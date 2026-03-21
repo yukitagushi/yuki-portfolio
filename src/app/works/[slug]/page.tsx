@@ -39,8 +39,7 @@ const works: Record<string, WorkData> = {
       "高速なページ表示速度（Core Web Vitals最適化）",
     ],
     techStack: ["Next.js", "Tailwind CSS", "Vercel", "SEO最適化", "構造化データ"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCiBFbPblrOjYtbgW7WoOAvkIdaGtsEusffoytb3eO3algp8jYP4V2ddGVneBnob6CRJTjqVOXtS8ZR5XKeFHWPMzhdmHmeI3EISt0GzN1oFI_mlHckfKTLTs-7zWgGiv4RSYC2kMPcIL9Euu4Ovh23TbEICBhSy5J5l-uw9UPPbjNAx3IqrFD8CUXO6cWU_-ipJ2_Ycq9jtGeRhu2Xfxx9kKFBTBg8Z1HxeshLL1_re4VloPLA3qD_ZCc7B09BT7lWKj7fJu_oVgc",
+    image: "/rig-techs-screenshot.png",
     imageAlt: "整備工場ホームページのデザインプレビュー",
   },
   "order-management": {

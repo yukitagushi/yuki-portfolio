@@ -350,7 +350,7 @@ export default function Home() {
                   <img
                     alt="整備工場ホームページ制作実績"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiBFbPblrOjYtbgW7WoOAvkIdaGtsEusffoytb3eO3algp8jYP4V2ddGVneBnob6CRJTjqVOXtS8ZR5XKeFHWPMzhdmHmeI3EISt0GzN1oFI_mlHckfKTLTs-7zWgGiv4RSYC2kMPcIL9Euu4Ovh23TbEICBhSy5J5l-uw9UPPbjNAx3IqrFD8CUXO6cWU_-ipJ2_Ycq9jtGeRhu2Xfxx9kKFBTBg8Z1HxeshLL1_re4VloPLA3qD_ZCc7B09BT7lWKj7fJu_oVgc"
+                    src="/rig-techs-screenshot.png"
                   />
                 </div>
                 <div>
