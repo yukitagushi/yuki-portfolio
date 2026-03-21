@@ -15,7 +15,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover opacity-60"
               src="/hero-bg.png"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface-lowest via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-lowest via-black/30 to-black/10" />
           </div>
           <div className="max-w-7xl mx-auto w-full space-y-8 relative z-10">
             <span className="inline-block text-tertiary font-headline font-bold text-sm tracking-[0.2em] uppercase bg-white/60 backdrop-blur-sm px-2 py-1">
@@ -27,7 +27,7 @@ export default function Home() {
               <span className="text-sky-300">&quot;めんどくさい&quot;</span>
               を解決する。
             </h1>
-            <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-medium bg-white/20 backdrop-blur-[2px] rounded-sm p-2 -ml-2">
+            <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed font-medium [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">
               ホームページ作成からアプリ開発、業務自動化まで。AIと最新テクノロジーで、コストを抑え、最短で届けます。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
