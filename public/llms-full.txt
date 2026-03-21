@@ -1,0 +1,66 @@
+# Yuki Taguchi - AI Engineer & DX Consultant - Complete Profile
+
+> AIの力で、ビジネスの「めんどくさい」を解決する。
+
+## About
+
+田口 侑生（たぐち ゆうせい / Yuki Taguchi）は、東京を拠点に活動するAIエンジニア＆DXコンサルタントです。AI導入企業の役員経験を持ち、AIと最新テクノロジーを活用して、ホームページ制作、業務自動化・DX支援、アプリ・システム開発を低コスト・短期間で提供しています。
+
+## Services Detail
+
+### 1. ホームページ制作・リニューアル (Web Design)
+**対象**: 美容室、クリニック、飲食店など地域に根ざしたビジネス
+**特徴**:
+- 集客に強いSEO設計（構造化データ、メタタグ最適化、Core Web Vitals対応）
+- スマホ最適化（レスポンシブデザイン）
+- 運用コストを抑えたCMS導入
+- モバイルファースト設計
+- AI SEO対応（llms.txt、AIクローラー許可設定）
+
+### 2. 業務自動化・DX支援 (DX & Automation)
+**特徴**:
+- AIによるメール・問い合わせ自動返信
+- 各種SaaS連携（Slack、LINE、Notion、Google Workspace等）
+- ペーパーレス化・請求管理自動化
+- 予約管理システムの自動化
+- カスタムAIチャットボット導入
+
+### 3. アプリ・システム開発 (Custom Development)
+**特徴**:
+- No-code × AI のハイブリッド開発
+- 最短2週間からの短期納品
+- 在庫管理、シフト管理、顧客管理等のオーダーメイドシステム
+- 従来の数分の一のコストで提供
+- React、Node.js、PostgreSQL等のモダン技術スタック
+
+## Portfolio / Works
+
+### 整備工場 ホームページ作成
+- **Year**: 2025
+- **Category**: Homepage
+- **Client**: 非公開（自動車整備工場）
+- **Description**: 地域密着型の自動車整備工場のホームページを新規制作。ローカルSEO対策を徹底し、地域検索からの集客を強化するサイト設計。
+- **Tech Stack**: Next.js, Tailwind CSS, Vercel, SEO最適化, 構造化データ
+- **Results**: モダンなホームページ公開、ローカルSEO最適化による地域検索上位表示、全デバイス対応、高速表示
+
+### 受発注管理システム
+- **Year**: 2024
+- **Category**: System Development
+- **Description**: 企業の受発注業務を一元管理するカスタムシステム。Excelベースの管理からの移行。
+- **Tech Stack**: React, Node.js, PostgreSQL, REST API, ダッシュボード
+- **Results**: 処理時間70%削減、入力ミスほぼゼロ、リアルタイム可視化、コスト1/3
+
+### 案件管理システム (2024) - System Development
+### 会計管理システム (2023) - System Development
+### 社内システムのデジタル化 (2023) - DX Support
+
+## Strengths
+1. **圧倒的なコスト削減**: AI活用により、従来の制作費用から大幅にコストを削減。中小企業でも手の届く価格でプロ品質を提供。
+2. **最短納期で納品**: AIによる開発効率化で、ホームページなら最短数日、アプリも驚きのスピードで納品可能。開発速度は従来の5倍。
+3. **AI導入の現場経験**: AI導入企業の役員として培った実務経験を活かし、本当に使えるソリューションを提案。
+
+## Contact Information
+- **Email**: yuu338@taguchi0308.com
+- **Location**: Tokyo, Japan
+- **Website**: https://yukitaguchi.com
+- **Consultation**: 無料相談受付中
