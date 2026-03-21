@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-screen flex flex-col justify-end pt-20 px-8 pb-20 overflow-hidden">
+        <section className="relative min-h-[480px] md:min-h-screen flex flex-col justify-end pt-20 px-8 pb-20 overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-black">
             <img
               alt="モダンなオフィスでAIを活用して業務を行うビジネスシーン"
