@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | 田口 侑生 - AIエンジニア",
   },
   description:
-    "AIエンジニア田口侑生のポートフォリオサイト。AIの力でビジネスの「めんどくさい」を解決。ホームページ制作、業務自動化・DX支援、アプリ・システム開発を低コスト・短期間で提供します。東京拠点。",
+    "AIエンジニア田口侑生のポートフォリオサイト。AIとSEOに特化したホームページ制作で地域のビジネスを支援。岩手県盛岡市拠点。ホームページ制作、業務自動化・DX支援を提供します。",
   keywords: [
     "AIエンジニア",
     "DXコンサルタント",
@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     "DX支援",
     "田口侑生",
     "Yuki Taguchi",
-    "東京",
+    "岩手",
+    "盛岡",
     "Web制作",
     "システム開発",
     "SEO対策",
@@ -103,7 +104,8 @@ function JsonLd() {
         ],
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Tokyo",
+          addressLocality: "盛岡市",
+          addressRegion: "岩手県",
           addressCountry: "JP",
         },
         sameAs: [],

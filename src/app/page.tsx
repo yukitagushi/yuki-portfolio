@@ -28,7 +28,7 @@ export default function Home() {
               を解決する。
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed font-medium [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">
-              ホームページ作成からアプリ開発、業務自動化まで。AIと最新テクノロジーで、コストを抑え、最短で届けます。
+              福岡での活動を経て、地元・岩手へ。AIとSEOに特化したホームページ制作で、地域のビジネスを支えます。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -84,7 +84,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 font-headline">AI導入の現場経験</h3>
                 <p className="text-on-surface-variant leading-relaxed text-sm">
-                  AI導入企業の役員として培った実務経験を活かし、本当に使えるソリューションを提案します。
+                  製造業の現場経験とAI導入の実務経験を活かし、現場目線で本当に使えるソリューションを提案します。
                 </p>
               </article>
             </div>
@@ -202,12 +202,12 @@ export default function Home() {
                   <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-2 block">Entry Level</span>
                   <h3 className="text-2xl font-bold font-headline mb-4">Starter Plan</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold font-headline">30</span>
+                    <span className="text-3xl font-bold font-headline">10</span>
                     <span className="text-sm font-bold">万円〜</span>
                   </div>
                 </div>
                 <div className="mb-10 flex-grow">
-                  <p className="text-sm text-on-surface-variant mb-6 font-medium">個人事業主や店舗の方向け。まずはWebでの顔を整えたい方に。</p>
+                  <p className="text-sm text-on-surface-variant mb-6 font-medium">個人事業主や小規模事業者向け。まずはホームページを持ちたい方に。</p>
                   <ul className="space-y-4 text-sm">
                     <li className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-tertiary text-lg">check</span>
@@ -237,7 +237,7 @@ export default function Home() {
                   <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-2 block">Best Value</span>
                   <h3 className="text-2xl font-bold font-headline mb-4 text-white">Standard Plan</h3>
                   <div className="flex items-baseline gap-1 text-white">
-                    <span className="text-3xl font-bold font-headline">50</span>
+                    <span className="text-3xl font-bold font-headline">30</span>
                     <span className="text-sm font-bold">万円〜</span>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function Home() {
                   <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-2 block">Scalable Systems</span>
                   <h3 className="text-2xl font-bold font-headline mb-4">Growth Plan</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold font-headline">80</span>
+                    <span className="text-3xl font-bold font-headline">60</span>
                     <span className="text-sm font-bold">万円〜</span>
                   </div>
                 </div>
@@ -444,7 +444,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Base</div>
-                    <div className="text-lg font-headline font-bold">Tokyo, Japan</div>
+                    <div className="text-lg font-headline font-bold">岩手県盛岡市</div>
                   </div>
                 </div>
               </div>
@@ -473,10 +473,10 @@ export default function Home() {
                   <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Investment Range</label>
                   <select name="budget" className="w-full bg-transparent border-0 border-b border-outline-variant/20 px-0 py-3 focus:ring-0 focus:border-tertiary transition-colors outline-none">
                     <option>予算感を選択してください</option>
-                    <option>~ 50万円</option>
-                    <option>50万円 ~ 150万円</option>
-                    <option>150万円 ~ 300万円</option>
-                    <option>300万円 ~</option>
+                    <option>~ 10万円</option>
+                    <option>10万円 ~ 30万円</option>
+                    <option>30万円 ~ 60万円</option>
+                    <option>60万円 ~</option>
                   </select>
                 </div>
                 <div>
