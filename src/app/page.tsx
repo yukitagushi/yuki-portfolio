@@ -22,13 +22,14 @@ export default function Home() {
               AI Engineering &amp; DX Strategy
             </span>
             <h1 className="text-5xl md:text-7xl font-headline font-bold text-white leading-[1.1] tracking-tight">
-              AIの力で、ビジネスの
+              盛岡・岩手の
               <br />
-              <span className="text-sky-300">&quot;めんどくさい&quot;</span>
-              を解決する。
+              <span className="text-sky-300">ホームページ制作</span>
+              <br className="hidden md:block" />
+              を、AIで。
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed font-medium [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">
-              福岡での活動を経て、地元・岩手へ。AIとSEOに特化したホームページ制作で、地域のビジネスを支えます。
+              岩手県盛岡市拠点。SEO対策・スマホ最適化込みのホームページが<strong className="text-sky-300">10〜20万円から、最短2週間</strong>で公開。リニューアルもお任せください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -38,12 +39,12 @@ export default function Home() {
                 無料相談する
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
-              <a
+              <Link
                 className="border border-outline-variant/20 bg-white/60 backdrop-blur-sm px-10 py-5 text-center font-bold hover:bg-white/80 transition-colors"
-                href="#works"
+                href="/examples"
               >
-                制作実績を見る
-              </a>
+                10〜20万円の制作例を見る
+              </Link>
             </div>
           </div>
         </section>
@@ -362,18 +363,18 @@ export default function Home() {
                 </div>
               </Link>
 
-              {/* Featured Work 2 */}
-              <Link href="/works/order-management" className="group cursor-pointer block">
+              {/* Featured Work 2 - Zukin Note */}
+              <Link href="/works/zukin-note" className="group cursor-pointer block">
                 <div className="aspect-[16/10] overflow-hidden mb-6 bg-surface border border-outline-variant/10">
                   <img
-                    alt="受発注管理システムの画面 - システム開発実績"
+                    alt="ズキンノート（zukin-note） - 片頭痛の記録・振り返りアプリ"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvxoPVD2HwbU_t_CO77bJziSaCjIYNr-_2CXPeUKDsLuOhQSws2C6ald-9pYgaEUJJivK-_ae9oO4lKTiaX_ZeY-wbFVVwhrD508o7mciuS_e52-d7wOmhRfSOtMrRE3ZouCtbhwETAAXcnj6o8_D2aNM61CFYUkMd5SpU5DzJAPTSnx9CiBi0qWK_Z_UvQhTqG4jweUNIddY_h4iVhP_5dZ3cPFpP_s3Wt1NvAJOWZIgzADLCc5XhozrJx-HZvBc51QbS-353EI4"
+                    src="/works-zukin-note.png"
                   />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest text-tertiary uppercase mb-2 block">System Development</span>
-                  <h3 className="text-2xl font-bold font-headline mb-4">受発注管理システム</h3>
+                  <span className="text-[10px] font-bold tracking-widest text-tertiary uppercase mb-2 block">Web App</span>
+                  <h3 className="text-2xl font-bold font-headline mb-4">ズキンノート｜片頭痛記録アプリ</h3>
                   <span className="inline-flex items-center gap-2 text-xs font-bold group-hover:gap-4 transition-all">
                     Read Case Study <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </span>
@@ -393,27 +394,65 @@ export default function Home() {
                 </thead>
                 <tbody className="divide-y divide-outline-variant/10">
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">整備工場 ホームページ作成</td>
+                    <td className="py-6 px-4 font-bold">
+                      <a href="https://rig-techs.com/" target="_blank" rel="noopener noreferrer" className="hover:text-tertiary transition-colors">
+                        Rig-Techs（整備工場・林業クレーン架装）
+                      </a>
+                    </td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">Homepage</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
                   </tr>
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">案件管理システム</td>
+                    <td className="py-6 px-4 font-bold">
+                      <a href="https://zukin-note.com/" target="_blank" rel="noopener noreferrer" className="hover:text-tertiary transition-colors">
+                        ズキンノート（片頭痛記録アプリ）
+                      </a>
+                    </td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant">Web App</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
+                  </tr>
+                  <tr className="group hover:bg-surface-lowest transition-colors">
+                    <td className="py-6 px-4 font-bold">Gemini Lounge（社内RAGシステム）</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
+                  </tr>
+                  <tr className="group hover:bg-surface-lowest transition-colors">
+                    <td className="py-6 px-4 font-bold">補助金レコメンドシステム</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
+                  </tr>
+                  <tr className="group hover:bg-surface-lowest transition-colors">
+                    <td className="py-6 px-4 font-bold">n8n × Claude Code 動画自動生成パイプライン</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant">DX Support</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
+                  </tr>
+                  <tr className="group hover:bg-surface-lowest transition-colors">
+                    <td className="py-6 px-4 font-bold">受発注管理システム</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">System Dev</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2024</td>
                   </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">会計管理システム</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">System Dev</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2023</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">社内システムのデジタル化</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">DX Support</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2023</td>
-                  </tr>
                 </tbody>
               </table>
+            </div>
+
+            {/* Examples CTA */}
+            <div className="mt-16 bg-gradient-to-br from-surface-low to-surface p-10 md:p-14 border border-outline-variant/10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div>
+                <p className="text-tertiary font-headline font-bold text-xs tracking-widest uppercase mb-3">Pricing Examples</p>
+                <h3 className="text-2xl md:text-3xl font-headline font-bold tracking-tight mb-3">
+                  10〜20万円で作れる業種別ホームページ作例
+                </h3>
+                <p className="text-on-surface-variant leading-relaxed max-w-2xl">
+                  福祉施設・行政書士・エアコン業者・財団系など、業種ごとの制作例を公開中。盛岡・岩手でホームページの新規制作・リニューアルをご検討中の方はぜひご覧ください。
+                </p>
+              </div>
+              <Link
+                href="/examples"
+                className="inline-flex items-center justify-center gap-3 bg-on-surface text-on-primary px-8 py-5 font-bold tracking-wide whitespace-nowrap transition-all hover:scale-[1.02] active:scale-95"
+              >
+                作例一覧へ
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
             </div>
           </div>
         </section>

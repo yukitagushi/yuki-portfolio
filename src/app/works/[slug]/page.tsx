@@ -17,15 +17,17 @@ type WorkData = {
   techStack: string[];
   image: string;
   imageAlt: string;
+  liveUrl?: string;
 };
 
 const works: Record<string, WorkData> = {
   "auto-repair-shop": {
-    title: "整備工場 ホームページ作成",
+    title: "Rig-Techs（整備工場・林業クレーン架装）ホームページ制作",
     category: "Homepage",
     categoryLabel: "ホームページ制作",
     year: "2025",
-    client: "非公開（自動車整備工場）",
+    client: "Rig-Techs（リグテクス）",
+    liveUrl: "https://rig-techs.com/",
     description:
       "自動車整備工場のホームページを新規制作しました。地域密着型ビジネスの信頼感と専門性を最大限に引き出すモダンなデザインを採用。SEO対策を徹底し、地域検索からの集客を強化するサイト設計を行いました。",
     challenge:
@@ -41,6 +43,29 @@ const works: Record<string, WorkData> = {
     techStack: ["Next.js", "Tailwind CSS", "Vercel", "SEO最適化", "構造化データ"],
     image: "/rig-techs-screenshot.png",
     imageAlt: "整備工場ホームページのデザインプレビュー",
+  },
+  "zukin-note": {
+    title: "ズキンノート｜片頭痛の記録・振り返りアプリ",
+    category: "Web App",
+    categoryLabel: "Webアプリ開発",
+    year: "2026",
+    client: "自社プロダクト",
+    liveUrl: "https://zukin-note.com/",
+    description:
+      "片頭痛持ちの方が、発作のタイミング・強さ・トリガー（食事・睡眠・気圧）を簡単に記録し、後から振り返れるWebアプリ。スマホでサッと記録し、医師との相談時にもデータを見せられる「片頭痛ダイアリー」として活用できます。AIによる傾向分析機能も搭載予定。",
+    challenge:
+      "片頭痛の発作は突然起こり、紙のノートではすぐに記録できない。既存の頭痛アプリは入力項目が多すぎて続かない、というユーザーの声が多くありました。「辛い時でも30秒で記録できる」設計が必須でした。",
+    solution:
+      "ワンタップで記録開始、トリガーは選択式、メモは任意。スマホファーストのUIで、寝込んでいても片手で操作できるレイアウトに最適化。Next.js + Supabase + Vercelで構築し、認証・データ保存・PWA対応まで実装。管理画面も同時提供。",
+    results: [
+      "発作から30秒以内に記録完了できるUI設計",
+      "気圧・睡眠・食事などのトリガーを構造化して保存",
+      "月次・週次の振り返りビューで傾向を可視化",
+      "PWA対応でスマホからアプリ感覚で使える",
+    ],
+    techStack: ["Next.js", "Supabase", "Vercel", "PWA", "TypeScript", "Tailwind CSS"],
+    image: "/works-zukin-note.png",
+    imageAlt: "ズキンノート - 片頭痛記録アプリのトップページ",
   },
   "order-management": {
     title: "受発注管理システム",
@@ -239,7 +264,20 @@ export default async function WorkDetailPage(props: {
                     </span>
                   ))}
                 </div>
-                <div className="mt-10 pt-8 border-t border-outline-variant/10">
+                {work.liveUrl && (
+                  <div className="mt-10 pt-8 border-t border-outline-variant/10">
+                    <a
+                      href={work.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-full items-center justify-center gap-2 border border-on-surface py-4 text-center font-bold tracking-widest uppercase text-sm transition-all hover:bg-surface-low active:scale-95"
+                    >
+                      公開サイトを見る
+                      <span className="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                  </div>
+                )}
+                <div className="mt-4">
                   <a
                     href="/#contact"
                     className="block w-full bg-on-surface text-on-primary py-4 text-center font-bold tracking-widest uppercase text-sm transition-all hover:bg-slate-800 active:scale-95"

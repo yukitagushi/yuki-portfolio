@@ -29,6 +29,12 @@ export default function Header() {
             >
               Pricing
             </a>
+            <Link
+              className="text-slate-600 hover:text-blue-700 transition-colors duration-300"
+              href="/examples"
+            >
+              Examples
+            </Link>
             <a
               className="text-slate-600 hover:text-blue-700 transition-colors duration-300"
               href="/#works"
@@ -76,6 +82,13 @@ export default function Header() {
           >
             Pricing
           </a>
+          <Link
+            href="/examples"
+            className="block font-headline text-sm font-medium text-slate-600"
+            onClick={() => setMobileOpen(false)}
+          >
+            Examples
+          </Link>
           <a
             href="/#works"
             className="block font-headline text-sm font-medium text-slate-600"
