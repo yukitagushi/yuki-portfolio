@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title:
-    "10〜20万円のホームページ制作例｜盛岡・岩手のWeb制作",
+    "10〜20万円のホームページ制作例｜岩手のWeb制作",
   description:
-    "盛岡・岩手で10〜20万円から作れる業種別ホームページの制作例。福祉施設、行政書士事務所、エアコン業者、財団系など、実際にAIで制作したサイトを公開中。新規制作・リニューアルともに最短2週間で公開可能です。",
+    "岩手で10〜20万円から作れる業種別ホームページの制作例。福祉施設、行政書士事務所、エアコン業者、財団系など、実際にAIで制作したサイトを公開中。新規制作・リニューアルともに最短2週間で公開可能です。",
   keywords: [
-    "盛岡 ホームページ制作 例",
+    "岩手 ホームページ制作 例",
     "岩手 ホームページ作成 例",
     "ホームページ 10万円 20万円",
     "福祉 ホームページ制作",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://taguchi338.com/examples",
   },
   openGraph: {
-    title: "10〜20万円のホームページ制作例｜盛岡・岩手のWeb制作",
+    title: "10〜20万円のホームページ制作例｜岩手のWeb制作",
     description:
       "業種別の実制作例を公開中。福祉・行政書士・エアコン・財団など、10〜20万円から最短2週間で公開できます。",
     url: "https://taguchi338.com/examples",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/examples/aircon.png",
         width: 1200,
         height: 630,
-        alt: "ホームページ制作例 - 盛岡・岩手のWeb制作",
+        alt: "ホームページ制作例 - 岩手のWeb制作",
       },
     ],
   },
@@ -137,7 +137,7 @@ function JsonLd() {
     "@type": "ItemList",
     name: "10〜20万円のホームページ制作例",
     description:
-      "盛岡・岩手で制作した業種別ホームページの作例一覧。10〜20万円から、最短2週間で公開可能。",
+      "岩手で制作した業種別ホームページの作例一覧。10〜20万円から、最短2週間で公開可能。",
     itemListElement: examples.map((ex, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -184,14 +184,14 @@ export default function ExamplesPage() {
               業種別ホームページ制作例
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-3xl">
-              盛岡・岩手で実際に制作した、業種別のホームページ作例をご紹介します。SEO対策・スマホ最適化・構造化データ標準装備で、新規制作・リニューアルともに<strong className="text-on-surface">10〜20万円から、最短2週間</strong>で公開可能です。
+              岩手で実際に制作した、業種別のホームページ作例をご紹介します。SEO対策・スマホ最適化・構造化データ標準装備で、新規制作・リニューアルともに<strong className="text-on-surface">10〜20万円から、最短2週間</strong>で公開可能です。
             </p>
 
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: "最低価格", value: "10万円〜" },
                 { label: "最短納期", value: "2週間" },
-                { label: "対応エリア", value: "盛岡・岩手・全国" },
+                { label: "対応エリア", value: "岩手・全国" },
                 { label: "SEO対策", value: "全プラン込み" },
               ].map((stat) => (
                 <div
@@ -383,7 +383,7 @@ export default function ExamplesPage() {
         <section className="px-8 py-20 md:py-28 bg-on-surface text-on-primary">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-headline font-bold tracking-tight mb-6 leading-tight">
-              盛岡・岩手で
+              岩手で
               <br />
               ホームページを作るなら。
             </h2>

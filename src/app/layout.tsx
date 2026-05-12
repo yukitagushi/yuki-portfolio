@@ -5,25 +5,21 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://taguchi338.com"),
   title: {
     default:
-      "盛岡のホームページ制作・リニューアル｜10〜20万円から | 田口侑生 - AIエンジニア",
-    template: "%s | 盛岡・岩手のホームページ制作 田口侑生",
+      "岩手のホームページ制作・リニューアル｜10〜20万円から | 田口侑生 - AIエンジニア",
+    template: "%s | 岩手のホームページ制作 田口侑生",
   },
   description:
-    "岩手県盛岡市拠点のAIエンジニアによるホームページ制作。SEO対策・スマホ最適化込みで10〜20万円から、最短2週間で公開。リニューアル・採用サイト・LPもAIで低コスト短納期。地域の中小企業・個人事業主を支援します。",
+    "岩手拠点のAIエンジニアによるホームページ制作。SEO対策・スマホ最適化込みで10〜20万円から、最短2週間で公開。リニューアル・採用サイト・LPもAIで低コスト短納期。地域の中小企業・個人事業主を支援します。",
   keywords: [
-    "盛岡 ホームページ制作",
     "岩手 ホームページ制作",
-    "盛岡 ホームページ作成",
     "岩手 ホームページ作成",
-    "盛岡 Web制作",
-    "盛岡 ホームページ リニューアル",
+    "岩手 Web制作",
     "岩手 ホームページ リニューアル",
     "ホームページ制作 10万円",
     "ホームページ制作 20万円",
-    "盛岡 SEO対策",
     "岩手 SEO対策",
-    "盛岡 LP制作",
     "岩手 LP制作",
+    "盛岡 ホームページ制作",
     "AIエンジニア",
     "DXコンサルタント",
     "業務自動化",
@@ -38,25 +34,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     url: "https://taguchi338.com",
-    siteName: "田口 侑生 | 盛岡・岩手のホームページ制作",
+    siteName: "田口 侑生 | 岩手のホームページ制作",
     title:
-      "盛岡のホームページ制作・リニューアル｜10〜20万円から | 田口侑生",
+      "岩手のホームページ制作・リニューアル｜10〜20万円から | 田口侑生",
     description:
-      "岩手県盛岡市拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。リニューアルも対応。",
+      "岩手拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。リニューアルも対応。",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "盛岡・岩手のホームページ制作 - 田口 侑生",
+        alt: "岩手のホームページ制作 - 田口 侑生",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "盛岡のホームページ制作・リニューアル｜10〜20万円から",
+    title: "岩手のホームページ制作・リニューアル｜10〜20万円から",
     description:
-      "岩手県盛岡市拠点。SEO対策込みで10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
+      "岩手拠点。SEO対策込みで10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -86,9 +82,9 @@ function JsonLd() {
         "@type": "WebSite",
         "@id": "https://taguchi338.com/#website",
         url: "https://taguchi338.com",
-        name: "田口 侑生 | 盛岡・岩手のホームページ制作",
+        name: "田口 侑生 | 岩手のホームページ制作",
         description:
-          "岩手県盛岡市拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
+          "岩手拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
         publisher: { "@id": "https://taguchi338.com/#person" },
         inLanguage: "ja",
         potentialAction: {
@@ -105,7 +101,7 @@ function JsonLd() {
         url: "https://taguchi338.com",
         jobTitle: "AIエンジニア & DXコンサルタント",
         description:
-          "盛岡を拠点に、AIを活用したホームページ制作・業務自動化・アプリ開発を低コスト・短期間で提供。",
+          "岩手を拠点に、AIを活用したホームページ制作・業務自動化・アプリ開発を低コスト・短期間で提供。",
         knowsAbout: [
           "ホームページ制作",
           "Webサイト リニューアル",
@@ -132,7 +128,7 @@ function JsonLd() {
         telephone: "",
         priceRange: "¥¥",
         description:
-          "盛岡・岩手のホームページ制作・リニューアル。SEO対策込み10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
+          "岩手のホームページ制作・リニューアル。SEO対策込み10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
         address: {
           "@type": "PostalAddress",
           addressLocality: "盛岡市",
@@ -145,7 +141,6 @@ function JsonLd() {
           longitude: 141.1527,
         },
         areaServed: [
-          { "@type": "City", name: "盛岡市" },
           { "@type": "State", name: "岩手県" },
           { "@type": "Country", name: "日本" },
         ],
@@ -154,10 +149,9 @@ function JsonLd() {
       {
         "@type": "ProfessionalService",
         "@id": "https://taguchi338.com/#service",
-        name: "盛岡・岩手のホームページ制作 - 田口 侑生",
+        name: "岩手のホームページ制作 - 田口 侑生",
         provider: { "@id": "https://taguchi338.com/#person" },
         areaServed: [
-          { "@type": "City", name: "盛岡市" },
           { "@type": "State", name: "岩手県" },
           { "@type": "Country", name: "日本" },
         ],
@@ -175,7 +169,7 @@ function JsonLd() {
                 "@type": "Service",
                 name: "ホームページ制作・リニューアル（10〜20万円プラン）",
                 description:
-                  "盛岡・岩手の中小企業・個人事業主向け。SEO対策・スマホ最適化・構造化データ標準装備で10〜20万円から、最短2週間で公開。",
+                  "岩手の中小企業・個人事業主向け。SEO対策・スマホ最適化・構造化データ標準装備で10〜20万円から、最短2週間で公開。",
                 areaServed: "岩手県",
               },
             },
@@ -206,7 +200,7 @@ function JsonLd() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "盛岡でホームページ制作を依頼するといくらかかりますか？",
+            name: "岩手でホームページ制作を依頼するといくらかかりますか？",
             acceptedAnswer: {
               "@type": "Answer",
               text:
@@ -219,7 +213,7 @@ function JsonLd() {
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "はい、リニューアル案件も多数対応しています。既存サイトの分析から、デザイン刷新、SEO再設計、CMS導入まで一貫して対応可能です。盛岡・岩手県内のお客様を中心に承っています。",
+                "はい、リニューアル案件も多数対応しています。既存サイトの分析から、デザイン刷新、SEO再設計、CMS導入まで一貫して対応可能です。岩手県内のお客様を中心に承っています。",
             },
           },
           {

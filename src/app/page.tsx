@@ -22,14 +22,14 @@ export default function Home() {
               AI Engineering &amp; DX Strategy
             </span>
             <h1 className="text-5xl md:text-7xl font-headline font-bold text-white leading-[1.1] tracking-tight">
-              盛岡・岩手の
+              岩手の
               <br />
               <span className="text-sky-300">ホームページ制作</span>
               <br className="hidden md:block" />
               を、AIで。
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed font-medium [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">
-              岩手県盛岡市拠点。SEO対策・スマホ最適化込みのホームページが<strong className="text-sky-300">10〜20万円から、最短2週間</strong>で公開。リニューアルもお任せください。
+              岩手拠点。SEO対策・スマホ最適化込みのホームページが<strong className="text-sky-300">10〜20万円から、最短2週間</strong>で公開。リニューアルもお任せください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -435,7 +435,7 @@ export default function Home() {
                   10〜20万円で作れる業種別ホームページ作例
                 </h3>
                 <p className="text-on-surface-variant leading-relaxed max-w-2xl">
-                  福祉施設・行政書士・エアコン業者・財団系など、業種ごとの制作例を公開中。盛岡・岩手でホームページの新規制作・リニューアルをご検討中の方はぜひご覧ください。
+                  福祉施設・行政書士・エアコン業者・財団系など、業種ごとの制作例を公開中。岩手でホームページの新規制作・リニューアルをご検討中の方はぜひご覧ください。
                 </p>
               </div>
               <Link
@@ -475,7 +475,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Base</div>
-                    <div className="text-lg font-headline font-bold">岩手県盛岡市</div>
+                    <div className="text-lg font-headline font-bold">岩手県</div>
                   </div>
                 </div>
               </div>
