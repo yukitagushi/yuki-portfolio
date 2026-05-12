@@ -143,7 +143,7 @@ export default async function WorkDetailPage(props: {
     creator: {
       "@type": "Person",
       name: "田口 侑生",
-      url: "https://yukitaguchi.com",
+      url: "https://taguchi338.com",
     },
     genre: work.categoryLabel,
     keywords: work.techStack.join(", "),

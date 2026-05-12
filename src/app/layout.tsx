@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yukitaguchi.com"),
+  metadataBase: new URL("https://taguchi338.com"),
   title: {
     default:
       "盛岡のホームページ制作・リニューアル｜10〜20万円から | 田口侑生 - AIエンジニア",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     "田口侑生",
     "Yuki Taguchi",
   ],
-  authors: [{ name: "田口 侑生", url: "https://yukitaguchi.com" }],
+  authors: [{ name: "田口 侑生", url: "https://taguchi338.com" }],
   creator: "田口 侑生",
   publisher: "田口 侑生",
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://yukitaguchi.com",
+    url: "https://taguchi338.com",
     siteName: "田口 侑生 | 盛岡・岩手のホームページ制作",
     title:
       "盛岡のホームページ制作・リニューアル｜10〜20万円から | 田口侑生",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://yukitaguchi.com",
+    canonical: "https://taguchi338.com",
   },
   robots: {
     index: true,
@@ -84,25 +84,25 @@ function JsonLd() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://yukitaguchi.com/#website",
-        url: "https://yukitaguchi.com",
+        "@id": "https://taguchi338.com/#website",
+        url: "https://taguchi338.com",
         name: "田口 侑生 | 盛岡・岩手のホームページ制作",
         description:
           "岩手県盛岡市拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
-        publisher: { "@id": "https://yukitaguchi.com/#person" },
+        publisher: { "@id": "https://taguchi338.com/#person" },
         inLanguage: "ja",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://yukitaguchi.com/?q={search_term_string}",
+          target: "https://taguchi338.com/?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "Person",
-        "@id": "https://yukitaguchi.com/#person",
+        "@id": "https://taguchi338.com/#person",
         name: "田口 侑生",
         alternateName: "Yuki Taguchi",
-        url: "https://yukitaguchi.com",
+        url: "https://taguchi338.com",
         jobTitle: "AIエンジニア & DXコンサルタント",
         description:
           "盛岡を拠点に、AIを活用したホームページ制作・業務自動化・アプリ開発を低コスト・短期間で提供。",
@@ -125,10 +125,10 @@ function JsonLd() {
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://yukitaguchi.com/#localbusiness",
+        "@id": "https://taguchi338.com/#localbusiness",
         name: "田口 侑生 ホームページ制作・AI開発",
-        image: "https://yukitaguchi.com/og-image.png",
-        url: "https://yukitaguchi.com",
+        image: "https://taguchi338.com/og-image.png",
+        url: "https://taguchi338.com",
         telephone: "",
         priceRange: "¥¥",
         description:
@@ -149,13 +149,13 @@ function JsonLd() {
           { "@type": "State", name: "岩手県" },
           { "@type": "Country", name: "日本" },
         ],
-        founder: { "@id": "https://yukitaguchi.com/#person" },
+        founder: { "@id": "https://taguchi338.com/#person" },
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://yukitaguchi.com/#service",
+        "@id": "https://taguchi338.com/#service",
         name: "盛岡・岩手のホームページ制作 - 田口 侑生",
-        provider: { "@id": "https://yukitaguchi.com/#person" },
+        provider: { "@id": "https://taguchi338.com/#person" },
         areaServed: [
           { "@type": "City", name: "盛岡市" },
           { "@type": "State", name: "岩手県" },
@@ -202,7 +202,7 @@ function JsonLd() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://yukitaguchi.com/#faq",
+        "@id": "https://taguchi338.com/#faq",
         mainEntity: [
           {
             "@type": "Question",

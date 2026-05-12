@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "業種別 ホームページ サンプル",
   ],
   alternates: {
-    canonical: "https://yukitaguchi.com/examples",
+    canonical: "https://taguchi338.com/examples",
   },
   openGraph: {
     title: "10〜20万円のホームページ制作例｜盛岡・岩手のWeb制作",
     description:
       "業種別の実制作例を公開中。福祉・行政書士・エアコン・財団など、10〜20万円から最短2週間で公開できます。",
-    url: "https://yukitaguchi.com/examples",
+    url: "https://taguchi338.com/examples",
     type: "website",
     images: [
       {
@@ -146,7 +146,7 @@ function JsonLd() {
         name: ex.title,
         description: ex.description,
         url: ex.liveUrl,
-        image: `https://yukitaguchi.com${ex.image}`,
+        image: `https://taguchi338.com${ex.image}`,
         genre: ex.industry,
       },
     })),

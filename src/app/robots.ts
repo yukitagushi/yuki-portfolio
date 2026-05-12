@@ -36,6 +36,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://yukitaguchi.com/sitemap.xml",
+    sitemap: "https://taguchi338.com/sitemap.xml",
   };
 }
