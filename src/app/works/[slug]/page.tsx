@@ -22,12 +22,11 @@ type WorkData = {
 
 const works: Record<string, WorkData> = {
   "auto-repair-shop": {
-    title: "Rig-Techs（整備工場・林業クレーン架装）ホームページ制作",
+    title: "整備工場 コーポレートサイト制作",
     category: "Homepage",
     categoryLabel: "ホームページ制作",
     year: "2025",
-    client: "Rig-Techs（リグテクス）",
-    liveUrl: "https://rig-techs.com/",
+    client: "非公開（自動車整備・林業クレーン架装業）",
     description:
       "自動車整備工場のホームページを新規制作しました。地域密着型ビジネスの信頼感と専門性を最大限に引き出すモダンなデザインを採用。SEO対策を徹底し、地域検索からの集客を強化するサイト設計を行いました。",
     challenge:
@@ -41,16 +40,15 @@ const works: Record<string, WorkData> = {
       "高速なページ表示速度（Core Web Vitals最適化）",
     ],
     techStack: ["Next.js", "Tailwind CSS", "Vercel", "SEO最適化", "構造化データ"],
-    image: "/rig-techs-screenshot.png",
+    image: "/works-auto-repair.png",
     imageAlt: "整備工場ホームページのデザインプレビュー",
   },
   "zukin-note": {
-    title: "ズキンノート｜片頭痛の記録・振り返りアプリ",
+    title: "片頭痛の記録・振り返りアプリ（自社プロダクト）",
     category: "Web App",
     categoryLabel: "Webアプリ開発",
     year: "2026",
     client: "自社プロダクト",
-    liveUrl: "https://zukin-note.com/",
     description:
       "片頭痛持ちの方が、発作のタイミング・強さ・トリガー（食事・睡眠・気圧）を簡単に記録し、後から振り返れるWebアプリ。スマホでサッと記録し、医師との相談時にもデータを見せられる「片頭痛ダイアリー」として活用できます。AIによる傾向分析機能も搭載予定。",
     challenge:

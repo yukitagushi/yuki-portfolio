@@ -351,7 +351,7 @@ export default function Home() {
                   <img
                     alt="整備工場ホームページ制作実績"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    src="/rig-techs-screenshot.png"
+                    src="/works-auto-repair.png"
                   />
                 </div>
                 <div>
@@ -363,18 +363,18 @@ export default function Home() {
                 </div>
               </Link>
 
-              {/* Featured Work 2 - Zukin Note */}
+              {/* Featured Work 2 - Headache Tracker */}
               <Link href="/works/zukin-note" className="group cursor-pointer block">
                 <div className="aspect-[16/10] overflow-hidden mb-6 bg-surface border border-outline-variant/10">
                   <img
-                    alt="ズキンノート（zukin-note） - 片頭痛の記録・振り返りアプリ"
+                    alt="片頭痛の記録・振り返りアプリのトップページ"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     src="/works-zukin-note.png"
                   />
                 </div>
                 <div>
                   <span className="text-[10px] font-bold tracking-widest text-tertiary uppercase mb-2 block">Web App</span>
-                  <h3 className="text-2xl font-bold font-headline mb-4">ズキンノート｜片頭痛記録アプリ</h3>
+                  <h3 className="text-2xl font-bold font-headline mb-4">片頭痛記録アプリ（自社プロダクト）</h3>
                   <span className="inline-flex items-center gap-2 text-xs font-bold group-hover:gap-4 transition-all">
                     Read Case Study <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </span>
@@ -394,25 +394,17 @@ export default function Home() {
                 </thead>
                 <tbody className="divide-y divide-outline-variant/10">
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">
-                      <a href="https://rig-techs.com/" target="_blank" rel="noopener noreferrer" className="hover:text-tertiary transition-colors">
-                        Rig-Techs（整備工場・林業クレーン架装）
-                      </a>
-                    </td>
+                    <td className="py-6 px-4 font-bold">整備工場 コーポレートサイト</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">Homepage</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
                   </tr>
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">
-                      <a href="https://zukin-note.com/" target="_blank" rel="noopener noreferrer" className="hover:text-tertiary transition-colors">
-                        ズキンノート（片頭痛記録アプリ）
-                      </a>
-                    </td>
+                    <td className="py-6 px-4 font-bold">片頭痛記録アプリ（自社プロダクト）</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">Web App</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
                   </tr>
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">Gemini Lounge（社内RAGシステム）</td>
+                    <td className="py-6 px-4 font-bold">社内RAGシステム</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
                   </tr>
@@ -422,7 +414,7 @@ export default function Home() {
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
                   </tr>
                   <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">n8n × Claude Code 動画自動生成パイプライン</td>
+                    <td className="py-6 px-4 font-bold">動画自動生成パイプライン</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">DX Support</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
                   </tr>
