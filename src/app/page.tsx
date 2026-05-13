@@ -466,7 +466,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Email</div>
-                    <div className="text-lg font-headline font-bold">yuu338@taguchi0308.com</div>
+                    <div className="text-lg font-headline font-bold">30.sc350@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -481,11 +481,11 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <form action="https://formsubmit.co/yuu338@taguchi0308.com" method="POST" className="space-y-8">
+              <form action="https://formsubmit.co/30.sc350@gmail.com" method="POST" className="space-y-8">
                 <input type="hidden" name="_subject" value="【ポートフォリオ】新しいお問い合わせ" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://portfolio-lm2wky4g7-yuki-taguchis-projects.vercel.app/#contact" />
+                <input type="hidden" name="_next" value="https://taguchi338.com/#contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Name</label>
