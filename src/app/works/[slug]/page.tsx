@@ -108,14 +108,14 @@ export async function generateMetadata(props: {
     title: `${work.title} - 制作実績`,
     description: work.description,
     openGraph: {
-      title: `${work.title} | 田口 侑生 制作実績`,
+      title: `${work.title} | AI Web Studio 制作実績`,
       description: work.description,
       images: [{ url: work.image, width: 1200, height: 630, alt: work.imageAlt }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${work.title} | 田口 侑生 制作実績`,
+      title: `${work.title} | AI Web Studio 制作実績`,
       description: work.description,
       images: [work.image],
     },
@@ -140,7 +140,7 @@ export default async function WorkDetailPage(props: {
     dateCreated: work.year,
     creator: {
       "@type": "Person",
-      name: "田口 侑生",
+      name: "AI Web Studio",
       url: "https://taguchi338.com",
     },
     genre: work.categoryLabel,

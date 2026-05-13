@@ -1,8 +1,8 @@
-# Yuki Taguchi - AI Engineer & DX Consultant
+# AI Web Studio - AI Engineering & DX Consulting
 
 > AIの力で、ビジネスの「めんどくさい」を解決する。
 
-田口 侑生（たぐち ゆうせい）は、東京を拠点に活動するAIエンジニア＆DXコンサルタントです。AI導入企業の役員経験を持ち、ホームページ制作、業務自動化・DX支援、アプリ・システム開発を低コスト・短期間で提供しています。
+AI Web Studio は、AIを活用してホームページ制作、業務自動化・DX支援、アプリ・システム開発を低コスト・短期間で提供するスタジオです。
 
 ## Services
 
@@ -26,9 +26,8 @@ SEO対策済み、モバイルファースト設計のホームページを低�
 ## Strengths
 - 圧倒的なコスト削減: AI活用により従来の制作費用から大幅にコストを削減
 - 最短納期で納品: ホームページなら最短数日、アプリも驚きのスピードで納品
-- AI導入の現場経験: AI導入企業の役員として培った実務経験
+- AI導入の現場経験: AI導入の実務経験を活かしたソリューション提案
 
 ## Contact
-- Email: 30.sc350@gmail.com
-- Location: Iwate, Japan
 - Website: https://taguchi338.com
+- 問い合わせはサイト内フォームより

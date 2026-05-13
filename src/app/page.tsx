@@ -465,8 +465,8 @@ export default function Home() {
                     <span className="material-symbols-outlined text-tertiary">mail</span>
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Email</div>
-                    <div className="text-lg font-headline font-bold">30.sc350@gmail.com</div>
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Contact</div>
+                    <div className="text-lg font-headline font-bold">右のフォームよりお問い合わせください</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -475,7 +475,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Base</div>
-                    <div className="text-lg font-headline font-bold">岩手県</div>
+                    <div className="text-lg font-headline font-bold">日本</div>
                   </div>
                 </div>
               </div>

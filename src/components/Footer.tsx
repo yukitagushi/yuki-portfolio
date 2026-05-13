@@ -8,7 +8,7 @@ export default function Footer() {
           href="/"
           className="text-lg font-bold text-slate-900 font-headline"
         >
-          Yuki Taguchi
+          AI Web Studio
         </Link>
         <div className="flex space-x-8 font-body text-xs tracking-widest uppercase font-medium">
           <a
@@ -31,7 +31,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="text-slate-500 font-body text-xs tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} Yuki Taguchi. All rights reserved.
+          &copy; {new Date().getFullYear()} AI Web Studio. All rights reserved.
         </div>
       </div>
     </footer>

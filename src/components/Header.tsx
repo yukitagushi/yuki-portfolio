@@ -13,7 +13,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold tracking-tighter text-slate-900 font-headline"
         >
-          Yuki Taguchi
+          AI Web Studio
         </Link>
         <div className="hidden md:flex items-center space-x-10">
           <div className="flex space-x-8 font-headline tracking-tight text-sm font-medium">
