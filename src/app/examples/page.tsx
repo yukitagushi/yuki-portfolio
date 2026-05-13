@@ -48,7 +48,7 @@ type Example = {
   priceRange: string;
   image: string;
   imageAlt: string;
-  liveUrl: string;
+  liveUrl?: string;
   accent: string;
 };
 
@@ -56,77 +56,75 @@ const examples: Example[] = [
   {
     slug: "fukushi",
     industry: "福祉・介護施設",
-    title: "コスモスの里｜グループホーム",
-    subtitle: "自宅のように安心して暮らせる場所",
+    title: "グループホーム",
+    subtitle: "安心感を伝える、ご家族目線の施設サイト",
     description:
-      "高齢者向けグループホームのコーポレートサイト。施設の温かみと安心感を伝えるやわらかな配色と、家族目線で読める情報設計。問い合わせ・見学申し込みまでの導線をシンプルに整えました。",
+      "高齢者向けグループホームを想定した構成例。トップで施設の雰囲気を写真+短いコピーで伝え、続けて「1日の過ごし方」「料金・入居までの流れ」「ご家族からよくある質問」を縦に配置。最後に見学申し込みフォームを置き、スマホで上から読み進めるだけで疑問が解消する設計にしています。やわらかな配色・大きめの文字サイズ・行間広めで、シニア層や家族世代でも読みやすく構成。",
     features: [
-      "施設紹介・1日の過ごし方のストーリーテリング",
-      "ご家族向けFAQ・料金表",
-      "見学申し込みフォーム",
-      "アクセス・採用情報",
+      "TOP：施設紹介ヒーロー + 雰囲気が伝わる写真ギャラリー",
+      "1日の過ごし方 / 提供サービス / スタッフ紹介ページ",
+      "料金・入居までの流れ・FAQの3点セット",
+      "見学申し込みフォーム + アクセス・採用情報",
     ],
     priceRange: "10〜15万円",
     image: "/examples/fukushi.png",
-    imageAlt: "福祉施設（グループホーム）のホームページ制作例",
-    liveUrl: "https://cosmos-no-sato-brown.vercel.app/",
+    imageAlt: "グループホーム向けホームページの構成例",
     accent: "from-amber-50 to-orange-50",
   },
   {
     slug: "gyoseishoshi",
     industry: "行政書士事務所",
-    title: "行政書士事務所｜想いを形に",
-    subtitle: "確かな未来を綴る、士業サイトの定番設計",
+    title: "行政書士事務所サイト",
+    subtitle: "信頼感と相談導線を両立する、士業サイトの定番構成",
     description:
-      "士業特有の信頼感・専門性を伝えるクラシカルなデザイン。業務内容（相続・許認可・在留資格など）、費用、相談の流れをわかりやすく構造化。問い合わせフォームから初回相談予約まで一気通貫。",
+      "士業特有の信頼感・専門性を伝える落ち着いたデザインを軸に、業務内容（相続・許認可・在留資格など）ごとに専用ページを用意。トップ→業務一覧→各業務の解説→料金/相談の流れ→問い合わせの順で、来訪者が迷わず予約まで進める導線で構成しています。電話タップ・LINE・フォームの3経路を確保し、スマホからの初回相談予約に最適化。",
     features: [
-      "業務内容ごとの専用ページ",
-      "料金・相談の流れの可視化",
-      "事務所紹介・代表プロフィール",
-      "問い合わせ・電話タップで予約",
+      "TOP：強み3点 + 取扱業務へのナビゲーション",
+      "業務別ページ（相続 / 許認可 / 在留資格 など）",
+      "料金表・ご相談の流れ・FAQ・代表者プロフィール",
+      "電話タップ / LINE / フォームの3経路相談窓口",
     ],
     priceRange: "12〜18万円",
     image: "/examples/gyoseishoshi.png",
-    imageAlt: "行政書士事務所のホームページ制作例",
+    imageAlt: "行政書士事務所向けホームページの構成例",
     liveUrl: "https://public-tan-three.vercel.app/",
     accent: "from-slate-50 to-stone-50",
   },
   {
     slug: "aircon",
-    industry: "エアコン業者",
-    title: "PureAir Solutions｜エアコンクリーニング",
-    subtitle: "プロのエアコンクリーニングを最短予約",
+    industry: "エアコンクリーニング業者",
+    title: "エアコンクリーニング業者サイト",
+    subtitle: "予約導線を最大化する、地域密着サービスサイト",
     description:
-      "ハウスクリーニング・エアコン洗浄業者向けのサービスサイト。料金プラン（家庭用・業務用）、対応エリア、施工事例、Web予約フォームまでを1サイトに集約。地域検索からの問い合わせを最大化する設計。",
+      "ハウスクリーニング・エアコン洗浄業者を想定したサービス型サイトの構成例。トップで「料金」「対応エリア」「予約」を即座に提示し、家庭用/業務用のプラン比較・Before/Afterによる施工事例・Web予約フォームまでを1ページ内で完結させる構成。地域名 × サービス名の検索意図に応えるエリア別ページも生成可能で、ローカルSEOからの集客を最大化します。",
     features: [
-      "サービス別の料金プラン表",
-      "施工事例・Before / After",
-      "対応エリア・出張範囲の明示",
-      "Web予約・LINE問い合わせ",
+      "TOP：料金・対応エリア・予約ボタンをファーストビューに",
+      "家庭用 / 業務用などサービス別の料金プラン比較表",
+      "施工事例ギャラリー（Before / After）",
+      "Web予約フォーム + LINE/電話タップでの即時問い合わせ",
     ],
     priceRange: "10〜15万円",
     image: "/examples/aircon.png",
-    imageAlt: "エアコン業者のホームページ制作例",
+    imageAlt: "エアコンクリーニング業者向けホームページの構成例",
     liveUrl: "https://pureair-solutions.vercel.app/",
     accent: "from-sky-50 to-cyan-50",
   },
   {
     slug: "zaidan",
     industry: "財団・社団法人",
-    title: "AWAA｜Asia Well-Aging Association",
-    subtitle: "国際的な活動を発信する財団サイト",
+    title: "財団・社団法人サイト",
+    subtitle: "ミッションと活動を堅実に発信する公益系サイト",
     description:
-      "アジア圏のウェルエイジングを推進する一般社団法人のオフィシャルサイト。活動報告・メンバー紹介・寄付/会員募集など、財団系に必要な要素を網羅。多言語対応も視野に入れた構造設計。",
+      "一般社団法人・財団法人など公益系団体を想定した構成例。トップでミッション/ビジョンを大きく掲げ、活動領域・実績・理事紹介・最新ニュースへ自然に流れるレイアウト。寄付・会員募集・お知らせCMSなど、公益団体に共通して必要な要素を一通り組み込み、信頼感を損なわない落ち着いた配色とタイポグラフィでまとめています。多言語化を前提としたページ設計も可能。",
     features: [
-      "団体概要・ミッション・活動報告",
-      "理事・会員紹介",
-      "寄付・会員募集フォーム",
-      "ニュース・お知らせCMS",
+      "TOP：ミッション/ビジョン + 活動領域の3〜4ブロック",
+      "団体概要・沿革・組織図・理事/役員紹介",
+      "活動報告・ニュースCMS（管理画面付き）",
+      "寄付・会員募集・問い合わせフォーム / 多言語化対応可",
     ],
     priceRange: "15〜20万円",
     image: "/examples/zaidan.png",
-    imageAlt: "財団・社団法人のホームページ制作例",
-    liveUrl: "https://awaa-site.vercel.app/",
+    imageAlt: "財団・社団法人向けホームページの構成例",
     accent: "from-emerald-50 to-teal-50",
   },
 ];
@@ -145,7 +143,7 @@ function JsonLd() {
         "@type": "CreativeWork",
         name: ex.title,
         description: ex.description,
-        url: ex.liveUrl,
+        ...(ex.liveUrl ? { url: ex.liveUrl } : {}),
         image: `https://taguchi338.com${ex.image}`,
         genre: ex.industry,
       },
@@ -272,15 +270,17 @@ export default function ExamplesPage() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href={ex.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 bg-on-surface text-on-primary px-6 py-4 font-bold text-sm tracking-widest uppercase transition-all hover:bg-slate-800 active:scale-95"
-                    >
-                      公開サイトを見る
-                      <span className="material-symbols-outlined text-sm">open_in_new</span>
-                    </a>
+                    {ex.liveUrl && (
+                      <a
+                        href={ex.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-on-surface text-on-primary px-6 py-4 font-bold text-sm tracking-widest uppercase transition-all hover:bg-slate-800 active:scale-95"
+                      >
+                        サンプルサイトを見る
+                        <span className="material-symbols-outlined text-sm">open_in_new</span>
+                      </a>
+                    )}
                     <a
                       href="/#contact"
                       className="inline-flex items-center justify-center gap-2 border border-on-surface px-6 py-4 font-bold text-sm tracking-widest uppercase transition-all hover:bg-surface-low active:scale-95"
