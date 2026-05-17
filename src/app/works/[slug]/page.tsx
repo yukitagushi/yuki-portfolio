@@ -124,9 +124,15 @@ const works: Record<string, WorkData> = {
       "アプリ内チャットで事業者-ケアマネのコミュニケーションを一元化",
       "決済システム連携で報酬のやり取りまでアプリ内で完結",
     ],
-    techStack: ["Bubble", "ノーコード", "決済API連携", "レスポンシブUI"],
+    techStack: ["Bubble"],
     image: "/works-welfare-matching.png",
     imageAlt: "ケアマネージャーと介護事業所をつなぐ福祉マッチングアプリのトップ画面",
+    images: [
+      {
+        src: "/works-welfare-matching.png",
+        alt: "ケアマネージャーと介護事業所をつなぐ福祉マッチングアプリのトップ画面",
+      },
+    ],
   },
   "ec-site": {
     title: "ECサイト構築",
@@ -139,14 +145,14 @@ const works: Record<string, WorkData> = {
     challenge:
       "汎用ECプラットフォームをそのまま使うとブランドの世界観を表現しきれず、コンバージョンが頭打ちになる。一方でフルスクラッチは予算的にも工期的にも厳しい、というジレンマを抱えていました。",
     solution:
-      "ヘッドレスEC / 既存EC基盤（Shopify等）の上に独自フロントを実装し、ブランド世界観に合うデザインを実現。商品ページのファーストビュー最適化、カゴ落ち対策、レコメンド、SEO（構造化データ・OG・サイトマップ）まで標準装備。スマホファーストで購入動線を1スクロール圏内に集約しました。",
+      "Bubbleでフロント／商品DB／カート／決済／受注管理／管理画面までを一括構築。ノーコードゆえの圧倒的なスピード感で、ブランド世界観に合うデザイン・スマホファーストの購入動線・カゴ落ち対策まで標準装備しました。要件確定から本番リリースまでを短期間で実現し、運用開始後の改善サイクルも高速に回せる構成です。",
     results: [
       "ブランド世界観に合った独自デザインのEC公開",
       "スマホ購入動線をファーストビューに集約し離脱を抑制",
-      "構造化データ・サイトマップによるSEO対策で自然流入を強化",
       "在庫・受注・配送通知の管理画面を運用しやすく整理",
+      "Bubbleによるノーコード開発で短期リリース＆運用改善サイクルを高速化",
     ],
-    techStack: ["Next.js", "Shopify / ヘッドレスEC", "Tailwind CSS", "決済API", "Vercel"],
+    techStack: ["Bubble"],
     image: "/works-ec-site-2.png",
     imageAlt: "D2Cブランド向けECサイトのキービジュアル",
     images: [
@@ -382,8 +388,14 @@ export default async function WorkDetailPage(props: {
         {/* Image */}
         <section className="px-8 pb-20 bg-surface-lowest">
           <div className="max-w-5xl mx-auto">
-            {work.images && work.images.length > 1 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            {work.images && work.images.length > 0 ? (
+              <div
+                className={`grid gap-6 md:gap-8 ${
+                  work.images.length >= 2
+                    ? "grid-cols-1 sm:grid-cols-2"
+                    : "grid-cols-1 max-w-md mx-auto"
+                }`}
+              >
                 {work.images.map((img) => (
                   <div
                     key={img.src}
