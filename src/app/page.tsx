@@ -398,41 +398,36 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-outline-variant/10">
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">整備工場 コーポレートサイト</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">Homepage</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">片頭痛記録アプリ（自社プロダクト）</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">Web App</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">自動車整備業向け会計管理システム</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">System Dev</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">社内RAGシステム</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">補助金レコメンドシステム</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">動画自動生成パイプライン</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">DX Support</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2025</td>
-                  </tr>
-                  <tr className="group hover:bg-surface-lowest transition-colors">
-                    <td className="py-6 px-4 font-bold">受発注管理システム</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant">System Dev</td>
-                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2024</td>
-                  </tr>
+                  {[
+                    { slug: "auto-repair-shop", title: "整備工場 コーポレートサイト", category: "Homepage", year: "2025" },
+                    { slug: "zukin-note", title: "片頭痛記録アプリ（自社プロダクト）", category: "Web App", year: "2026" },
+                    { slug: "auto-accounting", title: "自動車整備業向け会計管理システム", category: "System Dev", year: "2026" },
+                    { slug: "internal-rag", title: "社内RAGシステム", category: "AI System", year: "2026" },
+                    { slug: "grant-recommender", title: "補助金レコメンドシステム", category: "AI System", year: "2025" },
+                    { slug: "video-pipeline", title: "動画自動生成パイプライン", category: "DX Support", year: "2025" },
+                    { slug: "order-management", title: "受発注管理システム", category: "System Dev", year: "2024" },
+                  ].map((row) => (
+                    <tr key={row.slug} className="group hover:bg-surface-lowest transition-colors cursor-pointer">
+                      <td className="p-0">
+                        <Link href={`/works/${row.slug}`} className="flex items-center gap-3 py-6 px-4 font-bold">
+                          {row.title}
+                          <span className="material-symbols-outlined text-sm text-tertiary opacity-0 group-hover:opacity-100 transition-opacity">
+                            arrow_forward
+                          </span>
+                        </Link>
+                      </td>
+                      <td className="p-0">
+                        <Link href={`/works/${row.slug}`} className="block py-6 px-4 text-sm text-on-surface-variant">
+                          {row.category}
+                        </Link>
+                      </td>
+                      <td className="p-0">
+                        <Link href={`/works/${row.slug}`} className="block py-6 px-4 text-sm text-on-surface-variant font-headline">
+                          {row.year}
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
