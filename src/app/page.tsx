@@ -365,11 +365,16 @@ export default function Home() {
 
               {/* Featured Work 2 - Headache Tracker */}
               <Link href="/works/zukin-note" className="group cursor-pointer block">
-                <div className="aspect-[16/10] overflow-hidden mb-6 bg-surface border border-outline-variant/10">
+                <div className="aspect-[16/10] overflow-hidden mb-6 bg-[#f5ece4] border border-outline-variant/10 flex items-center justify-center gap-4 p-6">
                   <img
-                    alt="片頭痛の記録・振り返りアプリのトップページ"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    src="/works-zukin-note.png"
+                    alt="片頭痛記録アプリのトップ画面"
+                    className="h-full w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-sm"
+                    src="/works-zukin-note-1.png"
+                  />
+                  <img
+                    alt="片頭痛記録アプリの傾向分析画面"
+                    className="h-full w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-sm hidden md:block"
+                    src="/works-zukin-note-2.png"
                   />
                 </div>
                 <div>

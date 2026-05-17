@@ -17,6 +17,7 @@ type WorkData = {
   techStack: string[];
   image: string;
   imageAlt: string;
+  images?: { src: string; alt: string }[];
   liveUrl?: string;
 };
 
@@ -62,8 +63,18 @@ const works: Record<string, WorkData> = {
       "PWA対応でスマホからアプリ感覚で使える",
     ],
     techStack: ["Next.js", "Supabase", "Vercel", "PWA", "TypeScript", "Tailwind CSS"],
-    image: "/works-zukin-note.png",
-    imageAlt: "ズキンノート - 片頭痛記録アプリのトップページ",
+    image: "/works-zukin-note-1.png",
+    imageAlt: "片頭痛記録アプリのトップ画面（つらい時ほどさっと残せる）",
+    images: [
+      {
+        src: "/works-zukin-note-1.png",
+        alt: "片頭痛記録アプリのトップ画面（つらい時ほどさっと残せる）",
+      },
+      {
+        src: "/works-zukin-note-2.png",
+        alt: "片頭痛記録アプリの傾向分析画面（AIアナウンス・上位トリガー候補）",
+      },
+    ],
   },
   "order-management": {
     title: "受発注管理システム",
@@ -201,13 +212,30 @@ export default async function WorkDetailPage(props: {
         {/* Image */}
         <section className="px-8 pb-20 bg-surface-lowest">
           <div className="max-w-5xl mx-auto">
-            <div className="aspect-[16/9] overflow-hidden border border-outline-variant/10 bg-surface">
-              <img
-                alt={work.imageAlt}
-                className="w-full h-full object-cover"
-                src={work.image}
-              />
-            </div>
+            {work.images && work.images.length > 1 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                {work.images.map((img) => (
+                  <div
+                    key={img.src}
+                    className="border border-outline-variant/10 bg-surface flex items-center justify-center p-6 sm:p-8"
+                  >
+                    <img
+                      alt={img.alt}
+                      className="w-full h-auto max-h-[720px] object-contain"
+                      src={img.src}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="aspect-[16/9] overflow-hidden border border-outline-variant/10 bg-surface">
+                <img
+                  alt={work.imageAlt}
+                  className="w-full h-full object-cover"
+                  src={work.image}
+                />
+              </div>
+            )}
           </div>
         </section>
 
