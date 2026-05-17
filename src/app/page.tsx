@@ -409,6 +409,11 @@ export default function Home() {
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
                   </tr>
                   <tr className="group hover:bg-surface-lowest transition-colors">
+                    <td className="py-6 px-4 font-bold">自動車整備業向け会計管理システム</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant">System Dev</td>
+                    <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
+                  </tr>
+                  <tr className="group hover:bg-surface-lowest transition-colors">
                     <td className="py-6 px-4 font-bold">社内RAGシステム</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant">AI System</td>
                     <td className="py-6 px-4 text-sm text-on-surface-variant font-headline">2026</td>
