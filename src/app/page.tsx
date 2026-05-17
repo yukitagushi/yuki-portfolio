@@ -402,6 +402,8 @@ export default function Home() {
                     { slug: "auto-repair-shop", title: "整備工場 コーポレートサイト", category: "Homepage", year: "2025" },
                     { slug: "zukin-note", title: "片頭痛記録アプリ（自社プロダクト）", category: "Web App", year: "2026" },
                     { slug: "auto-accounting", title: "自動車整備業向け会計管理システム", category: "System Dev", year: "2026" },
+                    { slug: "welfare-matching", title: "福祉マッチングアプリ（Bubble）", category: "No-code App", year: "2025" },
+                    { slug: "ec-site", title: "ECサイト構築", category: "EC Site", year: "2025" },
                     { slug: "internal-rag", title: "社内RAGシステム", category: "AI System", year: "2026" },
                     { slug: "grant-recommender", title: "補助金レコメンドシステム", category: "AI System", year: "2025" },
                     { slug: "video-pipeline", title: "動画自動生成パイプライン", category: "DX Support", year: "2025" },
