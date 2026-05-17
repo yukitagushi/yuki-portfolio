@@ -15,8 +15,8 @@ type WorkData = {
   solution: string;
   results: string[];
   techStack: string[];
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   images?: { src: string; alt: string }[];
   liveUrl?: string;
 };
@@ -192,8 +192,6 @@ const works: Record<string, WorkData> = {
       "Next.js",
       "Vercel",
     ],
-    image: "/works-auto-accounting.png",
-    imageAlt: "社内RAGシステムのイメージ",
   },
   "grant-recommender": {
     title: "補助金レコメンドシステム",
@@ -220,8 +218,6 @@ const works: Record<string, WorkData> = {
       "OpenAI / Claude API",
       "スクレイピング基盤",
     ],
-    image: "/works-auto-accounting.png",
-    imageAlt: "補助金レコメンドシステムのイメージ",
   },
   "video-pipeline": {
     title: "動画自動生成パイプライン",
@@ -249,8 +245,6 @@ const works: Record<string, WorkData> = {
       "Fish Audio / ElevenLabs",
       "画像生成AI",
     ],
-    image: "/works-auto-accounting.png",
-    imageAlt: "動画自動生成パイプラインのイメージ",
   },
   "order-management": {
     title: "受発注管理システム",
@@ -291,20 +285,23 @@ export async function generateMetadata(props: {
     return { title: "Not Found" };
   }
 
+  const ogImage = work.image ?? "/og-image.png";
+  const ogImageAlt = work.imageAlt ?? `${work.title} - AI Web Studio 制作実績`;
+
   return {
     title: `${work.title} - 制作実績`,
     description: work.description,
     openGraph: {
       title: `${work.title} | AI Web Studio 制作実績`,
       description: work.description,
-      images: [{ url: work.image, width: 1200, height: 630, alt: work.imageAlt }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: ogImageAlt }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title: `${work.title} | AI Web Studio 制作実績`,
       description: work.description,
-      images: [work.image],
+      images: [ogImage],
     },
   };
 }
@@ -332,7 +329,7 @@ export default async function WorkDetailPage(props: {
     },
     genre: work.categoryLabel,
     keywords: work.techStack.join(", "),
-    image: work.image,
+    ...(work.image ? { image: work.image } : {}),
   };
 
   return (
@@ -386,40 +383,42 @@ export default async function WorkDetailPage(props: {
         </section>
 
         {/* Image */}
-        <section className="px-8 pb-20 bg-surface-lowest">
-          <div className="max-w-5xl mx-auto">
-            {work.images && work.images.length > 0 ? (
-              <div
-                className={`grid gap-6 md:gap-8 ${
-                  work.images.length >= 2
-                    ? "grid-cols-1 sm:grid-cols-2"
-                    : "grid-cols-1 max-w-md mx-auto"
-                }`}
-              >
-                {work.images.map((img) => (
-                  <div
-                    key={img.src}
-                    className="border border-outline-variant/10 bg-surface flex items-center justify-center p-6 sm:p-8"
-                  >
-                    <img
-                      alt={img.alt}
-                      className="w-full h-auto max-h-[720px] object-contain"
-                      src={img.src}
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="aspect-[16/9] overflow-hidden border border-outline-variant/10 bg-surface">
-                <img
-                  alt={work.imageAlt}
-                  className="w-full h-full object-cover"
-                  src={work.image}
-                />
-              </div>
-            )}
-          </div>
-        </section>
+        {(work.images && work.images.length > 0) || work.image ? (
+          <section className="px-8 pb-20 bg-surface-lowest">
+            <div className="max-w-5xl mx-auto">
+              {work.images && work.images.length > 0 ? (
+                <div
+                  className={`grid gap-6 md:gap-8 ${
+                    work.images.length >= 2
+                      ? "grid-cols-1 sm:grid-cols-2"
+                      : "grid-cols-1 max-w-md mx-auto"
+                  }`}
+                >
+                  {work.images.map((img) => (
+                    <div
+                      key={img.src}
+                      className="border border-outline-variant/10 bg-surface flex items-center justify-center p-6 sm:p-8"
+                    >
+                      <img
+                        alt={img.alt}
+                        className="w-full h-auto max-h-[720px] object-contain"
+                        src={img.src}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="aspect-[16/9] overflow-hidden border border-outline-variant/10 bg-surface">
+                  <img
+                    alt={work.imageAlt}
+                    className="w-full h-full object-cover"
+                    src={work.image}
+                  />
+                </div>
+              )}
+            </div>
+          </section>
+        ) : null}
 
         {/* Content */}
         <section className="px-8 py-20 bg-surface-low">
