@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://taguchi338.com"),
   title: {
     default:
-      "岩手のホームページ制作・リニューアル｜10〜20万円から | AI Web Studio",
-    template: "%s | 岩手のホームページ制作 AI Web Studio",
+      "岩手のホームページ制作・リニューアル｜10〜20万円から | 田口侑生 - AIエンジニア",
+    template: "%s | 岩手のホームページ制作 田口侑生",
   },
   description:
     "岩手拠点のAIエンジニアによるホームページ制作。SEO対策・スマホ最適化込みで10〜20万円から、最短2週間で公開。リニューアル・採用サイト・LPもAIで低コスト短納期。地域の中小企業・個人事業主を支援します。",
@@ -24,18 +24,19 @@ export const metadata: Metadata = {
     "DXコンサルタント",
     "業務自動化",
     "アプリ開発",
-    "AI Web Studio",
+    "田口侑生",
+    "Yuki Taguchi",
   ],
-  authors: [{ name: "AI Web Studio", url: "https://taguchi338.com" }],
-  creator: "AI Web Studio",
-  publisher: "AI Web Studio",
+  authors: [{ name: "田口 侑生", url: "https://taguchi338.com" }],
+  creator: "田口 侑生",
+  publisher: "田口 侑生",
   openGraph: {
     type: "website",
     locale: "ja_JP",
     url: "https://taguchi338.com",
-    siteName: "AI Web Studio | 岩手のホームページ制作",
+    siteName: "田口 侑生 | 岩手のホームページ制作",
     title:
-      "岩手のホームページ制作・リニューアル｜10〜20万円から | AI Web Studio",
+      "岩手のホームページ制作・リニューアル｜10〜20万円から | 田口侑生",
     description:
       "岩手拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。リニューアルも対応。",
     images: [
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "岩手のホームページ制作 - AI Web Studio",
+        alt: "岩手のホームページ制作 - 田口 侑生",
       },
     ],
   },
@@ -81,10 +82,10 @@ function JsonLd() {
         "@type": "WebSite",
         "@id": "https://taguchi338.com/#website",
         url: "https://taguchi338.com",
-        name: "AI Web Studio | 岩手のホームページ制作",
+        name: "田口 侑生 | 岩手のホームページ制作",
         description:
           "岩手拠点。SEO対策込みのホームページ制作が10〜20万円から、最短2週間で公開。AI活用で低コスト・短納期。",
-        publisher: { "@id": "https://taguchi338.com/#organization" },
+        publisher: { "@id": "https://taguchi338.com/#person" },
         inLanguage: "ja",
         potentialAction: {
           "@type": "SearchAction",
@@ -93,10 +94,12 @@ function JsonLd() {
         },
       },
       {
-        "@type": "Organization",
-        "@id": "https://taguchi338.com/#organization",
-        name: "AI Web Studio",
+        "@type": "Person",
+        "@id": "https://taguchi338.com/#person",
+        name: "田口 侑生",
+        alternateName: "Yuki Taguchi",
         url: "https://taguchi338.com",
+        jobTitle: "AIエンジニア & DXコンサルタント",
         description:
           "岩手を拠点に、AIを活用したホームページ制作・業務自動化・アプリ開発を低コスト・短期間で提供。",
         knowsAbout: [
@@ -108,11 +111,17 @@ function JsonLd() {
           "業務自動化",
           "アプリ開発",
         ],
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "岩手県",
+          addressCountry: "JP",
+        },
+        sameAs: [],
       },
       {
         "@type": "LocalBusiness",
         "@id": "https://taguchi338.com/#localbusiness",
-        name: "AI Web Studio ホームページ制作・AI開発",
+        name: "田口 侑生 ホームページ制作・AI開発",
         image: "https://taguchi338.com/og-image.png",
         url: "https://taguchi338.com",
         telephone: "",
@@ -128,13 +137,13 @@ function JsonLd() {
           { "@type": "State", name: "岩手県" },
           { "@type": "Country", name: "日本" },
         ],
-        founder: { "@id": "https://taguchi338.com/#organization" },
+        founder: { "@id": "https://taguchi338.com/#person" },
       },
       {
         "@type": "ProfessionalService",
         "@id": "https://taguchi338.com/#service",
-        name: "岩手のホームページ制作 - AI Web Studio",
-        provider: { "@id": "https://taguchi338.com/#organization" },
+        name: "岩手のホームページ制作 - 田口 侑生",
+        provider: { "@id": "https://taguchi338.com/#person" },
         areaServed: [
           { "@type": "State", name: "岩手県" },
           { "@type": "Country", name: "日本" },

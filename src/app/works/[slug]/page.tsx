@@ -286,20 +286,20 @@ export async function generateMetadata(props: {
   }
 
   const ogImage = work.image ?? "/og-image.png";
-  const ogImageAlt = work.imageAlt ?? `${work.title} - AI Web Studio 制作実績`;
+  const ogImageAlt = work.imageAlt ?? `${work.title} - 田口 侑生 制作実績`;
 
   return {
     title: `${work.title} - 制作実績`,
     description: work.description,
     openGraph: {
-      title: `${work.title} | AI Web Studio 制作実績`,
+      title: `${work.title} | 田口 侑生 制作実績`,
       description: work.description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: ogImageAlt }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${work.title} | AI Web Studio 制作実績`,
+      title: `${work.title} | 田口 侑生 制作実績`,
       description: work.description,
       images: [ogImage],
     },
@@ -324,7 +324,7 @@ export default async function WorkDetailPage(props: {
     dateCreated: work.year,
     creator: {
       "@type": "Person",
-      name: "AI Web Studio",
+      name: "田口 侑生",
       url: "https://taguchi338.com",
     },
     genre: work.categoryLabel,
