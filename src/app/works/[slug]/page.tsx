@@ -147,8 +147,18 @@ const works: Record<string, WorkData> = {
       "在庫・受注・配送通知の管理画面を運用しやすく整理",
     ],
     techStack: ["Next.js", "Shopify / ヘッドレスEC", "Tailwind CSS", "決済API", "Vercel"],
-    image: "/works-auto-accounting.png",
-    imageAlt: "ECサイト構築のイメージ",
+    image: "/works-ec-site-2.png",
+    imageAlt: "D2Cブランド向けECサイトのキービジュアル",
+    images: [
+      {
+        src: "/works-ec-site-2.png",
+        alt: "D2Cブランド向けECサイトのキービジュアル",
+      },
+      {
+        src: "/works-ec-site-1.png",
+        alt: "ECサイトのモバイルメニュー画面",
+      },
+    ],
   },
   "internal-rag": {
     title: "社内RAGシステム",
