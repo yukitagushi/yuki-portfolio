@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>制作実績（Works） — Yuki Taguchi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0f1115;
+    --ink-2: #1a1d23;
+    --muted: #6b7280;
+    --muted-2: #8b8f98;
+    --line: #ececec;
+    --line-2: #e6e6e6;
+    --bg: #ffffff;
+    --bg-2: #fafafa;
+    --card: #ffffff;
+    --green: #2bb673;
+    --blue: #3a6df0;
+    --violet: #8a6df0;
+    --yellow: #f5b400;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "Noto Sans JP", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "palt" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+  /* ===== Header (LPと同一) ===== */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid transparent;
+  }
+  .nav-inner {
+    display: flex; align-items: center; gap: 24px;
+    padding: 18px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    border: 1.6px solid var(--ink);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 20px; font-family: "Inter", sans-serif;
+    background: #fff;
+  }
+  .brand-name { font-weight: 700; font-size: 16px; letter-spacing: 0.01em; line-height: 1.15; }
+  .brand-tag { font-size: 11px; color: var(--muted); letter-spacing: 0.02em; line-height: 1.1; font-family: "Inter", sans-serif; white-space: nowrap; }
+
+  .nav-links { display: flex; gap: 36px; margin-left: auto; }
+  .nav-links a {
+    font-family: "Inter", sans-serif;
+    font-size: 14px; color: var(--ink-2);
+    font-weight: 500;
+    transition: color .15s ease;
+  }
+  .nav-links a:hover { color: var(--muted); }
+  .nav-links a.active { color: var(--blue); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    border: 1px solid transparent;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-arrow {
+    width: 22px; height: 22px; border-radius: 999px;
+    background: #fff; color: var(--ink);
+    display: inline-grid; place-items: center; font-size: 12px;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); padding: 12px 4px; }
+  .btn-ghost .arrow-inline {
+    display: inline-grid; place-items: center;
+    width: 22px; height: 22px; border-radius: 999px;
+    border: 1px solid var(--ink); margin-left: 8px;
+  }
+
+  /* ===== Works Hero ===== */
+  .works-hero {
+    padding: 56px 0 32px;
+    text-align: center;
+  }
+  .works-hero .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 13px; font-family: "Inter", sans-serif; font-weight: 500;
+    color: var(--ink-2);
+    margin-bottom: 22px;
+  }
+  .works-hero h1 {
+    font-size: 44px;
+    line-height: 1.3;
+    margin: 0 0 14px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .works-hero h1 .accent { color: var(--blue); }
+  .works-hero p {
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .breadcrumb {
+    display: flex; justify-content: center; gap: 8px;
+    font-size: 12px; color: var(--muted);
+    font-family: "Inter", sans-serif;
+    margin-top: 24px;
+  }
+  .breadcrumb a:hover { color: var(--ink-2); }
+  .breadcrumb .sep { color: var(--muted-2); }
+
+  /* ===== Works grid (詳細版) ===== */
+  section { padding: 28px 0; }
+  .works-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding-top: 16px;
+  }
+  .work-detail {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .work-detail:hover {
+    box-shadow: 0 10px 30px rgba(15,17,21,0.07);
+    transform: translateY(-3px);
+    border-color: #ddd;
+  }
+  .work-detail-thumb {
+    aspect-ratio: 3 / 2;
+    background: #f4f5f7;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-detail-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .4s ease;
+  }
+  .work-detail:hover .work-detail-thumb img { transform: scale(1.03); }
+  .work-detail-body {
+    padding: 20px 24px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+    flex: 1;
+  }
+  .work-detail-desc {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.75;
+    flex: 1;
+  }
+  .work-detail-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 4px;
+  }
+  .tag-pill {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f5f7fb;
+    color: var(--ink-2);
+    border: 1px solid var(--line-2);
+    letter-spacing: 0.01em;
+  }
+  .tag-pill.blue { background: rgba(58,109,240,0.08); color: var(--blue); border-color: rgba(58,109,240,0.15); }
+  .tag-pill.green { background: rgba(43,182,115,0.09); color: var(--green); border-color: rgba(43,182,115,0.18); }
+  .tag-pill.violet { background: rgba(138,109,240,0.09); color: var(--violet); border-color: rgba(138,109,240,0.18); }
+  .tag-pill.yellow { background: rgba(245,180,0,0.10); color: #b88500; border-color: rgba(245,180,0,0.22); }
+
+  /* ===== CTA block ===== */
+  .cta-card {
+    margin-top: 48px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 22px;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+  .cta-card h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.005em;
+  }
+  .cta-card p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+  .cta-card .btn-light {
+    background: #fff; color: var(--ink);
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .cta-card .btn-light .btn-arrow {
+    background: var(--ink); color: #fff;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 64px;
+    padding: 40px 0 56px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .works-hero { padding: 40px 0 24px; }
+    .works-hero h1 { font-size: 32px; }
+    .works-list { grid-template-columns: 1fr; gap: 18px; }
+    .cta-card {
+      grid-template-columns: 1fr;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .cta-card .btn-light { justify-self: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">Y</div>
+      <div>
+        <div class="brand-name">Yuki Taguchi</div>
+        <div class="brand-tag">AI Engineering &amp; DX Strategy</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#examples">Examples</a>
+      <a href="works.html" class="active">Works</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-dark" href="index.html#contact">無料相談する<span class="btn-arrow">→</span></a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== Works Hero ===== -->
+  <section class="works-hero">
+    <div class="hero-badge"><span>🔍</span> Works <span>✨</span></div>
+    <h1>
+      <span class="accent">AI</span>と<span class="accent">ノーコード</span>で<br/>
+      作ったプロダクト
+    </h1>
+    <p>これまでに手がけた制作実績の一覧です</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Works</span>
+    </div>
+  </section>
+
+  <!-- ===== Works list ===== -->
+  <section>
+    <div class="works-list">
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/real_works-auto-repair.png" alt="整備工場ホームページ" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">自動車整備工場向けのコーポレートサイト。サービス紹介・料金体系・来店予約フォームを実装し、スマホ最適化とSEOで地域集客を強化。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill blue">Next.js</span>
+            <span class="tag-pill">Tailwind</span>
+            <span class="tag-pill">SEO</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/real_works-zukin-note-1.png" alt="片頭痛記録アプリ" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">片頭痛の発症記録・服薬管理・トリガー分析を行うWebアプリ。日々の記録から発症パターンを可視化し、医師との共有レポートも生成。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill green">自社プロダクト</span>
+            <span class="tag-pill blue">Next.js</span>
+            <span class="tag-pill">Supabase</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/real_works-auto-accounting.png" alt="会計管理システム" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">売上・経費の自動取込、レシートOCR、青色申告対応の会計ツール。LINE連携で領収書を撮影するだけで即仕訳。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill violet">SaaS</span>
+            <span class="tag-pill">FastAPI</span>
+            <span class="tag-pill yellow">OCR</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/real_works-welfare-matching.png" alt="福祉マッチングアプリ" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">介護・福祉サービス事業者と利用者をマッチング。Bubble.ioによるフルノーコード開発で、リリースまで4週間。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill green">ノーコード</span>
+            <span class="tag-pill">Bubble</span>
+            <span class="tag-pill">マッチング</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/real_works-ec-site-1.png" alt="ECサイト構築" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">ShopifyベースのオンラインショップをCMS設計から構築。決済・在庫・配送通知を統合し、運用負荷を最小化。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill blue">Shopify</span>
+            <span class="tag-pill">EC</span>
+            <span class="tag-pill">決済連携</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/work_rag.png" alt="社内RAGシステム" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">社内ドキュメントを学習したAIアシスタント。問い合わせ対応の自動化で、ナレッジ検索の工数を大幅削減。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill violet">RAG</span>
+            <span class="tag-pill blue">LangChain</span>
+            <span class="tag-pill">AI</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/work_subsidy.png" alt="補助金レコメンドシステム" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">企業情報を入力するだけで、該当する補助金・助成金を自動推薦。中小企業の申請ハードルを下げるAIシステム。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill yellow">AI</span>
+            <span class="tag-pill">レコメンド</span>
+            <span class="tag-pill">業務支援</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/work_video.png" alt="動画自動生成パイプライン" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">台本生成 → TTS → 画像生成 → 動画合成までを自動化。1テーマあたり数分で動画コンテンツを量産。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill violet">TTS</span>
+            <span class="tag-pill blue">Remotion</span>
+            <span class="tag-pill">AI</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-detail">
+        <div class="work-detail-thumb"><img src="uploads/work_orders.png" alt="受発注管理システム" /></div>
+        <div class="work-detail-body">
+          <p class="work-detail-desc">発注・在庫・出荷を一元管理する業務システム。Excel管理から完全移行し、月次工数を大幅削減。</p>
+          <div class="work-detail-tags">
+            <span class="tag-pill green">業務システム</span>
+            <span class="tag-pill">DX</span>
+            <span class="tag-pill">在庫管理</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section>
+    <div class="cta-card">
+      <div>
+        <h3>同じような制作も承ります</h3>
+        <p>業種・予算・納期に合わせて、最適な提案をいたします。</p>
+      </div>
+      <a class="btn-light" href="index.html#contact">
+        無料相談する <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy
+</footer>
+
+</body>
+</html>
