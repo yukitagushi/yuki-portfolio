@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taguchi338.com/sitemap.xml
