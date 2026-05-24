@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIインフルエンサー運用・AI動画生成（TikTok約1万人達成 / アイリ） — Yuki Taguchi</title>
+<meta name="description" content="AI美女キャラクター「アイリ」によるAIインフルエンサー運用・縦型ショート動画制作。TikTok約1万人フォロワーを達成。最初の2〜3秒で指が止まるファーストビュー設計を提供。15秒動画 4,000円〜。" />
+<meta name="keywords" content="AIインフルエンサー,AIキャラクター,AI動画生成,縦型ショート動画,TikTok,Instagram Reels,YouTube Shorts,AI美女,ファーストビュー設計,ElevenLabs,Kling AI,sync.so" />
+<meta name="author" content="Yuki Taguchi" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://taguchi338.com/works/ai-influencer.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AIインフルエンサー運用・AI動画生成（TikTok約1万人達成） — Yuki Taguchi" />
+<meta property="og:description" content="AI美女キャラ「アイリ」でTikTok約1万人フォロワー達成。最初の2〜3秒で指が止まるファーストビュー設計の縦型ショート動画を制作。" />
+<meta property="og:url" content="https://taguchi338.com/works/ai-influencer.html" />
+<meta property="og:image" content="https://taguchi338.com/uploads/ai_influencer_banner.png" />
+<meta property="og:site_name" content="Yuki Taguchi — AI Engineering &amp; DX Strategy" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AIインフルエンサー運用・AI動画生成 — Yuki Taguchi" />
+<meta name="twitter:description" content="AI美女キャラ「アイリ」でTikTok約1万人達成。縦型ショート動画制作。" />
+<meta name="twitter:image" content="https://taguchi338.com/uploads/ai_influencer_banner.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AIインフルエンサー運用・AI動画生成・縦型ショート動画制作",
+  "provider": { "@type": "Person", "name": "Yuki Taguchi", "url": "https://taguchi338.com/" },
+  "areaServed": "JP",
+  "description": "AI美女キャラクターによる縦型ショート動画制作。ファーストビュー設計で視聴維持率を最大化。TikTok約1万人フォロワー実績あり。",
+  "url": "https://taguchi338.com/works/ai-influencer.html",
+  "image": "https://taguchi338.com/uploads/ai_influencer_banner.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "4000",
+    "priceCurrency": "JPY",
+    "description": "基本プラン：実写級AIキャラ＋ファーストビュー設計入り 15秒動画 1本（音声なし）／修正2回まで"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0f1115;
+    --ink-2: #1a1d23;
+    --muted: #6b7280;
+    --muted-2: #8b8f98;
+    --line: #ececec;
+    --line-2: #e6e6e6;
+    --bg: #ffffff;
+    --bg-2: #fafafa;
+    --green: #2bb673;
+    --blue: #3a6df0;
+    --violet: #8a6df0;
+    --yellow: #f5b400;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "Noto Sans JP", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "palt" 1;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+  /* Header */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(180%) blur(10px);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 24px; padding: 18px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    border: 1.6px solid var(--ink);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 20px; font-family: "Inter", sans-serif;
+  }
+  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.15; }
+  .brand-tag { font-size: 11px; color: var(--muted); line-height: 1.1; font-family: "Inter", sans-serif; }
+  .nav-links { display: flex; gap: 36px; margin-left: auto; }
+  .nav-links a { font-family: "Inter", sans-serif; font-size: 14px; color: var(--ink-2); font-weight: 500; }
+  .nav-links a:hover { color: var(--muted); }
+  .nav-links a.active { color: var(--blue); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px; border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+  }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-arrow {
+    width: 22px; height: 22px; border-radius: 999px;
+    background: #fff; color: var(--ink);
+    display: inline-grid; place-items: center; font-size: 12px;
+  }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-family: "Inter", sans-serif;
+    color: var(--muted); margin: 32px 0 16px;
+    transition: color .15s ease;
+  }
+  .back-link:hover { color: var(--ink); }
+  .back-link .arrow { font-size: 14px; }
+
+  /* Hero */
+  .detail-hero { padding: 8px 0 40px; }
+  .category-tag {
+    font-family: "Inter", sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .detail-title {
+    font-size: 36px;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    margin: 0 0 28px;
+  }
+  .detail-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 22px 26px;
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin-bottom: 36px;
+  }
+  .meta-item .meta-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-value { font-size: 14px; color: var(--ink); font-weight: 600; }
+
+  /* Banner image */
+  .banner-image {
+    margin: 0 0 36px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #0c0d12;
+  }
+  .banner-image img { width: 100%; height: auto; display: block; }
+
+  /* Highlight stat banner */
+  .stat-banner {
+    background: linear-gradient(135deg, rgba(58,109,240,0.08) 0%, rgba(138,109,240,0.08) 100%);
+    border: 1px solid rgba(58,109,240,0.15);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 0 0 48px;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .stat-banner .stat-num {
+    font-family: "Inter", sans-serif;
+    font-size: 44px; font-weight: 800;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-banner .stat-label {
+    font-size: 13px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .stat-banner .stat-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Sections */
+  .content-section { margin-bottom: 40px; }
+  .content-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 14px;
+    letter-spacing: 0.005em;
+  }
+  .content-section p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.85;
+  }
+
+  /* Results */
+  .results-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 12px;
+  }
+  .results-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px;
+    color: var(--ink-2);
+    padding: 14px 18px;
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    line-height: 1.7;
+  }
+  .results-list .check {
+    width: 22px; height: 22px;
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff;
+    flex-shrink: 0;
+    display: grid; place-items: center;
+    font-size: 13px; font-weight: 700;
+    margin-top: 1px;
+  }
+
+  /* Tech stack */
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tech-pill {
+    font-family: "Inter", sans-serif;
+    font-size: 12px; font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #f5f7fb;
+    color: var(--ink-2);
+    border: 1px solid var(--line-2);
+  }
+
+  /* CTA */
+  .cta-card {
+    margin-top: 52px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 22px;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+  .cta-card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+  .cta-card p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.7); }
+  .cta-card .btn-light {
+    background: #fff; color: var(--ink);
+    padding: 14px 22px; border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .cta-card .btn-light .btn-arrow { background: var(--ink); color: #fff; }
+
+  /* Footer */
+  footer {
+    margin-top: 64px;
+    padding: 40px 0 56px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .detail-title { font-size: 26px; }
+    .detail-meta { grid-template-columns: 1fr; gap: 14px; }
+    .stat-banner { flex-direction: column; align-items: flex-start; padding: 24px; }
+    .stat-banner .stat-num { font-size: 36px; }
+    .cta-card { grid-template-columns: 1fr; text-align: center; padding: 32px 28px; }
+    .cta-card .btn-light { justify-self: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="brand">
+      <div class="brand-mark">Y</div>
+      <div>
+        <div class="brand-name">Yuki Taguchi</div>
+        <div class="brand-tag">AI Engineering &amp; DX Strategy</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#examples">Examples</a>
+      <a href="../works.html" class="active">Works</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-dark" href="../index.html#contact">無料相談する<span class="btn-arrow">→</span></a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <a class="back-link" href="../works.html">
+    <span class="arrow">←</span> Back to Works
+  </a>
+
+  <section class="detail-hero">
+    <div class="category-tag">AI Marketing</div>
+    <h1 class="detail-title">AI動画生成・AIインフルエンサー運用</h1>
+    <div class="detail-meta">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">自社プロダクト</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Year</div>
+        <div class="meta-value">2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Category</div>
+        <div class="meta-value">AIマーケティング / SNS運用</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner-image">
+    <img src="../uploads/ai_influencer_banner.png" alt="AIインフルエンサー運用・AI美女キャラ「アイリ」TikTok約1万人達成 / 縦型ショート動画制作プラン" />
+  </div>
+
+  <div class="stat-banner">
+    <div>
+      <div class="stat-num">約1万人</div>
+      <div class="stat-label">TikTokフォロワー達成（AI美女キャラ「アイリ」）</div>
+      <div class="stat-sub">最初の2〜3秒で指が止まるファーストビュー設計</div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>Overview</h2>
+    <p>AIで動画コンテンツを大量生成し、TikTok・Instagram上でAIインフルエンサーアカウントを運用するプロジェクト。画像生成 → 動画合成 でフォロワー1〜2万人を達成。</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Challenge</h2>
+    <p>ファーストビュー（最初の数秒）での離脱を防ぐため、実在する人物のようにとてもリアルな画像を生成し、自然な動画を作り出すことが課題でした。</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Solution</h2>
+    <p>画像生成、投稿文、返信文を自動的に生成する仕組みを構築。AIで生成したリアルな人物画像をベースに動画を合成し、投稿から運用までを自動化することで、複数アカウントの継続運用を実現しています。</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Results</h2>
+    <ul class="results-list">
+      <li><span class="check">✓</span><span>複数アカウントで<strong>フォロワー1〜2万人</strong>を達成</span></li>
+      <li><span class="check">✓</span><span>動画コンテンツの大量生成パイプライン構築（テーマ投入 → 完成動画）</span></li>
+      <li><span class="check">✓</span><span>投稿文・返信文まで含めた運用フローを自動化</span></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-stack">
+      <span class="tech-pill">Claude / GPT API</span>
+      <span class="tech-pill">Fish Audio (TTS)</span>
+      <span class="tech-pill">Remotion</span>
+      <span class="tech-pill">Nano Banana (画像生成)</span>
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">TikTok / Instagram</span>
+    </div>
+  </section>
+
+  <div class="cta-card">
+    <div>
+      <h3>同じような課題をお持ちですか？</h3>
+      <p>SNS運用・AIコンテンツ生成・動画制作の自動化まで、ご相談ください。</p>
+    </div>
+    <a class="btn-light" href="../index.html#contact">
+      無料相談する <span class="btn-arrow">→</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy
+</footer>
+
+</body>
+</html>
