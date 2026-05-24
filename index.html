@@ -395,6 +395,50 @@
   .creator-bio { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.8; }
   .creator-illust { width: 180px; }
 
+  /* ===== Contact ===== */
+  .contact-section { padding: 16px 0 8px; scroll-margin-top: 88px; }
+  .contact-lead {
+    font-size: 15px; color: var(--ink-2);
+    margin: 0 0 24px;
+    line-height: 1.85;
+  }
+  .contact-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 32px;
+    background: var(--ink); color: #fff;
+    border-radius: 18px;
+    transition: transform .15s ease, box-shadow .15s ease;
+    gap: 16px;
+  }
+  .contact-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(15,17,21,0.18);
+  }
+  .contact-cta-label { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .contact-cta-email {
+    font-family: "Inter", sans-serif;
+    font-size: 14px; opacity: 0.75;
+    letter-spacing: 0.02em;
+  }
+  .contact-cta-arrow {
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    background: #fff; color: var(--ink);
+    display: grid; place-items: center;
+    font-size: 18px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .contact-note {
+    font-size: 12px; color: var(--muted);
+    margin: 14px 0 0;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .contact-cta { padding: 22px 24px; }
+    .contact-cta-label { font-size: 16px; }
+    .contact-cta-email { font-size: 12px; }
+  }
+
   /* ===== Footer ===== */
   footer {
     margin-top: 64px;
@@ -606,8 +650,25 @@
     </a>
   </section>
 
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="contact-section">
+    <h2 class="sec-head"><span class="ic">✉️</span>お問い合わせ・無料相談</h2>
+    <p class="contact-lead">
+      SNS向けAI広告動画制作・AIインフルエンサー運用・業務システム開発・Webサイト制作まで。<br/>
+      まずはお気軽にメールでご相談ください。1〜2営業日以内にご返信します。
+    </p>
+    <a class="contact-cta" href="mailto:30.sc350@gmail.com?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0D%0A%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%88%E4%BE%9D%E9%A0%BC%E7%A8%AE%E5%88%A5%E3%83%BB%E7%8F%BE%E7%8A%B6%E3%81%AE%E8%AA%B2%E9%A1%8C%E3%83%BB%E5%B8%8C%E6%9C%9B%E6%99%82%E6%9C%9F%E3%81%AA%E3%81%A9%EF%BC%89%EF%BC%9A%0D%0A">
+      <div>
+        <div class="contact-cta-label">メールで無料相談する</div>
+        <div class="contact-cta-email">30.sc350@gmail.com</div>
+      </div>
+      <span class="contact-cta-arrow">→</span>
+    </a>
+    <p class="contact-note">ボタンを押すとメールアプリが開き、件名・本文テンプレートが入力された状態で送信できます。</p>
+  </section>
+
   <!-- ===== Creator ===== -->
-  <section id="contact">
+  <section>
     <div class="creator">
       <div class="creator-avatar"><img src="uploads/creator_avatar.png" alt="Yuki Taguchi" /></div>
       <div>
