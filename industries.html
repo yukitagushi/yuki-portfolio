@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>業種別HP作例（10〜20万円・最短2週間） — Yuki Taguchi</title>
-<meta name="description" content="飲食店・美容室・整体院・士業・工務店・クリニック・不動産・教室など、業種別のホームページ作例。10〜20万円から、最短2週間で公開できる業種別テンプレートをご用意しています。" />
-<meta name="keywords" content="業種別ホームページ,飲食店HP,美容室HP,整体院HP,士業HP,工務店HP,クリニックHP,不動産HP,教室HP,ホームページ制作,10万円,最短2週間" />
+<meta name="description" content="飲食店・美容室・整体院・士業・工務店・クリニック・教室など、業種別のホームページ作例。10〜20万円から、最短2週間で公開できる業種別テンプレートをご用意しています。クリックで実物サンプルを拡大表示。" />
+<meta name="keywords" content="業種別ホームページ,飲食店HP,美容室HP,整体院HP,士業HP,工務店HP,クリニックHP,スクールHP,ホームページ制作,10万円,最短2週間" />
 <meta name="author" content="Yuki Taguchi" />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://taguchi338.com/industries.html" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="業種別HP作例（10〜20万円・最短2週間） — Yuki Taguchi" />
-<meta property="og:description" content="飲食店／美容室／整体院／士業／工務店など、業種別のホームページ作例。10〜20万円から、最短2週間で公開。" />
+<meta property="og:description" content="飲食店／美容室／整体院／士業／工務店／クリニック／教室。業種別ホームページ作例を実物サンプル付きで掲載。" />
 <meta property="og:url" content="https://taguchi338.com/industries.html" />
-<meta property="og:image" content="https://taguchi338.com/uploads/ai_influencer_banner.png" />
+<meta property="og:image" content="https://taguchi338.com/uploads/industries/food.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="業種別HP作例（10〜20万円・最短2週間）" />
-<meta name="twitter:description" content="飲食店・美容室・整体院・士業・工務店など、業種別ホームページ作例。" />
-<meta name="twitter:image" content="https://taguchi338.com/uploads/ai_influencer_banner.png" />
+<meta name="twitter:description" content="業種別ホームページ作例を実物サンプル付きで掲載。" />
+<meta name="twitter:image" content="https://taguchi338.com/uploads/industries/food.png" />
 
 <script type="application/ld+json">
 {
@@ -60,6 +60,7 @@
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: 0; background: none; }
 
   .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
 
@@ -104,7 +105,7 @@
   .back-link:hover { color: var(--ink); }
 
   /* Page hero */
-  .page-hero { padding: 8px 0 40px; }
+  .page-hero { padding: 8px 0 28px; }
   .category-tag {
     font-family: "Inter", sans-serif;
     font-size: 12px; font-weight: 600;
@@ -140,71 +141,88 @@
   }
   .hero-badge .num { color: var(--blue); font-family: "Inter", sans-serif; font-weight: 700; }
 
-  /* Industries grid */
+  /* Industries grid (image-based) */
   .industries-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 22px;
     margin: 20px 0 56px;
   }
   .industry-card {
     background: #fff;
     border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 28px 26px;
+    border-radius: 18px;
+    overflow: hidden;
     transition: transform .15s ease, box-shadow .2s ease, border-color .15s ease;
     display: flex; flex-direction: column;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 0;
   }
   .industry-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(15,17,21,0.06);
-    border-color: rgba(58,109,240,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(15,17,21,0.10);
+    border-color: rgba(58,109,240,0.4);
   }
-  .industry-emoji {
-    width: 56px; height: 56px;
-    border-radius: 14px;
-    display: grid; place-items: center;
-    font-size: 30px;
-    margin-bottom: 16px;
-    flex-shrink: 0;
+  .industry-thumb {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #fafafa;
+    position: relative;
   }
-  .industry-card .industry-title {
+  .industry-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .35s ease;
+  }
+  .industry-card:hover .industry-thumb img { transform: scale(1.04); }
+  .industry-thumb .zoom-hint {
+    position: absolute; bottom: 12px; right: 12px;
+    background: rgba(15,17,21,0.78);
+    color: #fff;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+    opacity: 0; transform: translateY(4px);
+    transition: opacity .2s ease, transform .2s ease;
+    pointer-events: none;
+  }
+  .industry-card:hover .zoom-hint { opacity: 1; transform: translateY(0); }
+
+  .industry-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .industry-tagline {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+  }
+  .industry-title {
     font-size: 18px;
     font-weight: 700;
-    margin: 0 0 8px;
+    margin: 0;
+    line-height: 1.45;
   }
-  .industry-card .industry-desc {
+  .industry-desc {
     font-size: 13px;
     color: var(--muted);
-    line-height: 1.7;
-    margin: 0 0 16px;
-  }
-  .industry-features {
-    list-style: none; padding: 0; margin: 0 0 18px;
-    display: grid; gap: 6px;
-  }
-  .industry-features li {
-    display: flex; align-items: flex-start; gap: 8px;
-    font-size: 13px;
-    color: var(--ink-2);
-    line-height: 1.7;
-  }
-  .industry-features .check {
-    color: var(--green);
-    font-weight: 700;
-    font-size: 12px;
-    margin-top: 4px;
-    flex-shrink: 0;
+    line-height: 1.75;
+    margin: 4px 0 12px;
   }
   .industry-meta {
-    display: flex; gap: 14px; flex-wrap: wrap;
+    display: flex; gap: 18px; flex-wrap: wrap;
     margin-top: auto;
     padding-top: 14px;
     border-top: 1px solid var(--line);
   }
-  .industry-meta div {
-    display: flex; flex-direction: column;
-  }
+  .industry-meta div { display: flex; flex-direction: column; }
   .industry-meta .meta-label {
     font-size: 10px;
     color: var(--muted);
@@ -220,15 +238,133 @@
   }
   .industry-meta .meta-value.price { color: var(--blue); font-family: "Inter", sans-serif; }
 
-  /* Emoji bg tints */
-  .ie-food   { background: #fff4e6; }
-  .ie-beauty { background: #fde8f4; }
-  .ie-care   { background: #e6f7ee; }
-  .ie-pro    { background: #eef1ff; }
-  .ie-craft  { background: #fef3d9; }
-  .ie-clinic { background: #e6f0ff; }
-  .ie-realty { background: #f0ecff; }
-  .ie-school { background: #fff0e1; }
+  /* Lightbox modal */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(15,17,21,0.92);
+    display: none;
+    align-items: flex-start; justify-content: center;
+    padding: 40px 24px;
+    overflow-y: auto;
+  }
+  .lightbox.is-open { display: flex; }
+  .lightbox-card {
+    background: #fff;
+    border-radius: 22px;
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .lightbox-image {
+    background: #f5f5f5;
+    max-height: 86vh;
+    overflow-y: auto;
+  }
+  .lightbox-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .lightbox-body {
+    padding: 36px 36px 28px;
+    overflow-y: auto;
+    max-height: 86vh;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .lightbox-close {
+    position: absolute; top: 18px; right: 18px;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
+    color: var(--ink);
+    display: grid; place-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    z-index: 2;
+    transition: background .15s ease;
+  }
+  .lightbox-close:hover { background: #fff; }
+  .lightbox-category {
+    font-family: "Inter", sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .lightbox-title {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .lightbox-desc {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.9;
+    margin: 0;
+  }
+  .lightbox-features-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 4px 0 0;
+  }
+  .lightbox-features {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 8px;
+  }
+  .lightbox-features li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+  .lightbox-features .check {
+    width: 18px; height: 18px;
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff;
+    flex-shrink: 0;
+    display: grid; place-items: center;
+    font-size: 11px; font-weight: 700;
+    margin-top: 2px;
+  }
+  .lightbox-meta {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .lightbox-meta div { display: flex; flex-direction: column; }
+  .lightbox-meta .meta-label {
+    font-size: 10px;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .lightbox-meta .meta-value {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .lightbox-meta .meta-value.price { color: var(--blue); font-family: "Inter", sans-serif; }
+  .lightbox-cta {
+    margin-top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    align-self: flex-start;
+  }
+  .lightbox-cta .btn-arrow { background: #fff; color: var(--ink); }
 
   /* Common section */
   .common-section {
@@ -247,6 +383,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 0; margin: 0;
   }
   .common-grid li {
     list-style: none;
@@ -314,6 +451,11 @@
     .common-grid { grid-template-columns: 1fr; }
     .cta-card { grid-template-columns: 1fr; text-align: center; padding: 32px 28px; }
     .cta-card .btn-light { justify-self: center; }
+    .lightbox { padding: 16px 12px; }
+    .lightbox-card { grid-template-columns: 1fr; max-width: 100%; }
+    .lightbox-image { max-height: 60vh; }
+    .lightbox-body { padding: 24px 22px; max-height: none; }
+    .lightbox-title { font-size: 20px; }
   }
 </style>
 </head>
@@ -347,7 +489,7 @@
     <h1 class="page-title">業種別HP作例<br/>（10〜20万円・最短2週間で公開）</h1>
     <p class="page-lead">
       業種ごとに「成果につながる構成」を最初から組み込んだホームページテンプレートをご用意しています。<br/>
-      飲食店・美容室・整体院・士業・工務店など、それぞれの業種で必要な情報設計・予約導線・SEOキーワードを盛り込んで制作します。
+      <strong>画像をクリック</strong>すると、実際のサンプルLPを拡大表示し、業種ごとの設計ポイント・含まれる機能・価格目安・制作期間が確認できます。
     </p>
     <div class="hero-badges">
       <span class="hero-badge"><span class="num">10〜20万円</span>の固定価格</span>
@@ -357,135 +499,126 @@
     </div>
   </section>
 
-  <section class="industries-grid">
+  <section class="industries-grid" id="industriesGrid">
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-food">🍣</div>
-      <h3 class="industry-title">飲食店（レストラン・カフェ・居酒屋）</h3>
-      <p class="industry-desc">メニュー・店内写真・予約・アクセスを1ページで完結。ローカルSEOで「地域名＋業種」検索に強い構成。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>ヒーロー＋お店のこだわり訴求</li>
-        <li><span class="check">✓</span>メニュー一覧（カテゴリ別／写真付き）</li>
-        <li><span class="check">✓</span>予約フォーム or 外部予約連携</li>
-        <li><span class="check">✓</span>営業時間・アクセス・Googleマップ埋め込み</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+    <!-- 飲食 -->
+    <button class="industry-card" data-key="food">
+      <div class="industry-thumb">
+        <img src="uploads/industries/food.png" alt="飲食店向けLPサンプル：おいしいお店はデザインでもっと選ばれる" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Restaurant / Café / Izakaya</span>
+        <h3 class="industry-title">飲食店（レストラン・カフェ・居酒屋）</h3>
+        <p class="industry-desc">写真の力でお店の世界観を伝え、検索→来店までを最短化。地域名×業種SEO・予約導線・テイクアウト対応に強い構成。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-beauty">💇</div>
-      <h3 class="industry-title">美容室・サロン</h3>
-      <p class="industry-desc">スタイル写真とメニュー価格を見せる王道構成。Instagram連携・スタッフ紹介・予約導線を最適化。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>スタイルギャラリー（カテゴリ別）</li>
-        <li><span class="check">✓</span>メニュー＆料金表</li>
-        <li><span class="check">✓</span>スタッフ紹介ページ</li>
-        <li><span class="check">✓</span>Instagram埋め込み／予約システム連携</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+    <!-- 美容室 -->
+    <button class="industry-card" data-key="beauty">
+      <div class="industry-thumb">
+        <img src="uploads/industries/beauty.png" alt="美容室向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Hair Salon / Beauty</span>
+        <h3 class="industry-title">美容室・サロン</h3>
+        <p class="industry-desc">スタイル写真とスタッフの個性を魅せ、Instagram連携で世界観を強化。ホットペッパー卒業を目指す自社予約導線も標準装備。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-care">🌿</div>
-      <h3 class="industry-title">整体院・治療院・整骨院</h3>
-      <p class="industry-desc">症状別ページで検索流入を獲得。お客様の声・施術の流れ・料金で安心感を醸成し、初回予約を獲得。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>症状別ランディングページ（腰痛・肩こり等）</li>
-        <li><span class="check">✓</span>施術の流れ・料金体系</li>
-        <li><span class="check">✓</span>お客様の声・Before/After</li>
-        <li><span class="check">✓</span>LINE予約／フォーム予約</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">14〜20万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+    <!-- 整体 -->
+    <button class="industry-card" data-key="care">
+      <div class="industry-thumb">
+        <img src="uploads/industries/care.png" alt="整体院・治療院向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Chiropractic / Body care</span>
+        <h3 class="industry-title">整体院・治療院・整骨院</h3>
+        <p class="industry-desc">症状別ページ（腰痛・肩こり・坐骨神経痛など）で検索流入を獲得。施術の流れ・お客様の声・Before/Afterで初回予約への不安を解消。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">14〜20万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-pro">⚖️</div>
-      <h3 class="industry-title">士業（税理士・行政書士・社労士・弁護士）</h3>
-      <p class="industry-desc">専門性と信頼感を両立する落ち着いた構成。サービス内容・料金・代表者プロフィールで信頼を獲得。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>サービス別ページ（業務領域ごと）</li>
-        <li><span class="check">✓</span>料金表・サービスプラン</li>
-        <li><span class="check">✓</span>代表者プロフィール・実績</li>
-        <li><span class="check">✓</span>無料相談フォーム・電話導線</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+    <!-- 士業 -->
+    <button class="industry-card" data-key="pro">
+      <div class="industry-thumb">
+        <img src="uploads/industries/pro.png" alt="士業（税理士・行政書士・弁護士・社労士）向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Tax / Legal / HR Professional</span>
+        <h3 class="industry-title">士業（税理士・行政書士・社労士・弁護士）</h3>
+        <p class="industry-desc">「相談していいのか」という心理的ハードルを下げる設計。料金・対応業務・代表者の人柄を明示し、初回無料相談への動線を強化。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-craft">🔨</div>
-      <h3 class="industry-title">工務店・建設業・リフォーム</h3>
-      <p class="industry-desc">施工事例の見せ方が肝。Before/After写真・対応エリア・お客様の声で信頼を可視化し、見積依頼へ誘導。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>施工事例ギャラリー（Before/After）</li>
-        <li><span class="check">✓</span>対応エリア・対応工事一覧</li>
-        <li><span class="check">✓</span>お客様の声・スタッフ紹介</li>
-        <li><span class="check">✓</span>見積依頼フォーム</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+    <!-- 工務店 -->
+    <button class="industry-card" data-key="craft">
+      <div class="industry-thumb">
+        <img src="uploads/industries/craft.png" alt="工務店・建設業向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Construction / Renovation</span>
+        <h3 class="industry-title">工務店・建設業・リフォーム</h3>
+        <p class="industry-desc">施工事例ギャラリーで「実力」を視覚化。対応エリア×工事種別のSEOでローカル検索に強く、見積依頼までの距離を縮める。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-clinic">🏥</div>
-      <h3 class="industry-title">クリニック・歯科</h3>
-      <p class="industry-desc">診療科目別ページで集患。診療時間・WEB予約・院内写真・院長挨拶で安心感を演出。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>診療科目／治療メニュー紹介</li>
-        <li><span class="check">✓</span>WEB予約システム連携</li>
-        <li><span class="check">✓</span>院内紹介・院長プロフィール</li>
-        <li><span class="check">✓</span>診療時間・アクセス・休診カレンダー</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+    <!-- クリニック -->
+    <button class="industry-card" data-key="clinic">
+      <div class="industry-thumb">
+        <img src="uploads/industries/clinic.png" alt="クリニック・歯科向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
+      <div class="industry-body">
+        <span class="industry-tagline">Clinic / Dental</span>
+        <h3 class="industry-title">クリニック・歯科</h3>
+        <p class="industry-desc">診療科目別ページで集患。WEB予約・院長挨拶・院内写真で初診の不安を解消し、診療時間・休診カレンダーで再来院もサポート。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+        </div>
+      </div>
+    </button>
 
-    <div class="industry-card">
-      <div class="industry-emoji ie-realty">🏠</div>
-      <h3 class="industry-title">不動産・賃貸仲介</h3>
-      <p class="industry-desc">物件一覧と問い合わせ導線を最短化。エリア別ページでローカルSEO、内見予約フォームで成約までスムーズに。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>物件一覧ページ（簡易CMS連携可）</li>
-        <li><span class="check">✓</span>エリア別ページ（ローカルSEO対応）</li>
-        <li><span class="check">✓</span>内見予約フォーム</li>
-        <li><span class="check">✓</span>会社案内・スタッフ紹介</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">15〜20万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">3週間</span></div>
+    <!-- スクール -->
+    <button class="industry-card" data-key="school">
+      <div class="industry-thumb">
+        <img src="uploads/industries/school.png" alt="教室・スクール向けLPサンプル" loading="lazy" />
+        <span class="zoom-hint">⤢ 拡大表示</span>
       </div>
-    </div>
-
-    <div class="industry-card">
-      <div class="industry-emoji ie-school">📚</div>
-      <h3 class="industry-title">教室・スクール（塾・習い事）</h3>
-      <p class="industry-desc">コース・料金・体験申込みを明確に。生徒・保護者の声、講師紹介で安心感を醸成し、体験予約に繋げる。</p>
-      <ul class="industry-features">
-        <li><span class="check">✓</span>コース・カリキュラム紹介</li>
-        <li><span class="check">✓</span>料金プラン</li>
-        <li><span class="check">✓</span>無料体験申込みフォーム</li>
-        <li><span class="check">✓</span>講師紹介・お客様の声</li>
-      </ul>
-      <div class="industry-meta">
-        <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
-        <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+      <div class="industry-body">
+        <span class="industry-tagline">School / Class / Lesson</span>
+        <h3 class="industry-title">教室・スクール（塾・習い事）</h3>
+        <p class="industry-desc">コース・料金・体験申込みを明確化。生徒や保護者の声、講師紹介で安心感を醸成し、無料体験予約への動線を最短化。</p>
+        <div class="industry-meta">
+          <div><span class="meta-label">Price</span><span class="meta-value price">12〜18万円</span></div>
+          <div><span class="meta-label">Lead time</span><span class="meta-value">2〜3週間</span></div>
+        </div>
       </div>
-    </div>
+    </button>
 
   </section>
 
@@ -531,9 +664,185 @@
 
 </div>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
+  <div class="lightbox-card">
+    <div class="lightbox-image">
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-category" id="lightboxCategory"></div>
+      <h2 class="lightbox-title" id="lightboxTitle"></h2>
+      <p class="lightbox-desc" id="lightboxDesc"></p>
+      <h3 class="lightbox-features-title">この業種で重視している設計ポイント</h3>
+      <ul class="lightbox-features" id="lightboxFeatures"></ul>
+      <div class="lightbox-meta">
+        <div><span class="meta-label">Price</span><span class="meta-value price" id="lightboxPrice"></span></div>
+        <div><span class="meta-label">Lead time</span><span class="meta-value" id="lightboxLead"></span></div>
+      </div>
+      <a class="lightbox-cta" href="index.html#contact">この業種で相談する <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
 <footer>
   © 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy
 </footer>
+
+<script>
+  const DATA = {
+    food: {
+      category: "Restaurant / Café / Izakaya",
+      title: "飲食店（レストラン・カフェ・居酒屋）",
+      img: "uploads/industries/food.png",
+      desc: "飲食店のHPで最重要なのは「料理写真」と「お店の世界観」。文字で伝えるよりも、シズル感のあるメニュー写真・店内写真でお腹を空かせ、来店動機を作ります。さらに「地域名＋業種」のローカルSEOキーワード（例: 渋谷 イタリアン、新宿 居酒屋）を構成に組み込み、Google検索からの新規来店を獲得。予約は外部サービス（食べログ・ぐるなび）連携も、自社予約フォームの設置も対応可能です。",
+      features: [
+        "メニュー一覧（カテゴリ別／高解像度写真）",
+        "店内・外観写真ギャラリー",
+        "予約フォーム or 外部予約サービス連携",
+        "ローカルSEO設計（地域名×業種ワード）",
+        "営業時間・定休日・アクセス・Googleマップ",
+        "テイクアウト／デリバリー対応の訴求枠"
+      ],
+      price: "12〜18万円",
+      lead: "2〜3週間"
+    },
+    beauty: {
+      category: "Hair Salon / Beauty",
+      title: "美容室・サロン",
+      img: "uploads/industries/beauty.png",
+      desc: "美容室のHPは「お客様が自分の未来像を見られるか」が決め手。スタイル写真の見せ方とスタッフの個性訴求が来店動機を作ります。Instagram連携で日々の投稿を自動表示し、世界観を強化。ホットペッパービューティーへの依存から脱却し、自社サイトからの直接予約を増やす設計が標準。リピーター育成のためのLINE公式連携も得意領域です。",
+      features: [
+        "スタイルギャラリー（カテゴリ別・タグ付き）",
+        "メニュー＆料金表",
+        "スタッフ紹介ページ（指名予約導線）",
+        "Instagram投稿の自動埋め込み",
+        "自社予約システム or 外部予約連携",
+        "LINE公式アカウント連携（リピート促進）"
+      ],
+      price: "12〜18万円",
+      lead: "2〜3週間"
+    },
+    care: {
+      category: "Chiropractic / Body care",
+      title: "整体院・治療院・整骨院",
+      img: "uploads/industries/care.png",
+      desc: "整体院は「症状で検索される業種」。腰痛・肩こり・坐骨神経痛・産後骨盤矯正など、症状ごとに専用ページを作り、検索流入を最大化します。初めての方は「本当に効くのか」「強引な勧誘されないか」という不安を抱えているため、施術の流れ・料金・お客様の声・Before/After写真で不安を1つずつ解消する構成が肝。LINE予約・電話予約の両導線を用意し、迷わず一歩を踏み出してもらえる設計に。",
+      features: [
+        "症状別ランディングページ（腰痛・肩こり・坐骨神経痛など）",
+        "施術の流れ（初回の不安を解消）",
+        "料金体系（明朗会計の訴求）",
+        "お客様の声・Before/After写真",
+        "LINE予約 / フォーム予約 / 電話導線",
+        "院長・施術者プロフィール（資格・経歴）"
+      ],
+      price: "14〜20万円",
+      lead: "3週間"
+    },
+    pro: {
+      category: "Tax / Legal / HR Professional",
+      title: "士業（税理士・行政書士・社労士・弁護士）",
+      img: "uploads/industries/pro.png",
+      desc: "士業の集客で最も大きな壁は「相談していいのか分からない」という心理的ハードル。価格が見えない・敷居が高そう・難しそう、を一つずつ崩していく構成にします。サービス内容を業務領域別に整理し、料金プランは可能な限り明示。代表者の人柄や経歴を出すことで「この人なら相談できそう」と思ってもらえる設計に。初回無料相談・LINE相談の動線も標準装備。",
+      features: [
+        "業務領域別ページ（法人税務／個人税務／補助金など）",
+        "明確な料金プラン（顧問料の目安）",
+        "代表者プロフィール・実績・対応事例",
+        "ブログ／コラムによる専門性発信",
+        "無料相談フォーム・LINE・電話導線",
+        "信頼性を高めるバッジ・所属団体・受賞歴"
+      ],
+      price: "15〜20万円",
+      lead: "3週間"
+    },
+    craft: {
+      category: "Construction / Renovation",
+      title: "工務店・建設業・リフォーム",
+      img: "uploads/industries/craft.png",
+      desc: "工務店は「百聞は一見にしかず」。施工事例ギャラリーが命です。Before/After写真・工事内容・期間・費用を明示し、「この会社ならうちもいい感じにしてくれそう」と思わせる構成に。対応エリア×工事種別（例: 横浜 屋根塗装、世田谷 キッチンリフォーム）のローカルSEOで、地域検索からの見積依頼を最大化します。お客様の声と施工スタッフ紹介で、信頼感を上乗せ。",
+      features: [
+        "施工事例ギャラリー（Before/After／工事内容／費用）",
+        "対応エリア・対応工事種別の一覧",
+        "見積依頼フォーム（細かい条件記入欄付き）",
+        "お客様の声・お客様インタビュー",
+        "スタッフ紹介・会社の強み・施工保証",
+        "ローカルSEO設計（エリア×工事種別）"
+      ],
+      price: "15〜20万円",
+      lead: "3週間"
+    },
+    clinic: {
+      category: "Clinic / Dental",
+      title: "クリニック・歯科",
+      img: "uploads/industries/clinic.png",
+      desc: "クリニックは「診療科目別ページ」で集患の起点を作ります。一般歯科・矯正歯科・インプラント、または内科・皮膚科・小児科のように、検索される単位でページを分けるのがセオリー。WEB予約システム・院長挨拶・院内写真で初診の不安を払拭し、診療時間・休診カレンダー・アクセス情報で来院ハードルを下げる構成に。再来院を促すLINE連携や、患者向けお知らせ機能もよく追加されます。",
+      features: [
+        "診療科目／治療メニュー紹介ページ",
+        "WEB予約システム連携（Air Reserve / EPARK等）",
+        "院長挨拶・スタッフ紹介・院内設備写真",
+        "診療時間・休診カレンダー・アクセス",
+        "患者向けお知らせ・ブログ機能",
+        "LINE連携（次回予約リマインド）"
+      ],
+      price: "15〜20万円",
+      lead: "3週間"
+    },
+    school: {
+      category: "School / Class / Lesson",
+      title: "教室・スクール（塾・習い事）",
+      img: "uploads/industries/school.png",
+      desc: "教室・スクールは「無料体験」がコンバージョンの中心。コース内容・料金プラン・講師の質をわかりやすく整理し、生徒や保護者の声で安心感を醸成。「うちの子（自分）に合うか」を判断してもらった上で、迷わず体験予約できる動線を作ります。教室の雰囲気が伝わる写真と、講師の人柄が見えるプロフィールページが、競合との差別化ポイント。",
+      features: [
+        "コース・カリキュラム紹介",
+        "料金プラン・入会金・教材費の明示",
+        "無料体験申込みフォーム（最短動線）",
+        "講師紹介・教室の雰囲気写真",
+        "生徒・保護者の声／合格実績・成果",
+        "イベント／キャンペーン情報"
+      ],
+      price: "12〜18万円",
+      lead: "2〜3週間"
+    }
+  };
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImage');
+  const lbCat = document.getElementById('lightboxCategory');
+  const lbTitle = document.getElementById('lightboxTitle');
+  const lbDesc = document.getElementById('lightboxDesc');
+  const lbFeatures = document.getElementById('lightboxFeatures');
+  const lbPrice = document.getElementById('lightboxPrice');
+  const lbLead = document.getElementById('lightboxLead');
+  const lbClose = document.getElementById('lightboxClose');
+
+  function openLightbox(key) {
+    const d = DATA[key];
+    if (!d) return;
+    lbImg.src = d.img;
+    lbImg.alt = d.title + ' のサンプルLP';
+    lbCat.textContent = d.category;
+    lbTitle.textContent = d.title;
+    lbDesc.textContent = d.desc;
+    lbFeatures.innerHTML = d.features.map(f => `<li><span class="check">✓</span><span>${f}</span></li>`).join('');
+    lbPrice.textContent = d.price;
+    lbLead.textContent = d.lead;
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.industry-card').forEach(card => {
+    card.addEventListener('click', () => openLightbox(card.dataset.key));
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 
 </body>
 </html>
