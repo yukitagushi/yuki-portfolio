@@ -14,12 +14,12 @@
 <meta property="og:title" content="制作実績（Works） — Yuki Taguchi" />
 <meta property="og:description" content="SNS向けAI広告動画／AIインフルエンサー運用／業務システム開発など、多数の納品実績を掲載。" />
 <meta property="og:url" content="https://taguchi338.com/works.html" />
-<meta property="og:image" content="https://taguchi338.com/uploads/hero_illust_hi.png" />
+<meta property="og:image" content="https://taguchi338.com/uploads/ogp_home.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="制作実績（Works） — Yuki Taguchi" />
 <meta name="twitter:description" content="SNS向けAI広告動画／AIインフルエンサー運用／業務システム開発の多数納品実績。" />
-<meta name="twitter:image" content="https://taguchi338.com/uploads/hero_illust_hi.png" />
+<meta name="twitter:image" content="https://taguchi338.com/uploads/ogp_home.png" />
 
 <script type="application/ld+json">
 {
@@ -34,287 +34,51 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --ink: #0f1115;
-    --ink-2: #1a1d23;
-    --muted: #6b7280;
-    --muted-2: #8b8f98;
-    --line: #ececec;
-    --line-2: #e6e6e6;
-    --bg: #ffffff;
-    --bg-2: #fafafa;
-    --card: #ffffff;
-    --green: #2bb673;
-    --blue: #3a6df0;
-    --violet: #8a6df0;
-    --yellow: #f5b400;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
-  body {
-    font-family: "Noto Sans JP", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-feature-settings: "palt" 1;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    line-height: 1.6;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
-  button { font: inherit; cursor: pointer; }
-
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
-
-  /* ===== Header (LPと同一) ===== */
-  .nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.86);
-    backdrop-filter: saturate(180%) blur(10px);
-    border-bottom: 1px solid transparent;
-  }
-  .nav-inner {
-    display: flex; align-items: center; gap: 24px;
-    padding: 18px 0;
-  }
-  .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-mark {
-    width: 40px; height: 40px; border-radius: 10px;
-    border: 1.6px solid var(--ink);
-    display: grid; place-items: center;
-    font-weight: 800; font-size: 20px; font-family: "Inter", sans-serif;
-    background: #fff;
-  }
-  .brand-name { font-weight: 700; font-size: 16px; letter-spacing: 0.01em; line-height: 1.15; }
-  .brand-tag { font-size: 11px; color: var(--muted); letter-spacing: 0.02em; line-height: 1.1; font-family: "Inter", sans-serif; white-space: nowrap; }
-
-  .nav-links { display: flex; gap: 36px; margin-left: auto; }
-  .nav-links a {
-    font-family: "Inter", sans-serif;
-    font-size: 14px; color: var(--ink-2);
-    font-weight: 500;
-    transition: color .15s ease;
-  }
-  .nav-links a:hover { color: var(--muted); }
-  .nav-links a.active { color: var(--blue); }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 20px;
-    border-radius: 999px;
-    font-size: 14px; font-weight: 700;
-    border: 1px solid transparent;
-    transition: transform .15s ease, opacity .15s ease;
-  }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-dark { background: var(--ink); color: #fff; }
-  .btn-arrow {
-    width: 22px; height: 22px; border-radius: 999px;
-    background: #fff; color: var(--ink);
-    display: inline-grid; place-items: center; font-size: 12px;
-  }
-  .btn-ghost { background: transparent; color: var(--ink); padding: 12px 4px; }
-  .btn-ghost .arrow-inline {
-    display: inline-grid; place-items: center;
-    width: 22px; height: 22px; border-radius: 999px;
-    border: 1px solid var(--ink); margin-left: 8px;
-  }
-
-  /* ===== Works Hero ===== */
-  .works-hero {
-    padding: 56px 0 32px;
-    text-align: center;
-  }
-  .works-hero .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 16px;
-    background: #fafafa;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 13px; font-family: "Inter", sans-serif; font-weight: 500;
-    color: var(--ink-2);
-    margin-bottom: 22px;
-  }
-  .works-hero h1 {
-    font-size: 44px;
-    line-height: 1.3;
-    margin: 0 0 14px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-  .works-hero h1 .accent { color: var(--blue); }
-  .works-hero p {
-    font-size: 16px;
-    color: var(--muted);
-    margin: 0;
-  }
-  .breadcrumb {
-    display: flex; justify-content: center; gap: 8px;
-    font-size: 12px; color: var(--muted);
-    font-family: "Inter", sans-serif;
-    margin-top: 24px;
-  }
-  .breadcrumb a:hover { color: var(--ink-2); }
-  .breadcrumb .sep { color: var(--muted-2); }
-
-  /* ===== Works grid (詳細版) ===== */
-  section { padding: 28px 0; }
-  .works-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    padding-top: 16px;
-  }
-  .work-detail {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    overflow: hidden;
-    display: flex; flex-direction: column;
-    transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
-  }
-  .work-detail:hover {
-    box-shadow: 0 10px 30px rgba(15,17,21,0.07);
-    transform: translateY(-3px);
-    border-color: #ddd;
-  }
-  .work-detail-thumb {
-    aspect-ratio: 3 / 2;
-    background: #f4f5f7;
-    overflow: hidden;
-    border-bottom: 1px solid var(--line);
-  }
-  .work-detail-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    transition: transform .4s ease;
-  }
-  .work-detail:hover .work-detail-thumb img { transform: scale(1.03); }
-  .work-detail-body {
-    padding: 20px 24px 24px;
-    display: flex; flex-direction: column; gap: 12px;
-    flex: 1;
-  }
-  .work-detail-desc {
-    margin: 0;
-    font-size: 13px;
-    color: var(--ink-2);
-    line-height: 1.75;
-    flex: 1;
-  }
-  .work-detail-tags {
-    display: flex; flex-wrap: wrap; gap: 6px;
-    margin-top: 4px;
-  }
-  .tag-pill {
-    font-family: "Inter", sans-serif;
-    font-size: 11px; font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: #f5f7fb;
-    color: var(--ink-2);
-    border: 1px solid var(--line-2);
-    letter-spacing: 0.01em;
-  }
-  .tag-pill.blue { background: rgba(58,109,240,0.08); color: var(--blue); border-color: rgba(58,109,240,0.15); }
-  .tag-pill.green { background: rgba(43,182,115,0.09); color: var(--green); border-color: rgba(43,182,115,0.18); }
-  .tag-pill.violet { background: rgba(138,109,240,0.09); color: var(--violet); border-color: rgba(138,109,240,0.18); }
-  .tag-pill.yellow { background: rgba(245,180,0,0.10); color: #b88500; border-color: rgba(245,180,0,0.22); }
-
-  /* ===== CTA block ===== */
-  .cta-card {
-    margin-top: 48px;
-    background: var(--ink);
-    color: #fff;
-    border-radius: 22px;
-    padding: 40px 44px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 24px;
-  }
-  .cta-card h3 {
-    margin: 0 0 6px;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.005em;
-  }
-  .cta-card p {
-    margin: 0;
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-  }
-  .cta-card .btn-light {
-    background: #fff; color: var(--ink);
-    padding: 14px 22px;
-    border-radius: 999px;
-    font-size: 14px; font-weight: 700;
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .cta-card .btn-light .btn-arrow {
-    background: var(--ink); color: #fff;
-  }
-
-  /* ===== Footer ===== */
-  footer {
-    margin-top: 64px;
-    padding: 40px 0 56px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
-    text-align: center;
-    font-family: "Inter", sans-serif;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .works-hero { padding: 40px 0 24px; }
-    .works-hero h1 { font-size: 32px; }
-    .works-list { grid-template-columns: 1fr; gap: 18px; }
-    .cta-card {
-      grid-template-columns: 1fr;
-      padding: 32px 28px;
-      text-align: center;
-    }
-    .cta-card .btn-light { justify-self: center; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="brand">
-      <div class="brand-mark">Y</div>
+      <div class="brand-mark" aria-hidden="true">Y</div>
       <div>
         <div class="brand-name">Yuki Taguchi</div>
-        <div class="brand-tag">AI Engineering &amp; DX Strategy</div>
+        <div class="brand-tag">AI Engineering &amp; DX — Iwate</div>
       </div>
     </a>
-    <nav class="nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#examples">Examples</a>
-      <a href="works.html" class="active">Works</a>
-      <a href="index.html#contact">Contact</a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="index.html#services">サービス</a>
+      <a href="index.html#pricing">料金</a>
+      <a href="index.html#process">制作の流れ</a>
+      <a href="works.html" class="active">実績</a>
+      <a href="index.html#faq">FAQ</a>
     </nav>
-    <a class="btn btn-dark" href="index.html#contact">無料相談する<span class="btn-arrow">→</span></a>
+    <a class="btn btn-dark" href="index.html#contact">無料相談する<span class="btn-arrow" aria-hidden="true">→</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="wrap" aria-label="モバイルナビゲーション">
+      <a href="index.html#services">サービス <span>Services</span></a>
+      <a href="index.html#pricing">料金 <span>Pricing</span></a>
+      <a href="works.html">実績 <span>Works</span></a>
+      <a href="index.html#faq">よくある質問 <span>FAQ</span></a>
+      <a href="index.html#contact">お問い合わせ <span>Contact</span></a>
+    </nav>
   </div>
 </header>
 
-<div class="wrap">
+<main class="wrap">
 
-  <!-- ===== Works Hero ===== -->
-  <section class="works-hero">
-    <div class="hero-badge"><span>🔍</span> Works <span>✨</span></div>
-    <h1>
-      <span class="accent">AI</span>と<span class="accent">ノーコード</span>で<br/>
-      作ったプロダクト
-    </h1>
-    <p>これまでに手がけた制作実績の一覧です</p>
+  <a class="back-link" href="index.html"><span aria-hidden="true">←</span> トップへ戻る</a>
+
+  <section class="page-hero">
+    <div class="category-tag">Works</div>
+    <h1 class="page-title">AIとノーコードで作った<br />制作実績</h1>
+    <p class="page-lead">
+      ホームページ・アプリ・業務システム・AI動画まで、これまでに手がけた制作実績の一覧です。
+    </p>
     <div class="breadcrumb">
       <a href="index.html">Home</a>
       <span class="sep">/</span>
@@ -322,13 +86,13 @@
     </div>
   </section>
 
-  <!-- ===== Works list ===== -->
-  <section>
+  <section data-reveal>
     <div class="works-list">
 
       <a class="work-detail" href="works/auto-repair-shop.html">
-        <div class="work-detail-thumb"><img src="uploads/real_works-auto-repair.png" alt="整備工場ホームページ" /></div>
+        <div class="work-detail-thumb"><img src="uploads/real_works-auto-repair.png" alt="整備工場ホームページのスクリーンショット" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">整備工場ホームページ制作</h2>
           <p class="work-detail-desc">自動車整備工場向けのコーポレートサイト。サービス紹介・料金体系・来店予約フォームを実装し、スマホ最適化とSEOで地域集客を強化。</p>
           <div class="work-detail-tags">
             <span class="tag-pill blue">Next.js</span>
@@ -337,9 +101,11 @@
           </div>
         </div>
       </a>
+
       <a class="work-detail" href="works/ai-influencer.html">
-        <div class="work-detail-thumb"><img src="uploads/ai_influencer_banner.png" alt="AIインフルエンサー運用・AI美女キャラ「アイリ」TikTok約1万人達成" /></div>
+        <div class="work-detail-thumb"><img src="uploads/ai_influencer_banner.png" alt="AIインフルエンサー運用・AI美女キャラ「アイリ」TikTok約1万人達成" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">AI動画生成・AIインフルエンサー運用</h2>
           <p class="work-detail-desc">AIで動画コンテンツを量産し、SNS上でAIインフルエンサーを運用。台本→TTS→動画合成までのパイプラインを構築し、複数アカウントで<strong>フォロワー1〜2万人</strong>を達成。</p>
           <div class="work-detail-tags">
             <span class="tag-pill violet">AI</span>
@@ -348,9 +114,11 @@
           </div>
         </div>
       </a>
+
       <a class="work-detail" href="works/sns-ad-video.html">
-        <div class="work-detail-thumb"><img src="uploads/sns_ad_video_banner.png" alt="SNS向けAI広告動画制作・動画編集（TikTok / Reels / Shorts）" /></div>
+        <div class="work-detail-thumb"><img src="uploads/sns_ad_video_banner.png" alt="SNS向けAI広告動画制作・動画編集（TikTok / Reels / Shorts）" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">SNS向けAI広告動画制作・動画編集</h2>
           <p class="work-detail-desc">SNS向けのAI広告動画の企画・生成・編集を一気通貫で提供。TikTok・Instagram Reels・YouTube Shorts向けの縦型動画を中心に、<strong>さまざまなクライアントから多数の納品実績</strong>があります。</p>
           <div class="work-detail-tags">
             <span class="tag-pill violet">AI動画</span>
@@ -360,10 +128,10 @@
         </div>
       </a>
 
-
       <a class="work-detail" href="works/zukin-note.html">
-        <div class="work-detail-thumb"><img src="uploads/real_works-zukin-note-1.png" alt="片頭痛記録アプリ" /></div>
+        <div class="work-detail-thumb"><img src="uploads/real_works-zukin-note-1.png" alt="片頭痛記録アプリの画面" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">片頭痛記録アプリ（自社プロダクト）</h2>
           <p class="work-detail-desc">片頭痛の発症記録・服薬管理・トリガー分析を行うWebアプリ。日々の記録から発症パターンを可視化し、医師との共有レポートも生成。</p>
           <div class="work-detail-tags">
             <span class="tag-pill green">自社プロダクト</span>
@@ -374,8 +142,9 @@
       </a>
 
       <a class="work-detail" href="works/auto-accounting.html">
-        <div class="work-detail-thumb"><img src="uploads/real_works-auto-accounting.png" alt="会計管理システム" /></div>
+        <div class="work-detail-thumb"><img src="uploads/real_works-auto-accounting.png" alt="会計管理システムの画面" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">自動車整備業向け会計管理システム</h2>
           <p class="work-detail-desc">売上・経費の自動取込、レシートOCR、青色申告対応の会計ツール。LINE連携で領収書を撮影するだけで即仕訳。</p>
           <div class="work-detail-tags">
             <span class="tag-pill violet">SaaS</span>
@@ -386,8 +155,9 @@
       </a>
 
       <a class="work-detail" href="works/welfare-matching.html">
-        <div class="work-detail-thumb"><img src="uploads/real_works-welfare-matching.png" alt="福祉マッチングアプリ" /></div>
+        <div class="work-detail-thumb"><img src="uploads/real_works-welfare-matching.png" alt="福祉マッチングアプリの画面" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">福祉マッチングアプリ</h2>
           <p class="work-detail-desc">介護・福祉サービス事業者と利用者をマッチング。Bubble.ioによるフルノーコード開発で、リリースまで4週間。</p>
           <div class="work-detail-tags">
             <span class="tag-pill green">ノーコード</span>
@@ -398,8 +168,9 @@
       </a>
 
       <a class="work-detail" href="works/ec-site.html">
-        <div class="work-detail-thumb"><img src="uploads/real_works-ec-site-1.png" alt="ECサイト構築" /></div>
+        <div class="work-detail-thumb"><img src="uploads/real_works-ec-site-1.png" alt="ECサイトの画面" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">ECサイト構築</h2>
           <p class="work-detail-desc">ShopifyベースのオンラインショップをCMS設計から構築。決済・在庫・配送通知を統合し、運用負荷を最小化。</p>
           <div class="work-detail-tags">
             <span class="tag-pill blue">Shopify</span>
@@ -410,8 +181,9 @@
       </a>
 
       <a class="work-detail" href="works/internal-rag.html">
-        <div class="work-detail-thumb"><img src="uploads/work_rag.png" alt="社内RAGシステム" /></div>
+        <div class="work-detail-thumb"><img src="uploads/work_rag.png" alt="社内RAGシステムのイメージ" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">社内RAGシステム</h2>
           <p class="work-detail-desc">社内ドキュメントを学習したAIアシスタント。問い合わせ対応の自動化で、ナレッジ検索の工数を大幅削減。</p>
           <div class="work-detail-tags">
             <span class="tag-pill violet">RAG</span>
@@ -422,8 +194,9 @@
       </a>
 
       <a class="work-detail" href="works/grant-recommender.html">
-        <div class="work-detail-thumb"><img src="uploads/work_subsidy.png" alt="補助金レコメンドシステム" /></div>
+        <div class="work-detail-thumb"><img src="uploads/work_subsidy.png" alt="補助金レコメンドシステムのイメージ" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">補助金レコメンドシステム</h2>
           <p class="work-detail-desc">企業情報を入力するだけで、該当する補助金・助成金を自動推薦。中小企業の申請ハードルを下げるAIシステム。</p>
           <div class="work-detail-tags">
             <span class="tag-pill yellow">AI</span>
@@ -434,8 +207,9 @@
       </a>
 
       <a class="work-detail" href="works/video-pipeline.html">
-        <div class="work-detail-thumb"><img src="uploads/work_video.png" alt="動画自動生成パイプライン" /></div>
+        <div class="work-detail-thumb"><img src="uploads/work_video.png" alt="動画自動生成パイプラインのイメージ" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">動画自動生成パイプライン</h2>
           <p class="work-detail-desc">台本生成 → TTS → 画像生成 → 動画合成までを自動化。1テーマあたり数分で動画コンテンツを量産。</p>
           <div class="work-detail-tags">
             <span class="tag-pill violet">TTS</span>
@@ -446,8 +220,9 @@
       </a>
 
       <a class="work-detail" href="works/order-management.html">
-        <div class="work-detail-thumb"><img src="uploads/work_orders.png" alt="受発注管理システム" /></div>
+        <div class="work-detail-thumb"><img src="uploads/work_orders.png" alt="受発注管理システムのイメージ" loading="lazy" /></div>
         <div class="work-detail-body">
+          <h2 class="work-detail-title">受発注管理システム</h2>
           <p class="work-detail-desc">発注・在庫・出荷を一元管理する業務システム。Excel管理から完全移行し、月次工数を大幅削減。</p>
           <div class="work-detail-tags">
             <span class="tag-pill green">業務システム</span>
@@ -460,24 +235,29 @@
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
   <section>
-    <div class="cta-card">
+    <div class="cta-card" data-reveal>
       <div>
         <h3>同じような制作も承ります</h3>
         <p>業種・予算・納期に合わせて、最適な提案をいたします。</p>
       </div>
       <a class="btn-light" href="index.html#contact">
-        無料相談する <span class="btn-arrow">→</span>
+        無料相談する <span class="btn-arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </section>
 
-</div>
+</main>
 
 <footer>
-  © 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top: none;">
+      <span>© 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy</span>
+      <span>Iwate, Japan</span>
+    </div>
+  </div>
 </footer>
 
+<script src="assets/site.js" defer></script>
 </body>
 </html>

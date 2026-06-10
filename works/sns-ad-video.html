@@ -50,299 +50,44 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --ink: #0f1115;
-    --ink-2: #1a1d23;
-    --muted: #6b7280;
-    --muted-2: #8b8f98;
-    --line: #ececec;
-    --line-2: #e6e6e6;
-    --bg: #ffffff;
-    --bg-2: #fafafa;
-    --green: #2bb673;
-    --blue: #3a6df0;
-    --violet: #8a6df0;
-    --yellow: #f5b400;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
-  body {
-    font-family: "Noto Sans JP", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-feature-settings: "palt" 1;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.7;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
-
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
-
-  /* Header */
-  .nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.86);
-    backdrop-filter: saturate(180%) blur(10px);
-  }
-  .nav-inner { display: flex; align-items: center; gap: 24px; padding: 18px 0; }
-  .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-mark {
-    width: 40px; height: 40px; border-radius: 10px;
-    border: 1.6px solid var(--ink);
-    display: grid; place-items: center;
-    font-weight: 800; font-size: 20px; font-family: "Inter", sans-serif;
-  }
-  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.15; }
-  .brand-tag { font-size: 11px; color: var(--muted); line-height: 1.1; font-family: "Inter", sans-serif; }
-  .nav-links { display: flex; gap: 36px; margin-left: auto; }
-  .nav-links a { font-family: "Inter", sans-serif; font-size: 14px; color: var(--ink-2); font-weight: 500; }
-  .nav-links a:hover { color: var(--muted); }
-  .nav-links a.active { color: var(--blue); }
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 20px; border-radius: 999px;
-    font-size: 14px; font-weight: 700;
-  }
-  .btn-dark { background: var(--ink); color: #fff; }
-  .btn-arrow {
-    width: 22px; height: 22px; border-radius: 999px;
-    background: #fff; color: var(--ink);
-    display: inline-grid; place-items: center; font-size: 12px;
-  }
-
-  /* Back link */
-  .back-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; font-family: "Inter", sans-serif;
-    color: var(--muted); margin: 32px 0 16px;
-    transition: color .15s ease;
-  }
-  .back-link:hover { color: var(--ink); }
-  .back-link .arrow { font-size: 14px; }
-
-  /* Hero */
-  .detail-hero { padding: 8px 0 40px; }
-  .category-tag {
-    font-family: "Inter", sans-serif;
-    font-size: 12px; font-weight: 600;
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-  }
-  .detail-title {
-    font-size: 36px;
-    line-height: 1.35;
-    font-weight: 800;
-    letter-spacing: -0.005em;
-    margin: 0 0 28px;
-  }
-  .detail-meta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 22px 26px;
-    background: #fafafa;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    margin-bottom: 36px;
-  }
-  .meta-item .meta-label {
-    font-family: "Inter", sans-serif;
-    font-size: 11px; font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-  }
-  .meta-item .meta-value { font-size: 14px; color: var(--ink); font-weight: 600; }
-
-  /* Banner image */
-  .banner-image {
-    margin: 0 0 36px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: #0c0d12;
-  }
-  .banner-image img { width: 100%; height: auto; display: block; }
-
-  /* Highlight stat banner */
-  .stat-banner {
-    background: linear-gradient(135deg, rgba(58,109,240,0.08) 0%, rgba(138,109,240,0.08) 100%);
-    border: 1px solid rgba(58,109,240,0.15);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin: 0 0 48px;
-    display: flex; align-items: center; gap: 24px;
-  }
-  .stat-banner .stat-num {
-    font-family: "Inter", sans-serif;
-    font-size: 44px; font-weight: 800;
-    color: var(--blue);
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .stat-banner .stat-label {
-    font-size: 13px;
-    color: var(--ink-2);
-    font-weight: 600;
-  }
-  .stat-banner .stat-sub {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  /* Sections */
-  .content-section { margin-bottom: 40px; }
-  .content-section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0 0 14px;
-    letter-spacing: 0.005em;
-  }
-  .content-section p {
-    margin: 0 0 10px;
-    font-size: 15px;
-    color: var(--ink-2);
-    line-height: 1.85;
-  }
-
-  /* Results */
-  .results-list {
-    list-style: none; padding: 0; margin: 0;
-    display: grid; gap: 12px;
-  }
-  .results-list li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 14px;
-    color: var(--ink-2);
-    padding: 14px 18px;
-    background: #fafafa;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    line-height: 1.7;
-  }
-  .results-list .check {
-    width: 22px; height: 22px;
-    border-radius: 999px;
-    background: var(--green);
-    color: #fff;
-    flex-shrink: 0;
-    display: grid; place-items: center;
-    font-size: 13px; font-weight: 700;
-    margin-top: 1px;
-  }
-
-  /* Service list */
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .service-grid .service-card {
-    padding: 18px 20px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fff;
-  }
-  .service-grid .service-card h3 {
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0 0 6px;
-    color: var(--ink);
-  }
-  .service-grid .service-card p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  /* Tech stack */
-  .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tech-pill {
-    font-family: "Inter", sans-serif;
-    font-size: 12px; font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: #f5f7fb;
-    color: var(--ink-2);
-    border: 1px solid var(--line-2);
-  }
-
-  /* CTA */
-  .cta-card {
-    margin-top: 52px;
-    background: var(--ink);
-    color: #fff;
-    border-radius: 22px;
-    padding: 40px 44px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 24px;
-  }
-  .cta-card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
-  .cta-card p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.7); }
-  .cta-card .btn-light {
-    background: #fff; color: var(--ink);
-    padding: 14px 22px; border-radius: 999px;
-    font-size: 14px; font-weight: 700;
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .cta-card .btn-light .btn-arrow { background: var(--ink); color: #fff; }
-
-  /* Footer */
-  footer {
-    margin-top: 64px;
-    padding: 40px 0 56px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
-    text-align: center;
-    font-family: "Inter", sans-serif;
-  }
-
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .detail-title { font-size: 26px; }
-    .detail-meta { grid-template-columns: 1fr; gap: 14px; }
-    .stat-banner { flex-direction: column; align-items: flex-start; padding: 24px; }
-    .stat-banner .stat-num { font-size: 36px; }
-    .service-grid { grid-template-columns: 1fr; }
-    .cta-card { grid-template-columns: 1fr; text-align: center; padding: 32px 28px; }
-    .cta-card .btn-light { justify-self: center; }
-  }
-</style>
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="../index.html" class="brand">
-      <div class="brand-mark">Y</div>
+      <div class="brand-mark" aria-hidden="true">Y</div>
       <div>
         <div class="brand-name">Yuki Taguchi</div>
-        <div class="brand-tag">AI Engineering &amp; DX Strategy</div>
+        <div class="brand-tag">AI Engineering &amp; DX — Iwate</div>
       </div>
     </a>
-    <nav class="nav-links">
-      <a href="../index.html#services">Services</a>
-      <a href="../index.html#pricing">Pricing</a>
-      <a href="../index.html#examples">Examples</a>
-      <a href="../works.html" class="active">Works</a>
-      <a href="../index.html#contact">Contact</a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="../index.html#services">サービス</a>
+      <a href="../index.html#pricing">料金</a>
+      <a href="../index.html#process">制作の流れ</a>
+      <a href="../works.html" class="active">実績</a>
+      <a href="../index.html#faq">FAQ</a>
     </nav>
-    <a class="btn btn-dark" href="../index.html#contact">無料相談する<span class="btn-arrow">→</span></a>
+    <a class="btn btn-dark" href="../index.html#contact">無料相談する<span class="btn-arrow" aria-hidden="true">→</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="wrap" aria-label="モバイルナビゲーション">
+      <a href="../index.html#services">サービス <span>Services</span></a>
+      <a href="../index.html#pricing">料金 <span>Pricing</span></a>
+      <a href="../works.html">実績 <span>Works</span></a>
+      <a href="../index.html#faq">よくある質問 <span>FAQ</span></a>
+      <a href="../index.html#contact">お問い合わせ <span>Contact</span></a>
+    </nav>
   </div>
 </header>
 
 <div class="wrap">
 
   <a class="back-link" href="../works.html">
-    <span class="arrow">←</span> Back to Works
+    <span aria-hidden="true">←</span> 実績一覧へ戻る
   </a>
 
   <section class="detail-hero">
@@ -458,8 +203,14 @@
 </div>
 
 <footer>
-  © 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top: none;">
+      <span>© 2026 Yuki Taguchi — AI Engineering &amp; DX Strategy</span>
+      <span>Iwate, Japan</span>
+    </div>
+  </div>
 </footer>
 
+<script src="../assets/site.js" defer></script>
 </body>
 </html>
