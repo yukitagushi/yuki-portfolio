@@ -2,5 +2,27 @@
   "framework": null,
   "buildCommand": null,
   "installCommand": null,
-  "outputDirectory": null
+  "outputDirectory": null,
+  "redirects": [
+    {
+      "source": "/works/:slug(auto-repair-shop|ai-influencer|sns-ad-video|zukin-note|auto-accounting|welfare-matching|ec-site|internal-rag|grant-recommender|video-pipeline|order-management)",
+      "destination": "/works/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/:slug(automation|app-development)",
+      "destination": "/services/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/works",
+      "destination": "/works.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/industries.html",
+      "permanent": true
+    }
+  ]
 }
