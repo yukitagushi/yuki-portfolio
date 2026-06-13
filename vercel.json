@@ -10,7 +10,7 @@
       "permanent": true
     },
     {
-      "source": "/services/:slug(automation|app-development)",
+      "source": "/services/:slug(automation|app-development|ai-influencer)",
       "destination": "/services/:slug.html",
       "permanent": true
     },
