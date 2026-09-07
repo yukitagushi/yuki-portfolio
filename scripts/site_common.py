@@ -11,16 +11,16 @@ def esc(value):
 def ld(data):
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace('<', '\\u003c') + '</script>'
 
-def header():
+def header(overlay=False):
     links = [('/#services', 'サービス'), ('/works.html', '実績'), ('/guides.html', 'AI活用ガイド'), ('/about.html', 'プロフィール')]
     items = ''.join(f'<a href="{url}">{label}</a>' for url, label in links)
+    brand = '' if overlay else '<a class="brand" href="/" aria-label="Yuki Taguchi ホーム"><span class="brand-name">Yuki Taguchi</span></a>'
     return f'''<a class="skip-link" href="#main">本文へスキップ</a>
-<header class="nav"><div class="wide nav-inner">
-<a class="brand" href="/" aria-label="Yuki Taguchi ホーム"><span class="brand-name">Yuki Taguchi</span></a>
-<nav class="nav-links" aria-label="メインナビゲーション">{items}</nav>
-<a class="btn btn-dark nav-cta" href="/#contact">無料相談</a>
-<button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く">☰</button>
-</div><div class="mobile-menu" id="mobileMenu"><nav class="wide" aria-label="モバイルナビゲーション">{items}<a href="/#contact">無料相談する</a></nav></div></header>'''
+<header class="nav site-nav{' nav--overlay' if overlay else ''}"><div class="wide nav-inner">{brand}
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-haspopup="dialog" aria-label="メニューを開く" hidden><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button>
+</div></header>
+<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><nav class="menu-links" aria-label="メインナビゲーション">{items}<a class="menu-contact" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></nav></dialog>
+<noscript><nav class="no-script-navigation" aria-label="メインナビゲーション">{items}<a href="/#contact">無料相談</a></nav></noscript>'''
 
 def footer():
     return '''<footer class="site-footer"><div class="wide"><div class="footer-top">
@@ -40,7 +40,7 @@ def head(title, description, path, schemas=(), article=False, noindex=False):
 <meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{esc(title)} | Yuki Taguchi"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Yuki Taguchi — AI Video &amp; Automation"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="Yuki Taguchi">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)} | Yuki Taguchi"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{image}">
 <meta name="theme-color" content="#82d3ef"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=menu-3"><script src="/assets/site.js?v=menu-3" defer></script>
 {''.join(ld(s) for s in schemas)}</head>'''
 
 def breadcrumbs(items):
@@ -52,4 +52,6 @@ def contact_cta():
     return '''<aside class="small-cta"><h2>あなたの仕事に合わせて、考えます。</h2><p>資料や作りたいものが決まっていなくても大丈夫です。まずは課題をお聞かせください。</p><a class="btn btn-dark" href="/#contact">無料相談する <span aria-hidden="true">→</span></a></aside>'''
 
 def page(title, description, path, body, schemas=(), article=False, noindex=False):
-    return head(title, description, path, schemas, article, noindex) + '<body class="refresh">' + header() + '<main id="main">' + body + '</main>' + footer() + '</body></html>'
+    overlay = path == '/' and 'data-hero-reel' in body
+    body_class = 'refresh home-page' if overlay else 'refresh'
+    return head(title, description, path, schemas, article, noindex) + f'<body class="{body_class}">' + header(overlay) + '<main id="main">' + body + '</main>' + footer() + '</body></html>'

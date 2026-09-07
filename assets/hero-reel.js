@@ -27,7 +27,7 @@
     var segmentLength = 8;
     var fadeLength = 650;
 
-    function canRun() { return wantsPlayback && inView && !document.hidden && !pageSuspended; }
+    function canRun() { return wantsPlayback && inView && !document.hidden && !pageSuspended && !document.documentElement.classList.contains('menu-open'); }
     function say(message) { if (status) status.textContent = message; }
 
     function updatePlaybackUI() {
@@ -243,6 +243,7 @@
     });
 
     document.addEventListener('visibilitychange', syncRuntime);
+    document.addEventListener('site-menu-toggle', syncRuntime);
     window.addEventListener('pagehide', function () { pageSuspended = true; syncRuntime(); });
     window.addEventListener('pageshow', function () { pageSuspended = false; syncRuntime(); });
     function preferenceChanged() {

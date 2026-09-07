@@ -2,20 +2,65 @@
 (function () {
   'use strict';
   var menuBtn = document.querySelector('.menu-btn');
-  var mobileMenu = document.querySelector('.mobile-menu');
-  function setMenu(open) {
-    mobileMenu.classList.toggle('is-open', open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-    menuBtn.textContent = open ? '✕' : '☰';
+  var siteMenu = document.getElementById('siteMenu');
+  var siteNav = document.querySelector('.site-nav');
+  function notifyMenu() { document.dispatchEvent(new Event('site-menu-toggle')); }
+  function finishClosing() {
+    var wasOpen = document.documentElement.classList.contains('menu-open');
+    document.documentElement.classList.remove('menu-open');
+    document.documentElement.style.removeProperty('--menu-scrollbar-gap');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    if (wasOpen) notifyMenu();
   }
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function () { setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
-    mobileMenu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
+  function closeMenu(restoreFocus) {
+    if (!siteMenu.open) return;
+    siteMenu.close();
+    finishClosing();
+    if (restoreFocus !== false) menuBtn.focus({ preventScroll: true });
+  }
+  if (menuBtn && siteMenu && typeof siteMenu.showModal === 'function') {
+    menuBtn.hidden = false;
+    menuBtn.addEventListener('click', function () {
+      if (siteMenu.open) { closeMenu(); return; }
+      document.documentElement.style.setProperty('--menu-scrollbar-gap', (window.innerWidth - document.documentElement.clientWidth) + 'px');
+      siteMenu.showModal();
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('menu-open');
+      notifyMenu();
+      siteMenu.querySelector('.menu-links a').focus();
     });
-    window.matchMedia('(min-width: 920px)').addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+    siteMenu.querySelector('.menu-close').addEventListener('click', function () { closeMenu(); });
+    siteMenu.addEventListener('cancel', function (event) { event.preventDefault(); closeMenu(); });
+    siteMenu.addEventListener('close', finishClosing);
+    siteMenu.addEventListener('click', function (event) {
+      if (event.target !== siteMenu) return;
+      var box = siteMenu.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closeMenu();
+    });
+    siteMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var destination = new URL(link.href, window.location.href);
+        var target = destination.origin === window.location.origin && destination.pathname === window.location.pathname && destination.hash
+          ? document.getElementById(decodeURIComponent(destination.hash.slice(1))) : null;
+        if (target) {
+          event.preventDefault();
+          closeMenu(false);
+          history.pushState(null, '', destination.pathname + destination.hash);
+          window.requestAnimationFrame(function () {
+            if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+            target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+          });
+        } else closeMenu(false);
+      });
+    });
+    var hero = document.querySelector('.hero-reel');
+    if (hero && siteNav && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        siteNav.classList.toggle('is-over-light', !entries[0].isIntersecting);
+      }, { rootMargin: '-72px 0px 0px 0px', threshold: 0 }).observe(hero);
+    }
   }
   document.querySelectorAll('[data-copy]').forEach(function (button) {
     button.addEventListener('click', async function () {

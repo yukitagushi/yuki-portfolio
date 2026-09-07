@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/site.css?v=menu-3" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,14 +59,11 @@
 <body>
 
 <a class="skip-link" href="#main">本文へスキップ</a>
-<header class="nav"><div class="wide nav-inner">
-<a class="brand" href="/" aria-label="Yuki Taguchi ホーム"><span class="brand-name">Yuki Taguchi</span></a>
-<nav class="nav-links" aria-label="メインナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a></nav>
-<a class="btn btn-dark nav-cta" href="/#contact">無料相談</a>
-<button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く">☰</button>
-</div><div class="mobile-menu" id="mobileMenu"><nav class="wide" aria-label="モバイルナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a href="/#contact">無料相談する</a></nav></div></header>
-
-<main id="main" class="wrap">
+<header class="nav site-nav"><div class="wide nav-inner"><a class="brand" href="/" aria-label="Yuki Taguchi ホーム"><span class="brand-name">Yuki Taguchi</span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-haspopup="dialog" aria-label="メニューを開く" hidden><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button>
+</div></header>
+<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><nav class="menu-links" aria-label="メインナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a class="menu-contact" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></nav></dialog>
+<noscript><nav class="no-script-navigation" aria-label="メインナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a href="/#contact">無料相談</a></nav></noscript><main id="main" class="wrap">
 
   <a class="back-link" href="/"><span aria-hidden="true">←</span> トップへ戻る</a>
 
@@ -252,6 +249,6 @@
 <div class="footer-services"><a href="/services/ai-agent.html">AIエージェント活用</a><a href="/services/ai-video.html">AI広告動画制作</a><a href="/services/video-editing.html">AI自動動画編集</a><a href="/services/training-video.html">研修動画の自動生成</a><a href="/services/manual-to-video.html">紙マニュアルの動画化</a><a href="/industries.html">ホームページ制作</a><a href="/services/app-development.html">アプリ開発</a><a href="/services/ai-influencer.html">AIインフルエンサー</a></div>
 <div class="footer-bottom"><span>© Yuki Taguchi</span><span>AI Video &amp; Automation · Iwate, Japan</span></div></div></footer>
 
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=menu-3" defer></script>
 </body>
 </html>

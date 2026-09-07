@@ -25,7 +25,7 @@ def render_reel(videos=None):
         progress.append(f'''<span class="reel-progress-item{' is-active' if first else ''}" data-reel-progress="{index}"><i></i></span>''')
     return f'''<div class="hero-reel" data-hero-reel>
 <div class="reel-slides" aria-hidden="true">{''.join(slides)}</div>
-<div class="reel-overlay"><p class="reel-eyebrow">SELECTED WORKS / 制作実績</p><div class="reel-headline"><h1><span>つくるを、</span><span>もっと自由に。</span></h1><p>AI広告動画の制作と、仕事の自動化。</p></div></div>
+<div class="reel-overlay"><a class="hero-brand" href="/" aria-label="Yuki Taguchi ホーム">Yuki Taguchi</a><p class="reel-eyebrow">SELECTED WORKS / 制作実績</p><div class="reel-headline"><h1><span>つくるを、</span><span>もっと自由に。</span></h1><p>AI広告動画の制作と、仕事の自動化。</p></div></div>
 <div class="reel-controls" hidden><span class="reel-count" data-reel-count aria-hidden="true">01 / {len(videos):02}</span><div class="reel-progress" aria-hidden="true">{''.join(progress)}</div><button type="button" data-reel-toggle aria-label="背景の動きを再開"><span data-reel-toggle-label>再開</span><span class="reel-pause-icon" aria-hidden="true">Ⅱ</span><span class="reel-resume-icon" aria-hidden="true">↻</span></button></div>
 <p class="reel-status" data-reel-status role="status"></p>
-</div><script src="/assets/hero-reel.js" defer></script>''', True
+</div><script src="/assets/hero-reel.js?v=menu-3" defer></script>''', True
