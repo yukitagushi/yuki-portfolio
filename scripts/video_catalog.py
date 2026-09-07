@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Validate the shared video catalogue without modifying files or making requests.
+"""Validate background-video sources without modifying files or making requests.
 
-Local media must exist in a published directory. Work pages may be generated
-from this catalogue, so check_site.py checks their existence after the build.
+The catalogue controls the homepage background sequence, not watch pages.
+Local media must exist in a published directory.
 HTTPS media URLs are checked for safe syntax and an expected file extension;
 their availability and playback must be checked in the browser.
 """
 
 import argparse
-from datetime import date, datetime
 import json
-import math
 from pathlib import Path, PurePosixPath
 import re
 import sys
@@ -21,8 +19,8 @@ from check_site import AUTHORING_ROOTS, EXCLUDED
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED = {"title", "src", "poster", "href", "width", "height"}
-OPTIONAL = {"slug", "description", "durationSeconds", "uploadDate", "previewSrc"}
+REQUIRED = {"title", "src", "poster", "width", "height"}
+OPTIONAL = {"slug"}
 VIDEO_FORMATS = {".mp4", ".webm"}
 IMAGE_FORMATS = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
 
@@ -38,7 +36,7 @@ def plain_text(value, label, maximum):
     return value
 
 
-def published_url(value, label, *, root, suffixes=None, must_exist=False):
+def published_url(value, label, *, root, suffixes):
     if not isinstance(value, str) or not value or any(char.isspace() for char in value):
         raise ValueError(f"{label}: expected a URL without whitespace")
     if "\\" in value or any(unicodedata.category(char) in {"Cc", "Cs"} for char in value):
@@ -57,7 +55,7 @@ def published_url(value, label, *, root, suffixes=None, must_exist=False):
     decoded = unquote(url.path)
     if "\\" in decoded or any(unicodedata.category(char) in {"Cc", "Cs"} for char in decoded):
         raise ValueError(f"{label}: unsafe encoded path")
-    if suffixes and PurePosixPath(decoded).suffix.lower() not in suffixes:
+    if PurePosixPath(decoded).suffix.lower() not in suffixes:
         raise ValueError(f"{label}: expected one of {', '.join(sorted(suffixes))}")
     if not url.scheme:
         parts = decoded.lstrip("/").split("/")
@@ -74,10 +72,8 @@ def published_url(value, label, *, root, suffixes=None, must_exist=False):
         if resolved_parts and (resolved_parts[0] in AUTHORING_ROOTS or
                                any(part.startswith(".") or part in EXCLUDED for part in resolved_parts)):
             raise ValueError(f"{label}: path resolves to an unpublished file")
-        if must_exist and (not target.is_file() or target.stat().st_size == 0):
+        if not target.is_file() or target.stat().st_size == 0:
             raise ValueError(f"{label}: missing or empty published asset {value}")
-        if not must_exist and decoded != "/" and PurePosixPath(decoded).suffix.lower() != ".html":
-            raise ValueError(f"{label}: local work links must point to an HTML page")
     return value
 
 
@@ -97,10 +93,8 @@ def validate_catalog(data, *, root=ROOT):
             raise ValueError(f"{label}: unknown fields {', '.join(sorted(unknown))}")
         result = dict(item)
         result["title"] = plain_text(item["title"], f"{label}.title", 160)
-        for field, suffixes in (("src", VIDEO_FORMATS), ("poster", IMAGE_FORMATS), ("previewSrc", VIDEO_FORMATS)):
-            if field in item:
-                result[field] = published_url(item[field], f"{label}.{field}", root=root, suffixes=suffixes, must_exist=True)
-        result["href"] = published_url(item["href"], f"{label}.href", root=root)
+        for field, suffixes in (("src", VIDEO_FORMATS), ("poster", IMAGE_FORMATS)):
+            result[field] = published_url(item[field], f"{label}.{field}", root=root, suffixes=suffixes)
         for field in ("width", "height"):
             if type(item[field]) is not int or item[field] <= 0:
                 raise ValueError(f"{label}.{field}: expected a positive integer")
@@ -111,27 +105,6 @@ def validate_catalog(data, *, root=ROOT):
             if slug in slugs:
                 raise ValueError(f"{label}.slug: duplicate {slug}")
             slugs.add(slug)
-            if not urlsplit(item["href"]).scheme and item["href"] != f"/videos/{slug}.html":
-                raise ValueError(f"{label}.href: generated watch page must use /videos/{slug}.html; omit slug to link an existing page")
-        if "description" in item:
-            result["description"] = plain_text(item["description"], f"{label}.description", 1200)
-        if "durationSeconds" in item:
-            seconds = item["durationSeconds"]
-            if type(seconds) not in {int, float} or not math.isfinite(seconds) or seconds <= 0:
-                raise ValueError(f"{label}.durationSeconds: expected a positive finite number")
-        if "uploadDate" in item:
-            value = item["uploadDate"]
-            try:
-                if not isinstance(value, str):
-                    raise ValueError()
-                if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
-                    date.fromisoformat(value)
-                elif re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})", value):
-                    datetime.fromisoformat(value.replace("Z", "+00:00"))
-                else:
-                    raise ValueError()
-            except ValueError as exc:
-                raise ValueError(f"{label}.uploadDate: expected a verified ISO date or timestamp with timezone") from exc
         videos.append(result)
     return videos
 
@@ -162,7 +135,7 @@ def main():
     args = parser.parse_args()
     try:
         videos = load_catalog(args.catalog, root=args.root)
-        print(f"Video catalogue is valid: {len(videos)} works in display order.")
+        print(f"Background-video catalogue is valid: {len(videos)} clips in display order.")
         return 0
     except (OSError, UnicodeError, ValueError) as exc:
         print(f"ERROR {exc}", file=sys.stderr)

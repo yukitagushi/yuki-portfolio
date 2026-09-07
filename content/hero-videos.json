@@ -3,35 +3,26 @@
     {
       "slug": "hitoiki-soda",
       "title": "「ひと息ソーダ」AI CM",
-      "description": "白ぶどうの微炭酸飲料「ひと息ソーダ」をテーマにした、約20秒のAI CM。夕景から雲の上へと広がる世界観と、商品カットを組み合わせた実写風の映像です。",
-      "src": "/uploads/videos/hitoiki-soda.mp4",
+      "src": "/uploads/videos/hitoiki-soda-background.mp4",
       "poster": "/uploads/videos/hitoiki-soda-poster.webp",
-      "href": "/videos/hitoiki-soda.html",
       "width": 1280,
-      "height": 720,
-      "durationSeconds": 20.063991
+      "height": 720
     },
     {
       "slug": "haircare-ad",
       "title": "ヘアケア商品の縦型AI広告",
-      "description": "ヘアケア商品を紹介する、約42秒の縦型AI広告サンプル。髪の質感や使用シーン、商品カットを組み合わせ、字幕付きで商品の魅力を伝える構成です。",
-      "src": "/uploads/videos/ai-sample.mp4",
+      "src": "/uploads/videos/ai-sample-background.mp4",
       "poster": "/uploads/videos/ai-sample-poster.webp",
-      "href": "/videos/haircare-ad.html",
       "width": 1072,
-      "height": 1920,
-      "durationSeconds": 41.966667
+      "height": 1920
     },
     {
       "slug": "pov-video",
       "title": "日常を切り取る実写風POV動画",
-      "description": "スマートフォンで撮影したような距離感で、室内での何気ないやりとりを描いた約20秒のAI動画。自然な表情やカメラに向けたしぐさを、縦型のPOV映像にまとめています。",
-      "src": "/uploads/videos/workplace-pov.mp4",
+      "src": "/uploads/videos/workplace-pov-background.mp4",
       "poster": "/uploads/videos/pov-video-poster.webp",
-      "href": "/videos/pov-video.html",
       "width": 720,
-      "height": 1280,
-      "durationSeconds": 20.016667
+      "height": 1280
     }
   ]
 }

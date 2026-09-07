@@ -1,4 +1,4 @@
-/* Real work videos enhance the static hero poster; no JavaScript is needed to follow its work link. */
+/* Silent background clips enhance a static poster; headings remain readable without JavaScript. */
 (function () {
   'use strict';
 
@@ -10,12 +10,8 @@
     if (!slides.length || !controls || !toggle || videos.some(function (video) { return !video || !video.dataset.src; })) return;
 
     var label = root.querySelector('[data-reel-toggle-label]');
-    var previous = root.querySelector('[data-reel-prev]');
-    var next = root.querySelector('[data-reel-next]');
-    var selectors = Array.from(root.querySelectorAll('[data-reel-select]'));
-    var selectorGroup = root.querySelector('.reel-selectors');
+    var progress = Array.from(root.querySelectorAll('[data-reel-progress]'));
     var count = root.querySelector('[data-reel-count]');
-    var workLink = root.querySelector('[data-reel-link]');
     var status = root.querySelector('[data-reel-status]');
     var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -38,30 +34,18 @@
       var playing = canRun() && videos[active].readyState >= 2 && !videos[active].paused && !videos[active].ended;
       root.dataset.reelState = playing ? 'playing' : (canRun() ? 'loading' : 'paused');
       root.classList.toggle('is-paused', !wantsPlayback);
-      toggle.setAttribute('aria-label', wantsPlayback ? '動画を一時停止' : '動画を再生');
-      if (label) label.textContent = wantsPlayback ? '一時停止' : '再生';
+      toggle.setAttribute('aria-label', wantsPlayback ? '背景の動きを一時停止' : '背景の動きを再開');
+      if (label) label.textContent = wantsPlayback ? '一時停止' : '再開';
     }
 
     function updateSelection() {
       slides.forEach(function (slide, index) {
         slide.classList.toggle('is-active', index === active);
-        slide.setAttribute('aria-hidden', String(index !== active));
       });
-      selectors.forEach(function (button) {
-        button.setAttribute('aria-pressed', String(Number(button.dataset.reelSelect) === active));
+      progress.forEach(function (bar, index) {
+        bar.classList.toggle('is-active', index === active);
       });
       if (count) count.textContent = String(active + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-      if (workLink) {
-        if (slides[active].dataset.title) {
-          workLink.textContent = slides[active].dataset.title;
-          workLink.setAttribute('aria-label', slides[active].dataset.title + 'の全編を見る');
-          var arrow = document.createElement('span');
-          arrow.setAttribute('aria-hidden', 'true');
-          arrow.textContent = ' ↗';
-          workLink.appendChild(arrow);
-        }
-        if (slides[active].dataset.href) workLink.setAttribute('href', slides[active].dataset.href);
-      }
       root.style.setProperty('--reel-progress', '0');
     }
 
@@ -156,7 +140,7 @@
         if (requests.get(video) !== request) return;
         requests.delete(video);
         if (request.revision !== revision || video !== videos[active] || !canRun()) return;
-        failPlayback('動画を再生できませんでした。再生ボタンで再試行するか、別の作品をご覧ください。');
+        failPlayback('背景を再生できませんでした。再開ボタンで再試行できます。');
       });
     }
 
@@ -246,7 +230,7 @@
       });
       video.addEventListener('error', function () {
         if (index !== active || !video.hasAttribute('src')) return;
-        failPlayback('動画を読み込めませんでした。再生ボタンで再試行するか、別の作品をご覧ください。');
+        failPlayback('背景を読み込めませんでした。再開ボタンで再試行できます。');
       });
     });
 
@@ -257,16 +241,6 @@
       if (wantsPlayback && videos[active].error) releaseVideo(videos[active], active);
       syncRuntime();
     });
-    if (previous) previous.addEventListener('click', function () { select((active - 1 + slides.length) % slides.length); });
-    if (next) next.addEventListener('click', function () { select((active + 1) % slides.length); });
-    selectors.forEach(function (button) {
-      button.addEventListener('click', function () { select(Number(button.dataset.reelSelect)); });
-    });
-    if (selectorGroup) selectorGroup.hidden = slides.length === 1;
-    if (slides.length === 1) {
-      if (previous) previous.hidden = true;
-      if (next) next.hidden = true;
-    }
 
     document.addEventListener('visibilitychange', syncRuntime);
     window.addEventListener('pagehide', function () { pageSuspended = true; syncRuntime(); });

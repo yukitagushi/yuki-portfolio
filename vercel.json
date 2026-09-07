@@ -48,16 +48,6 @@
       "source": "/about",
       "destination": "/about.html",
       "permanent": true
-    },
-    {
-      "source": "/videos",
-      "destination": "/videos.html",
-      "permanent": true
-    },
-    {
-      "source": "/videos/:slug(hitoiki-soda|haircare-ad|pov-video)",
-      "destination": "/videos/:slug.html",
-      "permanent": true
     }
   ],
   "$schema": "https://openapi.vercel.sh/vercel.json",

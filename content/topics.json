@@ -82,9 +82,7 @@
         {"question": "既存の動画や商品写真も使えますか？", "answer": "使えます。利用できる権利と素材の品質を確認したうえで、AIで制作した背景や説明素材と組み合わせます。手元の動画を短く編集し直す相談にも対応します。"},
         {"question": "AIだけで広告動画を完成させますか？", "answer": "企画の判断、情報の照合、編集の調整、最終確認には人が関わります。AIは制作工程を支援する手段として使用し、公開前に担当者が内容を承認します。"}
       ],
-      "relatedWorks": [
-      {"url": "/videos/hitoiki-soda.html", "title": "「ひと息ソーダ」AI CMの全編を見る"},
-      {"url": "/videos/haircare-ad.html", "title": "ヘアケア商品の縦型AI広告を見る"},{"url": "/works/sns-ad-video.html", "title": "SNS向けAI広告動画制作・動画編集"}],
+      "relatedWorks": [{"url": "/works/sns-ad-video.html", "title": "SNS向けAI広告動画制作・動画編集"}],
       "relatedGuides": ["ai-video-guide"],
       "priceNote": "相談内容に応じて個別見積もりです。動画の尺、本数、支給素材、生成する素材、修正範囲を確認してご案内します。ホームページ制作の料金プランは適用されません。"
     },

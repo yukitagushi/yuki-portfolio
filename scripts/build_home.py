@@ -3,8 +3,6 @@ from pathlib import Path
 import json
 from site_common import BASE, page, esc, breadcrumbs
 from hero_reel import render_reel
-from video_catalog import load_catalog
-from build_videos import work_cards
 
 ROOT = Path(__file__).resolve().parents[1]
 topics = json.loads((ROOT/'content/topics.json').read_text())
@@ -22,8 +20,6 @@ steps = [('相談','今の課題や、作りたいものを伺います。資料
 step_rows = ''.join(f'<li><span class="row-no">{i+1:02}</span><h3>{title}</h3><p>{desc}</p></li>' for i,(title,desc) in enumerate(steps))
 form=(ROOT/'content/contact-form.html').read_text()
 hero_media, has_reel = render_reel()
-videos = load_catalog()
-featured_video_works = work_cards(videos[:2]) if videos else ''
 if not has_reel:
     hero_media = '<figure class="hero-art"><img src="/uploads/creative-paper-sky.webp" width="1448" height="1086" fetchpriority="high" alt="青い紙の造形にコーラルと黄色の紙を組み合わせた、制作をテーマにしたビジュアル"></figure>'
 hero = f'''<section class="home-hero wide">
@@ -34,16 +30,14 @@ hero = f'''<section class="home-hero wide">
 </section>'''
 if has_reel:
     hero = f'''<section class="home-hero has-reel">
-<div class="hero-heading wide"><h1><span>つくるを、</span><span class="accent-text">もっと自由に。</span></h1><div class="hero-heading-note"><p>AI広告動画の制作と、仕事の自動化。</p><a class="hero-work-link" href="/videos.html">制作実績を見る <span aria-hidden="true">↗</span></a></div></div>
 {hero_media}
-<div class="hero-details wide"><div><p>アイデアを、<span class="warm-underline">ちゃんと使える</span>かたちにします。</p><p class="hero-signature">田口侑生 / 岩手を拠点に、全国オンライン対応</p></div><div class="hero-actions"><a class="btn btn-dark" href="#contact">制作・自動化を相談する <span aria-hidden="true">→</span></a></div></div>
+<div class="hero-details wide"><p>アイデアを、ちゃんと使えるかたちに。</p><a class="hero-consult" href="#contact">相談する <span aria-hidden="true">↗</span></a></div>
 </section>'''
 body=f'''{hero}
-<div class="wide"><div class="creative-strip"><span>VIDEO / AUTOMATION / DEVELOPMENT</span><span aria-hidden="true"></span></div></div>
 <section class="wide section-pad" id="services"><p class="section-label">01 / SERVICES</p><h2 class="headline">つくりたいものから、<span class="understroke">選ぶ。</span></h2><p class="section-intro">AIの使い方から、制作と自動化の仕組みまで。</p><div class="service-lines">{rows}</div>
 <div class="other-services"><p>ホームページ制作・アプリ開発も対応しています。</p><div><a href="/industries.html">ホームページ制作 <span aria-hidden="true">↗</span></a><a href="/services/app-development.html">アプリ開発 <span aria-hidden="true">↗</span></a><a href="/services/automation.html">業務自動化・DX <span aria-hidden="true">↗</span></a></div></div></section>
 <section class="wide section-pad" id="works"><div class="section-heading"><div><p class="section-label">02 / WORKS</p><h2 class="headline">つくったものが、<br class="only-mobile">いちばんの説明。</h2></div><a class="text-link" href="/works.html">実績をすべて見る <span aria-hidden="true">↗</span></a></div>
-<div class="featured-works"><a class="featured-work" href="/works/sns-ad-video.html"><div class="work-picture"><img src="/uploads/sns_ad_video_banner.webp" width="1536" height="1024" loading="lazy" alt="AI広告動画制作の紹介ビジュアル"><span>実績の詳細を見る ↗</span></div><div class="work-caption"><small>AI VIDEO</small><h3>SNS向けAI広告動画制作</h3><p>企画・台本・生成・編集をつなぎ、縦型の広告クリエイティブを制作。</p></div></a>
+<div class="featured-works"><a class="featured-work" href="/works/auto-accounting.html"><div class="work-picture"><img src="/uploads/real_works-auto-accounting.webp" loading="lazy" alt="自動車整備業向け会計管理システムのスクリーンショット"><span>実装事例を見る ↗</span></div><div class="work-caption"><small>DEVELOPMENT</small><h3>自動車整備業向け会計管理システム</h3><p>現場の業務に合わせた、日々の会計管理を支えるシステム。</p></div></a>
 <a class="featured-work" href="/works/video-pipeline.html"><div class="work-picture workflow-picture"><div class="flow-art" aria-label="台本から音声・映像・字幕を経て確認・納品へ進む制作フロー"><span>台本<small>構成・原稿</small></span><b aria-hidden="true">→</b><span>AI生成<small>音声・映像</small></span><b aria-hidden="true">→</b><span>編集<small>字幕・同期</small></span><b aria-hidden="true">→</b><span>確認<small>仕上げ・納品</small></span></div><span>実装事例を見る ↗</span></div><div class="work-caption"><small>AUTOMATION</small><h3>動画自動生成パイプライン</h3><p>台本・音声・画像・編集を連携させ、動画づくりを繰り返し使える仕組みに。</p></div></a></div></section>
 <section class="guide-band section-pad" id="guides"><div class="wide"><p class="section-label">03 / GUIDE</p><h2 class="headline">AIを、仕事にするための読みもの。</h2><div class="guide-list">{guide_rows}</div><a class="text-link" href="/guides.html">AI活用ガイドをすべて読む <span aria-hidden="true">↗</span></a></div></section>
 <section class="wide section-pad" id="process"><p class="section-label">04 / FLOW</p><h2 class="headline">ご相談から、運用まで。</h2><ol class="process-list">{step_rows}</ol></section>
@@ -56,10 +50,6 @@ body=f'''{hero}
 <section class="contact-band" id="contact"><div class="wide"><p class="section-label">06 / CONTACT</p><h2>その作業、AIと動画で<br>変えてみませんか。</h2><p>まだアイデアの段階でも、お気軽にご相談ください。</p><a class="btn btn-lime" href="#contact-form">無料相談する <span aria-hidden="true">→</span></a></div></section>
 <section class="wide section-pad contact-content" id="contact-form"><div><h2 class="headline">まずは、お話を聞かせてください。</h2><p>作りたい動画、減らしたい作業、いま困っていること。<br>箇条書きのメモからでも大丈夫です。</p><a class="email-link" href="mailto:30.sc350@gmail.com">30.sc350@gmail.com <span aria-hidden="true">↗</span></a><p class="small-note">メールアプリから直接ご連絡いただけます。<br>ご相談内容に応じて制作方法とお見積もりをご案内します。</p><div class="profile-mini"><img src="/uploads/creator_avatar.png" width="64" height="64" loading="lazy" alt="Yuki Taguchiのプロフィールイラスト"><div><a href="/about.html">田口侑生 / Yuki Taguchi ↗</a><small>AIエンジニア・動画制作 / 岩手県</small></div></div></div><div><noscript><p>フォームにはJavaScriptが必要です。上記メールアドレスからご連絡ください。</p></noscript>{form}</div></section>'''
 person={'@type':'Person','@id':BASE+'/#person','name':'田口侑生','alternateName':'Yuki Taguchi','url':BASE+'/about.html','image':BASE+'/uploads/creator_avatar.png','jobTitle':'AIエンジニア・動画制作者','description':'岩手県を拠点にAI動画制作、業務自動化、Web・アプリ開発を行う。オンラインで全国対応。','sameAs':['https://github.com/yukitagushi'],'knowsAbout':['AIエージェント','AI広告動画制作','動画編集自動化','研修動画制作','動画マニュアル','業務自動化']}
-if featured_video_works:
-    start = body.index('<div class="featured-works">')
-    end = body.index('</section>', start)
-    body = body[:start] + '<div class="featured-works">' + featured_video_works + '</div><div class="video-more-links"><a class="text-link" href="/videos.html">動画作品をすべて見る ↗</a><a class="text-link" href="/works/video-pipeline.html">動画制作を自動化する仕組みを見る →</a></div>' + body[end:]
 schemas=[{'@context':'https://schema.org','@graph':[person,{'@type':'WebSite','@id':BASE+'/#website','name':'Yuki Taguchi','url':BASE+'/','inLanguage':'ja','publisher':{'@id':BASE+'/#person'}},{'@type':'WebPage','@id':BASE+'/#webpage','url':BASE+'/','name':'AI動画制作とAIエージェント活用','isPartOf':{'@id':BASE+'/#website'},'about':{'@id':BASE+'/#person'}}]}]
 (ROOT/'index.html').write_text(page('AI広告動画制作・AIエージェント活用・動画編集の自動化','AI広告動画の制作、AI自動動画編集、社内研修動画の自動生成、紙マニュアルの動画化を支援。AIエージェントの使い方から業務への導入まで、岩手のAIエンジニア田口侑生がオンラインで全国対応。実績と実践ガイドを掲載。','/',body,schemas))
 
