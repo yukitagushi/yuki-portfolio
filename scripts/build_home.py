@@ -26,12 +26,19 @@ videos = load_catalog()
 featured_video_works = work_cards(videos[:2]) if videos else ''
 if not has_reel:
     hero_media = '<figure class="hero-art"><img src="/uploads/creative-paper-sky.webp" width="1448" height="1086" fetchpriority="high" alt="青い紙の造形にコーラルと黄色の紙を組み合わせた、制作をテーマにしたビジュアル"></figure>'
-body=f'''<section class="home-hero wide{' has-reel' if has_reel else ''}">
+hero = f'''<section class="home-hero wide">
 <div class="hero-copy"><h1><span>つくるを、</span><span class="accent-text">もっと自由に。</span></h1>
 <div class="hero-details"><p>AI広告動画の制作から、日々の仕事の自動化まで。<br>アイデアを、<span class="warm-underline">ちゃんと使える</span>かたちにします。</p>
 <div class="hero-actions"><a class="btn btn-dark" href="#contact">制作・自動化を相談する <span aria-hidden="true">→</span></a><a class="hero-work-link" href="/works.html">制作実績を見る <span aria-hidden="true">↗</span></a></div><p class="hero-signature">田口侑生 / 岩手を拠点に、全国オンライン対応</p></div></div>
 {hero_media}
-</section>
+</section>'''
+if has_reel:
+    hero = f'''<section class="home-hero has-reel">
+<div class="hero-heading wide"><h1><span>つくるを、</span><span class="accent-text">もっと自由に。</span></h1><div class="hero-heading-note"><p>AI広告動画の制作と、仕事の自動化。</p><a class="hero-work-link" href="/videos.html">制作実績を見る <span aria-hidden="true">↗</span></a></div></div>
+{hero_media}
+<div class="hero-details wide"><div><p>アイデアを、<span class="warm-underline">ちゃんと使える</span>かたちにします。</p><p class="hero-signature">田口侑生 / 岩手を拠点に、全国オンライン対応</p></div><div class="hero-actions"><a class="btn btn-dark" href="#contact">制作・自動化を相談する <span aria-hidden="true">→</span></a></div></div>
+</section>'''
+body=f'''{hero}
 <div class="wide"><div class="creative-strip"><span>VIDEO / AUTOMATION / DEVELOPMENT</span><span aria-hidden="true"></span></div></div>
 <section class="wide section-pad" id="services"><p class="section-label">01 / SERVICES</p><h2 class="headline">つくりたいものから、<span class="understroke">選ぶ。</span></h2><p class="section-intro">AIの使い方から、制作と自動化の仕組みまで。</p><div class="service-lines">{rows}</div>
 <div class="other-services"><p>ホームページ制作・アプリ開発も対応しています。</p><div><a href="/industries.html">ホームページ制作 <span aria-hidden="true">↗</span></a><a href="/services/app-development.html">アプリ開発 <span aria-hidden="true">↗</span></a><a href="/services/automation.html">業務自動化・DX <span aria-hidden="true">↗</span></a></div></div></section>

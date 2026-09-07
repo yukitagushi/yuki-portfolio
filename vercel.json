@@ -55,7 +55,7 @@
       "permanent": true
     },
     {
-      "source": "/videos/:slug(hitoiki-soda|haircare-ad)",
+      "source": "/videos/:slug(hitoiki-soda|haircare-ad|pov-video)",
       "destination": "/videos/:slug.html",
       "permanent": true
     }
