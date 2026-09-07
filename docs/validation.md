@@ -50,4 +50,8 @@
 
 ## 公開と検索
 
-今回の変更はローカル実装段階で、本番公開は未実施。ユーザーが第三者の広告を含む動画について懸念を示しており、該当動画の特定と使用範囲の確認を待っている。無音化を公開許可の根拠にはしない。検索順位・AI検索への掲載も未確認。公開時にはHTTP応答、撤去した4URLの404、canonical、robots.txt、サイトマップを確認し、その後Search Consoleでインデックスとクエリ別データを確認する。サービスとガイドを検索の入口として維持する。運用項目は `search-strategy.md`、背景動画の追加手順は `video-addition.md` を参照。
+ユーザーのVercelへの反映依頼を受け、完成版コミット `eb96c93` を既存プロジェクト `yuki-portfolio` の本番に公開した。デプロイ `dpl_5aXoLnbaUz8c8Jj3AWzGFr7zFSDP` はReady、`https://taguchi338.com` へ割り当て済み。GitHubの既存作業ブランチ `codex/ai-search-refresh` にも同じコードをpushした。本番はVercel CLIからの公開で、GitHubのmainは変更していない。
+
+本番配信45項目を確認。27検索対象ページとCSS・JavaScript・robots.txt・サイトマップがローカルの完成版と一致し、200応答。撤去した4視聴URLと内部資料の代表3URLは404。旧形式3URLのリダイレクト、背景動画3件のRangeリクエストによる206応答も正常。本番ブラウザでも新メニューの表示と自動動画編集ページへの移動を確認した。検証結果はWebルート外の `taguchi338-review/production-deployment-check.json` に保存。
+
+検索順位・AI検索への掲載、Search Consoleでのインデックスや検索流入、実ユーザーのCore Web Vitalsは未測定。技術実装の完了を競合優位や掲載保証とは扱わない。次の優先事項はSearch Consoleでの確認、公開可能な原本→台本→完成画面の事例、入力と出力の具体例、条件を添えた制作工数の実測。サービスとガイドを検索の入口として維持する。運用項目は `search-strategy.md`、背景動画の追加手順は `video-addition.md` を参照。
