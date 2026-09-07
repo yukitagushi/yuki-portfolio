@@ -35,7 +35,7 @@
     function say(message) { if (status) status.textContent = message; }
 
     function updatePlaybackUI() {
-      var playing = canRun() && !videos[active].paused && !videos[active].ended;
+      var playing = canRun() && videos[active].readyState >= 2 && !videos[active].paused && !videos[active].ended;
       root.dataset.reelState = playing ? 'playing' : (canRun() ? 'loading' : 'paused');
       root.classList.toggle('is-paused', !wantsPlayback);
       toggle.setAttribute('aria-label', wantsPlayback ? '動画を一時停止' : '動画を再生');
@@ -54,6 +54,7 @@
       if (workLink) {
         if (slides[active].dataset.title) {
           workLink.textContent = slides[active].dataset.title;
+          workLink.setAttribute('aria-label', slides[active].dataset.title + 'の全編を見る');
           var arrow = document.createElement('span');
           arrow.setAttribute('aria-hidden', 'true');
           arrow.textContent = ' ↗';
@@ -130,7 +131,12 @@
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
-      if (!video.paused && !video.ended) { updatePlaybackUI(); return; }
+      if (!video.paused && !video.ended) {
+        // A quick next/previous can return to the outgoing video before its fade ends.
+        if (video.readyState >= 2) slides[active].classList.add('is-playing');
+        updatePlaybackUI();
+        return;
+      }
       var existing = requests.get(video);
       if (existing && existing.revision === revision) return;
       var request = { revision: revision };

@@ -3,6 +3,8 @@ from pathlib import Path
 import json
 from site_common import BASE, page, esc, breadcrumbs
 from hero_reel import render_reel
+from video_catalog import load_catalog
+from build_videos import work_cards
 
 ROOT = Path(__file__).resolve().parents[1]
 topics = json.loads((ROOT/'content/topics.json').read_text())
@@ -20,6 +22,8 @@ steps = [('相談','今の課題や、作りたいものを伺います。資料
 step_rows = ''.join(f'<li><span class="row-no">{i+1:02}</span><h3>{title}</h3><p>{desc}</p></li>' for i,(title,desc) in enumerate(steps))
 form=(ROOT/'content/contact-form.html').read_text()
 hero_media, has_reel = render_reel()
+videos = load_catalog()
+featured_video_works = work_cards(videos[:2]) if videos else ''
 if not has_reel:
     hero_media = '<figure class="hero-art"><img src="/uploads/creative-paper-sky.webp" width="1448" height="1086" fetchpriority="high" alt="青い紙の造形にコーラルと黄色の紙を組み合わせた、制作をテーマにしたビジュアル"></figure>'
 body=f'''<section class="home-hero wide{' has-reel' if has_reel else ''}">
@@ -45,6 +49,10 @@ body=f'''<section class="home-hero wide{' has-reel' if has_reel else ''}">
 <section class="contact-band" id="contact"><div class="wide"><p class="section-label">06 / CONTACT</p><h2>その作業、AIと動画で<br>変えてみませんか。</h2><p>まだアイデアの段階でも、お気軽にご相談ください。</p><a class="btn btn-lime" href="#contact-form">無料相談する <span aria-hidden="true">→</span></a></div></section>
 <section class="wide section-pad contact-content" id="contact-form"><div><h2 class="headline">まずは、お話を聞かせてください。</h2><p>作りたい動画、減らしたい作業、いま困っていること。<br>箇条書きのメモからでも大丈夫です。</p><a class="email-link" href="mailto:30.sc350@gmail.com">30.sc350@gmail.com <span aria-hidden="true">↗</span></a><p class="small-note">メールアプリから直接ご連絡いただけます。<br>ご相談内容に応じて制作方法とお見積もりをご案内します。</p><div class="profile-mini"><img src="/uploads/creator_avatar.png" width="64" height="64" loading="lazy" alt="Yuki Taguchiのプロフィールイラスト"><div><a href="/about.html">田口侑生 / Yuki Taguchi ↗</a><small>AIエンジニア・動画制作 / 岩手県</small></div></div></div><div><noscript><p>フォームにはJavaScriptが必要です。上記メールアドレスからご連絡ください。</p></noscript>{form}</div></section>'''
 person={'@type':'Person','@id':BASE+'/#person','name':'田口侑生','alternateName':'Yuki Taguchi','url':BASE+'/about.html','image':BASE+'/uploads/creator_avatar.png','jobTitle':'AIエンジニア・動画制作者','description':'岩手県を拠点にAI動画制作、業務自動化、Web・アプリ開発を行う。オンラインで全国対応。','sameAs':['https://github.com/yukitagushi'],'knowsAbout':['AIエージェント','AI広告動画制作','動画編集自動化','研修動画制作','動画マニュアル','業務自動化']}
+if featured_video_works:
+    start = body.index('<div class="featured-works">')
+    end = body.index('</section>', start)
+    body = body[:start] + '<div class="featured-works">' + featured_video_works + '</div><div class="video-more-links"><a class="text-link" href="/videos.html">動画作品をすべて見る ↗</a><a class="text-link" href="/works/video-pipeline.html">動画制作を自動化する仕組みを見る →</a></div>' + body[end:]
 schemas=[{'@context':'https://schema.org','@graph':[person,{'@type':'WebSite','@id':BASE+'/#website','name':'Yuki Taguchi','url':BASE+'/','inLanguage':'ja','publisher':{'@id':BASE+'/#person'}},{'@type':'WebPage','@id':BASE+'/#webpage','url':BASE+'/','name':'AI動画制作とAIエージェント活用','isPartOf':{'@id':BASE+'/#website'},'about':{'@id':BASE+'/#person'}}]}]
 (ROOT/'index.html').write_text(page('AI広告動画制作・AIエージェント活用・動画編集の自動化','AI広告動画の制作、AI自動動画編集、社内研修動画の自動生成、紙マニュアルの動画化を支援。AIエージェントの使い方から業務への導入まで、岩手のAIエンジニア田口侑生がオンラインで全国対応。実績と実践ガイドを掲載。','/',body,schemas))
 

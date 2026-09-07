@@ -25,7 +25,7 @@ def header():
 def footer():
     return '''<footer class="site-footer"><div class="wide"><div class="footer-top">
 <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">Y</span><span><strong>Yuki Taguchi</strong><small>岩手から、全国へ。</small></span></a>
-<nav aria-label="フッターナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a href="/#contact">お問い合わせ</a></nav></div>
+<nav aria-label="フッターナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/videos.html">動画作品</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a href="/#contact">お問い合わせ</a></nav></div>
 <div class="footer-services"><a href="/services/ai-agent.html">AIエージェント活用</a><a href="/services/ai-video.html">AI広告動画制作</a><a href="/services/video-editing.html">AI自動動画編集</a><a href="/services/training-video.html">研修動画の自動生成</a><a href="/services/manual-to-video.html">紙マニュアルの動画化</a><a href="/industries.html">ホームページ制作</a><a href="/services/app-development.html">アプリ開発</a><a href="/services/ai-influencer.html">AIインフルエンサー</a></div>
 <div class="footer-bottom"><span>© Yuki Taguchi</span><span>AI Video &amp; Automation · Iwate, Japan</span></div></div></footer>'''
 

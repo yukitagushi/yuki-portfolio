@@ -1,3 +1,26 @@
 {
-  "videos": []
+  "videos": [
+    {
+      "slug": "hitoiki-soda",
+      "title": "「ひと息ソーダ」AI CM",
+      "description": "白ぶどうの微炭酸飲料「ひと息ソーダ」をテーマにした、約20秒のAI CM。夕景から雲の上へと広がる世界観と、商品カットを組み合わせた実写風の映像です。",
+      "src": "/uploads/videos/hitoiki-soda.mp4",
+      "poster": "/uploads/videos/hitoiki-soda-poster.webp",
+      "href": "/videos/hitoiki-soda.html",
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 20.063991
+    },
+    {
+      "slug": "haircare-ad",
+      "title": "ヘアケア商品の縦型AI広告",
+      "description": "ヘアケア商品を紹介する、約42秒の縦型AI広告サンプル。髪の質感や使用シーン、商品カットを組み合わせ、字幕付きで商品の魅力を伝える構成です。",
+      "src": "/uploads/videos/ai-sample.mp4",
+      "poster": "/uploads/videos/ai-sample-poster.webp",
+      "href": "/videos/haircare-ad.html",
+      "width": 1072,
+      "height": 1920,
+      "durationSeconds": 41.966667
+    }
+  ]
 }
