@@ -111,3 +111,5 @@ IABで読み込み・実再生・作品ごとの状態同期を確認。IABの�
 28HTML・1637参照のオフライン監査と27canonicalのサイトマップ照合に成功。生成元と出力の整合を確認。更新6ページを独立したChromiumで320／390／1440pxの18表示条件、9操作で確認し、実画像の欠損・横はみ出し・ブラウザエラーなし。320pxで見出し末尾が1文字だけ残る改行を短い見出しへ直し、詳細3幅を最終再確認した。サイトマップのURL集合・CSS・JS・動画・問い合わせ計測は不変更。Safari実機は未確認。
 
 聞き取りメモ・ブラウザQA・画面はWebルート外の`taguchi338-review/rig-techs-interview-notes.md`、`rigtechs-case-study-qa.json`、`rigtechs-case-study-final-detail-qa.json`に保存した。
+
+この実績更新のコードコミット`10bb808`を既存Vercelプロジェクトへ公開。デプロイ`dpl_HMEUmAF683aDfqLWReBDbDSjcfo8`はReadyで、`https://taguchi338.com`に割り当て済み。更新6HTML・サイトマップ・robots.txtの8ファイルが200応答かつローカルと完全一致し、noindexレスポンスヘッダーなし。サイトマップは27canonicalを維持。公開確認はWebルート外の`production-rig-techs-check.json`に保存した。実装・公開の完了であり、この改修による検索順位や問い合わせ増加の実測結果ではない。
