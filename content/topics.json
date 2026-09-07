@@ -39,7 +39,7 @@
         {"question": "ChatGPTなどのチャット利用とは何が違いますか？", "answer": "一般的なチャットは質問への回答が中心です。AIエージェントは、設定された権限の範囲で資料検索やツール操作を組み合わせ、複数の作業を進めます。回答だけで目的を達成できる仕事には、簡単なチャット運用が適する場合もあります。"},
         {"question": "社内資料を使う場合は何を確認しますか？", "answer": "利用する資料の範囲、閲覧権限、外部サービスへ送信できる情報、保存方法を確認します。最初は共有可能なサンプルで検証し、採用する環境と社内の情報管理方針が合うかを確かめます。"}
       ],
-      "relatedWorks": [{"url": "/works.html#ai-agent-support", "title": "物販経営者へのAI活用・業務効率化の伴走支援"}, {"url": "/works/internal-rag.html", "title": "社内RAGシステム"}, {"url": "/works/video-pipeline.html", "title": "動画自動生成パイプライン"}],
+      "relatedWorks": [{"url": "/works.html#ai-agent-support", "title": "経営者へのAI活用・業務効率化の伴走支援"}, {"url": "/works/internal-rag.html", "title": "社内RAGシステム"}, {"url": "/works/video-pipeline.html", "title": "動画自動生成パイプライン"}],
       "relatedGuides": ["ai-agent-guide"],
       "priceNote": "相談内容に応じて個別見積もりです。対象業務、連携先、利用人数、導入・運用支援の範囲を確認してご案内します。ホームページ制作の料金プランは適用されません。"
     },
