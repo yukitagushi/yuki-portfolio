@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ai-agent-support",
+    "category": "AI AGENT",
+    "title": "経営者のAIエージェント導入支援",
+    "summary": "経営者向けに、AIエージェントの初期設定・セットアップから、実務の課題改善までを支援しました。",
+    "scope": ["初期設定・セットアップ", "実務での活用支援", "業務の課題改善"],
+    "related_url": "/services/ai-agent.html",
+    "related_label": "AIエージェントの導入・活用について"
+  },
+  {
+    "id": "ai-manga",
+    "category": "AI MANGA",
+    "title": "AIを活用した漫画制作",
+    "summary": "AIを使った漫画制作を手がけています。",
+    "scope": [],
+    "related_url": "/#contact",
+    "related_label": "漫画制作について相談する"
+  }
+]

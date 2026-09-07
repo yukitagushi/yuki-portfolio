@@ -7,3 +7,8 @@
 /README.md
 **/__pycache__
 *.pyc
+# Superseded banners with unverified claims are retained only as source files.
+/uploads/ai_influencer_banner.png
+/uploads/ai_influencer_banner.webp
+/uploads/sns_ad_video_banner.png
+/uploads/sns_ad_video_banner.webp
