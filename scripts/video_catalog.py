@@ -9,6 +9,7 @@ their availability and playback must be checked in the browser.
 
 import argparse
 import json
+import math
 from pathlib import Path, PurePosixPath
 import re
 import sys
@@ -20,7 +21,7 @@ from check_site import AUTHORING_ROOTS, EXCLUDED
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = {"title", "src", "poster", "width", "height"}
-OPTIONAL = {"slug", "mobileLayout"}
+OPTIONAL = {"slug", "mobileLayout", "displayDuration"}
 MOBILE_LAYOUTS = {"standard", "centered", "wide", "captioned"}
 VIDEO_FORMATS = {".mp4", ".webm"}
 IMAGE_FORMATS = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
@@ -99,6 +100,10 @@ def validate_catalog(data, *, root=ROOT):
         for field in ("width", "height"):
             if type(item[field]) is not int or item[field] <= 0:
                 raise ValueError(f"{label}.{field}: expected a positive integer")
+        if "displayDuration" in item:
+            duration = item["displayDuration"]
+            if type(duration) not in {int, float} or not 1 <= duration <= 60 or not math.isfinite(duration):
+                raise ValueError(f"{label}.displayDuration: expected a finite number from 1 to 60 seconds")
         if "mobileLayout" in item:
             layout = item["mobileLayout"]
             if not isinstance(layout, str) or layout not in MOBILE_LAYOUTS:

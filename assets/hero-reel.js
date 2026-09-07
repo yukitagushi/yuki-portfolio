@@ -26,7 +26,10 @@
     var lastMediaTime = 0;
     var requests = new Map();
     var fades = new Map();
-    var segmentLength = 8;
+    var segmentLengths = slides.map(function (slide) {
+      var duration = Number(slide.dataset.displayDuration);
+      return Number.isFinite(duration) && duration >= 1 && duration <= 60 ? duration : 8;
+    });
     var fadeLength = 650;
 
     function canRun() { return wantsPlayback && inView && !document.hidden && !pageSuspended && !document.documentElement.classList.contains('menu-open'); }
@@ -227,8 +230,8 @@
         lastMediaTime = video.currentTime;
         // Ignore seeks; count actual playback, so buffering and time spent paused do not advance a work.
         if (delta > 0 && delta < 2) playedTime += delta;
-        root.style.setProperty('--reel-progress', String(Math.min(1, playedTime / segmentLength)));
-        if (playedTime >= segmentLength && slides.length > 1) select((active + 1) % slides.length);
+        root.style.setProperty('--reel-progress', String(Math.min(1, playedTime / segmentLengths[active])));
+        if (playedTime >= segmentLengths[active] && slides.length > 1) select((active + 1) % slides.length);
       });
       video.addEventListener('ended', function () {
         if (index !== active || !canRun()) return;
