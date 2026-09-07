@@ -2378,6 +2378,8 @@ body.refresh .home-hero.has-reel { display: block; width: 100%; max-width: none;
   .nav .brand-name { font-size: 20px; }
   .hero-reel { height: max(560px, calc(var(--reel-mobile-wide-height, 0px) + 350px)); }
   .reel-slide:not(.is-portrait) video,.reel-slide:not(.is-portrait) .reel-poster { object-position: 76% center; }
+  .reel-slide[data-mobile-layout="centered"] video,
+  .reel-slide[data-mobile-layout="centered"] .reel-poster { object-position: 46% center; }
   .reel-slide[data-mobile-layout="wide"] video,
   .reel-slide[data-mobile-layout="wide"] .reel-poster {
     inset: 108px 0 auto;
@@ -2390,6 +2392,7 @@ body.refresh .home-hero.has-reel { display: block; width: 100%; max-width: none;
   .reel-headline { left: 20px; right: 20px; bottom: 92px; }
   .reel-headline h1 { font-size: clamp(36px, 9.8vw, 56px); line-height: 1.3; letter-spacing: .005em; margin-bottom: 16px; }
   .reel-headline > p { font-size: 12px; letter-spacing: 0; }
+  .hero-reel[data-reel-layout="centered"] .reel-headline h1 { margin-bottom: 52px; }
   .hero-reel[data-reel-layout="wide"] .reel-headline h1 { font-size: clamp(36px, 9.8vw, 40px); }
   .hero-reel[data-reel-layout="captioned"] .reel-headline { bottom: 86px; }
   .reel-controls { right: 14px; bottom: 24px; gap: 20px; }

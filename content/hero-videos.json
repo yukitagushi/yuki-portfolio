@@ -2,7 +2,7 @@
   "videos": [
     {
       "slug": "hitoiki-soda",
-      "mobileLayout": "wide",
+      "mobileLayout": "centered",
       "title": "「ひと息ソーダ」AI CM",
       "src": "/uploads/videos/hitoiki-soda-background.mp4",
       "poster": "/uploads/videos/hitoiki-soda-poster.webp",
