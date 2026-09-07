@@ -14,13 +14,17 @@ def ld(data):
 def header(overlay=False):
     links = [('/#services', 'サービス'), ('/works.html', '実績'), ('/guides.html', 'AI活用ガイド'), ('/about.html', 'プロフィール')]
     items = ''.join(f'<a href="{url}">{label}</a>' for url, label in links)
+    services = [('/services/ai-video.html', '広告動画の作成'), ('/services/video-editing.html', '自動動画編集について'), ('/services/training-video.html', '社内・研修動画の自動生成'), ('/services/manual-to-video.html', '紙マニュアルの動画化'), ('/services/ai-agent.html', 'AIエージェントの活用'), ('/industries.html', 'Webサイト制作'), ('/services/app-development.html', 'アプリ開発'), ('/services/automation.html', '業務自動化・DX')]
+    service_items = ''.join(f'<a class="menu-reveal" style="--menu-order:{i+1}" href="{url}">{label}<span aria-hidden="true">↗</span></a>' for i,(url,label) in enumerate(services))
+    site_items = ''.join(f'<a class="menu-reveal" style="--menu-order:{i+2}" href="{url}">{label}</a>' for i,(url,label) in enumerate(links))
+    fallback_items = ''.join(f'<a href="{url}">{label}</a>' for url,label in services)
     brand = '' if overlay else '<a class="brand" href="/" aria-label="Yuki Taguchi ホーム"><span class="brand-name">Yuki Taguchi</span></a>'
     return f'''<a class="skip-link" href="#main">本文へスキップ</a>
 <header class="nav site-nav{' nav--overlay' if overlay else ''}"><div class="wide nav-inner">{brand}
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-haspopup="dialog" aria-label="メニューを開く" hidden><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button>
 </div></header>
-<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><nav class="menu-links" aria-label="メインナビゲーション">{items}<a class="menu-contact" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></nav></dialog>
-<noscript><nav class="no-script-navigation" aria-label="メインナビゲーション">{items}<a href="/#contact">無料相談</a></nav></noscript>'''
+<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><div class="menu-main"><nav class="menu-services" aria-label="制作・自動化"><p class="menu-group-label menu-reveal" style="--menu-order:0">制作・自動化</p>{service_items}</nav><nav class="menu-links" aria-label="サイト案内"><p class="menu-group-label menu-reveal" style="--menu-order:1">サイト案内</p>{site_items}</nav></div><a class="menu-contact menu-reveal" style="--menu-order:8" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></dialog>
+<noscript><nav class="no-script-navigation" aria-label="メインナビゲーション">{fallback_items}{items}<a href="/#contact">無料相談</a></nav></noscript>'''
 
 def footer():
     return '''<footer class="site-footer"><div class="wide"><div class="footer-top">
@@ -40,7 +44,7 @@ def head(title, description, path, schemas=(), article=False, noindex=False):
 <meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{esc(title)} | Yuki Taguchi"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Yuki Taguchi — AI Video &amp; Automation"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="Yuki Taguchi">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)} | Yuki Taguchi"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{image}">
 <meta name="theme-color" content="#82d3ef"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css?v=menu-3"><script src="/assets/site.js?v=menu-3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=menu-motion-1"><script src="/assets/site.js?v=menu-motion-1" defer></script>
 {''.join(ld(s) for s in schemas)}</head>'''
 
 def breadcrumbs(items):
