@@ -2,6 +2,7 @@
   "videos": [
     {
       "slug": "hitoiki-soda",
+      "mobileLayout": "wide",
       "title": "「ひと息ソーダ」AI CM",
       "src": "/uploads/videos/hitoiki-soda-background.mp4",
       "poster": "/uploads/videos/hitoiki-soda-poster.webp",
@@ -10,6 +11,7 @@
     },
     {
       "slug": "haircare-ad",
+      "mobileLayout": "captioned",
       "title": "ヘアケア商品の縦型AI広告",
       "src": "/uploads/videos/ai-sample-background.mp4",
       "poster": "/uploads/videos/ai-sample-poster.webp",

@@ -44,7 +44,7 @@ def head(title, description, path, schemas=(), article=False, noindex=False):
 <meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{esc(title)} | Yuki Taguchi"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Yuki Taguchi — AI Video &amp; Automation"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="Yuki Taguchi">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)} | Yuki Taguchi"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{image}">
 <meta name="theme-color" content="#82d3ef"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css?v=work-summaries-1"><script src="/assets/site.js?v=work-summaries-1" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=mobile-reel-2"><script src="/assets/site.js?v=mobile-reel-2" defer></script>
 {''.join(ld(s) for s in schemas)}</head>'''
 
 def breadcrumbs(items):

@@ -20,7 +20,8 @@ from check_site import AUTHORING_ROOTS, EXCLUDED
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = {"title", "src", "poster", "width", "height"}
-OPTIONAL = {"slug"}
+OPTIONAL = {"slug", "mobileLayout"}
+MOBILE_LAYOUTS = {"standard", "wide", "captioned"}
 VIDEO_FORMATS = {".mp4", ".webm"}
 IMAGE_FORMATS = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
 
@@ -98,6 +99,12 @@ def validate_catalog(data, *, root=ROOT):
         for field in ("width", "height"):
             if type(item[field]) is not int or item[field] <= 0:
                 raise ValueError(f"{label}.{field}: expected a positive integer")
+        if "mobileLayout" in item:
+            layout = item["mobileLayout"]
+            if not isinstance(layout, str) or layout not in MOBILE_LAYOUTS:
+                raise ValueError(f"{label}.mobileLayout: expected standard, wide or captioned")
+            if layout == "wide" and item["width"] <= item["height"]:
+                raise ValueError(f"{label}.mobileLayout: wide requires a landscape video")
         if "slug" in item:
             slug = item["slug"]
             if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
