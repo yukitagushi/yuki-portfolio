@@ -1,0 +1,29 @@
+<form class="contact-form" id="contactForm" aria-label="お問い合わせフォーム">
+        <div class="form-field">
+          <label for="cfName">お名前</label>
+          <input type="text" id="cfName" name="name" required autocomplete="name" placeholder="例）田口 太郎" />
+        </div>
+        <div class="form-field">
+          <label for="cfCompany">会社名・屋号<span class="opt">任意</span></label>
+          <input type="text" id="cfCompany" name="company" autocomplete="organization" placeholder="例）株式会社〇〇" />
+        </div>
+        <div class="form-field">
+          <label for="cfCategory">ご相談の種類</label>
+          <select id="cfCategory" name="category">
+            <option>AIエージェントの導入・使い方</option><option>AI広告動画の制作</option><option>AI自動動画編集</option><option>社内研修動画の自動生成</option><option>紙マニュアルの動画化</option><option>ホームページ制作・リニューアル</option>
+            <option>業務自動化・DX支援</option>
+            <option>アプリ・システム開発</option>
+
+            <option>AIインフルエンサー運用</option>
+            <option>その他・まだ決まっていない</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cfMessage">ご相談内容</label>
+          <textarea id="cfMessage" name="message" required placeholder="現状の課題、やりたいこと、希望時期など。箇条書きでも大丈夫です。"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-dark">この内容でメールを作成<span class="btn-arrow" aria-hidden="true">→</span></button>
+          <p class="form-note">まず下書きを作成します。<br />その後、メールアプリを開いて送信してください。</p>
+        </div>
+      </form>

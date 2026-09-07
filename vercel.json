@@ -10,7 +10,7 @@
       "permanent": true
     },
     {
-      "source": "/services/:slug(automation|app-development|ai-influencer)",
+      "source": "/services/:slug(automation|app-development|ai-influencer|ai-agent|ai-video|video-editing|training-video|manual-to-video)",
       "destination": "/services/:slug.html",
       "permanent": true
     },
@@ -23,6 +23,70 @@
       "source": "/industries",
       "destination": "/industries.html",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/examples",
+      "destination": "/industries.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/:slug(ai-agent-guide|ai-video-guide|manual-video-guide)",
+      "destination": "/guides/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    }
+  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/docs/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/scripts/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/content/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/README.md",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

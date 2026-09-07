@@ -1,105 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://taguchi338.com/</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/guides.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/guides/ai-agent-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/guides/ai-video-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/guides/manual-video-guide.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/industries.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://taguchi338.com/works.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://taguchi338.com/services/ai-agent.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/services/ai-influencer.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://taguchi338.com/services/automation.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://taguchi338.com/services/ai-video.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/services/app-development.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://taguchi338.com/works/sns-ad-video.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://taguchi338.com/services/automation.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/services/manual-to-video.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/services/training-video.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/services/video-editing.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/works.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/works/ai-influencer.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://taguchi338.com/works/auto-repair-shop.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://taguchi338.com/works/zukin-note.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://taguchi338.com/works/auto-accounting.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://taguchi338.com/works/welfare-matching.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://taguchi338.com/works/auto-repair-shop.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/works/ec-site.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://taguchi338.com/works/internal-rag.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://taguchi338.com/works/grant-recommender.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://taguchi338.com/works/video-pipeline.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://taguchi338.com/works/internal-rag.html</loc>
   </url>
   <url>
     <loc>https://taguchi338.com/works/order-management.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/works/sns-ad-video.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/works/video-pipeline.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/works/welfare-matching.html</loc>
+  </url>
+  <url>
+    <loc>https://taguchi338.com/works/zukin-note.html</loc>
   </url>
 </urlset>

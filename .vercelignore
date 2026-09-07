@@ -1,0 +1,9 @@
+# Internal authoring files are not part of the public static site.
+/docs
+/scripts
+/content
+/.git
+/.claude
+/README.md
+**/__pycache__
+*.pyc
