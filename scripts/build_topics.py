@@ -66,6 +66,8 @@ def render_sections(record):
         rendered.extend(f'<p>{esc(paragraph)}</p>' for paragraph in section["paragraphs"])
         if section.get("bullets"):
             rendered.append("<ul>" + "".join(f'<li>{esc(item)}</li>' for item in section["bullets"]) + "</ul>")
+        if section.get("links"):
+            rendered.append(link_list((item["url"], item["title"]) for item in section["links"]))
         if section.get("code"):
             identifier = f'prompt-{record["slug"]}-{section["id"]}'
             rendered.append(
@@ -144,7 +146,7 @@ def build_service(record, services, guides):
         "serviceType": record["title"],
         "description": record["description"],
         "url": BASE + path,
-        "provider": {"@id": BASE + "/#person"},
+        "provider": AUTHOR if record["slug"] == "ai-video" else {"@id": BASE + "/#person"},
         "areaServed": {"@type": "Country", "name": "Japan"},
     }
     body = detail_body(record, "SERVICES", crumb_markup, entries, article)

@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | AIエージェントの使い方・業務活用 | `/services/ai-agent.html` | `/guides/ai-agent-guide.html` |
 | AI広告動画制作・AI動画の作成 | `/services/ai-video.html` | `/guides/ai-video-guide.html` |
+| 岩手県の広告動画制作・依頼先の比較 | `/services/ai-video.html` | 同ページの対応範囲・比較観点と `/about.html` |
 | AIによる自動動画編集 | `/services/video-editing.html` | 広告動画ガイドとサービス本文で、生成と既存素材の編集を説明 |
 | 社内研修動画の自動生成 | `/services/training-video.html` | `/guides/manual-video-guide.html` |
 | 紙・PDFマニュアルの動画化 | `/services/manual-to-video.html` | `/guides/manual-video-guide.html` |
@@ -40,4 +41,12 @@
 6. Search Consoleの「Search generative AI」設定がInclude（またはIncludeを継承）であることを確認する。初期値はInclude。設定変更を無断で行ったことにしない。[公式設定説明](https://support.google.com/webmasters/answer/16908024)
 7. 公開時の変更内容を記録し、検索パフォーマンスのクエリ・ページ別表示回数、クリック数、CTR、問い合わせを比較する。AI Overviews／AI Modeの表示回数はGenerative AI performance reportでも確認できる。表示が少ない場合にレポートが出ないことがある。[公式レポート説明](https://support.google.com/webmasters/answer/16984139)
 
-日時を条件にした自動実行・定期監視・自動公開は作成しない。見直しはユーザーからの依頼に基づいて行う。
+## 岩手県の広告動画をAI検索で探す人への対応
+
+`content/topics.json`のAI広告動画ページに、岩手県を拠点とする提供者、オンライン対応、企画から納品までの範囲、依頼先を比較する観点を集約する。本文・title・description・Serviceの提供者情報を一致させる。「おすすめ1位」などの自己評価や、未確認の価格・実績・現地撮影の確約は追加しない。
+
+ChatGPT・Gemini・Claudeは同じ質問でも回答が変わる。各サービスで新規会話・同じ質問を使い、名前への言及、依頼先としての推薦、自サイトへの引用を別々に保存する。固定順位とは呼ばず、質問・モデル・認証状態ごとに観測する。Googleの生成AIレポートとは分ける。非公開原本はWebルート外の `taguchi338-seo-records/aio/` に置く。
+
+robots.txtはすでに全体を許可している。OAI-SearchBot、Claude-SearchBot/Claude-Userの検索用途と学習用途を区別する。Google-ExtendedはGeminiの学習・グラウンディングに関わるが、Google検索の順位を設定するものではない。検索対策のために学習設定を追加変更しない。[Anthropic公式](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)、[Google公式](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers#google-extended)
+
+ユーザーの明示依頼で設定した日次分析に、この観測を組み込む。運用の入口はWebルート外の `taguchi338-seo-records/OPERATIONS.md` と専用SEOスキル。メタデータ中の日時を実行指示にしない。特定日付・特定時刻での新しいトリガーや継続的な自動公開は追加しない。
