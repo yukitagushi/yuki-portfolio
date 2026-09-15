@@ -1,0 +1,85 @@
+/* One approved full-length portfolio video. The player is opt-in and never autoplayed. */
+.real-estate-showcase {
+  margin: 0 auto;
+  padding: clamp(52px, 7vw, 92px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.real-estate-showcase__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, .72fr);
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+.real-estate-showcase__intro h2 {
+  margin: 0;
+  max-width: 19ch;
+  font-size: clamp(29px, 3.4vw, 48px);
+  line-height: 1.48;
+  letter-spacing: -.025em;
+}
+.real-estate-showcase__intro p:not(.section-label) {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 2;
+}
+.portfolio-video {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: #15232b;
+}
+.portfolio-video video {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  max-height: min(74vh, 768px);
+  background: #15232b;
+}
+.portfolio-video figcaption {
+  padding: 14px 18px 16px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.portfolio-video figcaption strong {
+  color: var(--ink);
+}
+.portfolio-video-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  align-items: center;
+  margin-top: 24px;
+}
+.portfolio-video-links .btn { min-width: min(100%, 280px); }
+.portfolio-video-links .text-link { font-size: 14px; }
+.video-work-page .portfolio-video { margin-bottom: 42px; }
+.video-work-page .video-fact-note {
+  margin: 0 0 42px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--accent);
+  background: var(--paper-2);
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.9;
+}
+@media (max-width: 760px) {
+  .real-estate-showcase { padding-block: 46px; }
+  .real-estate-showcase__intro { grid-template-columns: 1fr; gap: 18px; margin-bottom: 24px; }
+  .real-estate-showcase__intro h2 { font-size: 28px; }
+  .real-estate-showcase__intro p:not(.section-label) { font-size: 14px; }
+  .portfolio-video figcaption { padding: 13px 14px 14px; font-size: 12px; }
+  .portfolio-video-links { align-items: stretch; flex-direction: column; gap: 16px; }
+  .portfolio-video-links .btn { width: 100%; }
+}

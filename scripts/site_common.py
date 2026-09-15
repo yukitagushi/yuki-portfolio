@@ -14,7 +14,7 @@ def ld(data):
 def header(overlay=False):
     links = [('/#services', 'サービス'), ('/works.html', '実績'), ('/guides.html', 'AI活用ガイド'), ('/about.html', 'プロフィール')]
     items = ''.join(f'<a href="{url}">{label}</a>' for url, label in links)
-    services = [('/services/ai-video.html', '広告動画の作成'), ('/services/video-editing.html', '自動動画編集について'), ('/services/training-video.html', '社内・研修動画の自動生成'), ('/services/manual-to-video.html', '紙マニュアルの動画化'), ('/services/ai-agent.html', 'AIエージェントの活用'), ('/industries.html', 'Webサイト制作'), ('/services/app-development.html', 'アプリ開発'), ('/services/automation.html', '業務自動化・DX')]
+    services = [('/services/real-estate-3d-video.html', '不動産向け3D内覧動画'), ('/services/ai-video.html', '広告動画の作成'), ('/services/video-editing.html', '自動動画編集について'), ('/services/training-video.html', '社内・研修動画の自動生成'), ('/services/manual-to-video.html', '紙マニュアルの動画化'), ('/services/ai-agent.html', 'AIエージェントの活用'), ('/industries.html', 'Webサイト制作'), ('/services/app-development.html', 'アプリ開発'), ('/services/automation.html', '業務自動化・DX')]
     service_items = ''.join(f'<a class="menu-reveal" style="--menu-order:{i+1}" href="{url}">{label}<span aria-hidden="true">↗</span></a>' for i,(url,label) in enumerate(services))
     site_items = ''.join(f'<a class="menu-reveal" style="--menu-order:{i+2}" href="{url}">{label}</a>' for i,(url,label) in enumerate(links))
     fallback_items = ''.join(f'<a href="{url}">{label}</a>' for url,label in services)
@@ -23,14 +23,14 @@ def header(overlay=False):
 <header class="nav site-nav{' nav--overlay' if overlay else ''}"><div class="wide nav-inner">{brand}
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-haspopup="dialog" aria-label="メニューを開く" hidden><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button>
 </div></header>
-<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><div class="menu-main"><nav class="menu-services" aria-label="制作・自動化"><p class="menu-group-label menu-reveal" style="--menu-order:0">制作・自動化</p>{service_items}</nav><nav class="menu-links" aria-label="サイト案内"><p class="menu-group-label menu-reveal" style="--menu-order:1">サイト案内</p>{site_items}</nav></div><a class="menu-contact menu-reveal" style="--menu-order:8" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></dialog>
+<dialog class="site-menu menu-panel" id="siteMenu" aria-label="サイトメニュー"><div class="menu-top"><a class="menu-brand" href="/">Yuki Taguchi</a><button class="menu-close" type="button" aria-label="メニューを閉じる"><span class="menu-line" aria-hidden="true"></span><span class="menu-line" aria-hidden="true"></span></button></div><div class="menu-main"><nav class="menu-services" aria-label="制作・自動化"><p class="menu-group-label menu-reveal" style="--menu-order:0">制作・自動化</p>{service_items}</nav><nav class="menu-links" aria-label="サイト案内"><p class="menu-group-label menu-reveal" style="--menu-order:1">サイト案内</p>{site_items}</nav></div><a class="menu-contact menu-reveal" style="--menu-order:10" href="/#contact">無料相談 <span aria-hidden="true">↗</span></a></dialog>
 <noscript><nav class="no-script-navigation" aria-label="メインナビゲーション">{fallback_items}{items}<a href="/#contact">無料相談</a></nav></noscript>'''
 
 def footer():
     return '''<footer class="site-footer"><div class="wide"><div class="footer-top">
 <a class="brand" href="/"><span><strong>Yuki Taguchi</strong><small>岩手から、全国へ。</small></span></a>
 <nav aria-label="フッターナビゲーション"><a href="/#services">サービス</a><a href="/works.html">実績</a><a href="/guides.html">AI活用ガイド</a><a href="/about.html">プロフィール</a><a href="/#contact">お問い合わせ</a></nav></div>
-<div class="footer-services"><a href="/services/ai-agent.html">AIエージェント活用</a><a href="/services/ai-video.html">AI広告動画制作</a><a href="/services/video-editing.html">AI自動動画編集</a><a href="/services/training-video.html">研修動画の自動生成</a><a href="/services/manual-to-video.html">紙マニュアルの動画化</a><a href="/industries.html">ホームページ制作</a><a href="/services/app-development.html">アプリ開発</a><a href="/services/ai-influencer.html">AIインフルエンサー</a></div>
+<div class="footer-services"><a href="/services/real-estate-3d-video.html">不動産向け3D内覧動画</a><a href="/services/ai-agent.html">AIエージェント活用</a><a href="/services/ai-video.html">AI広告動画制作</a><a href="/services/video-editing.html">AI自動動画編集</a><a href="/services/training-video.html">研修動画の自動生成</a><a href="/services/manual-to-video.html">紙マニュアルの動画化</a><a href="/industries.html">ホームページ制作</a><a href="/services/app-development.html">アプリ開発</a><a href="/services/ai-influencer.html">AIインフルエンサー</a></div>
 <div class="footer-bottom"><span>© Yuki Taguchi</span><span>AI Video &amp; Automation · Iwate, Japan</span></div></div></footer>'''
 
 def head(title, description, path, schemas=(), article=False, noindex=False):
@@ -44,7 +44,7 @@ def head(title, description, path, schemas=(), article=False, noindex=False):
 <meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{esc(title)} | Yuki Taguchi"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Yuki Taguchi — AI Video &amp; Automation"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="Yuki Taguchi">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)} | Yuki Taguchi"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{image}">
 <meta name="theme-color" content="#82d3ef"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css?v=mobile-focus-1"><script src="/assets/site.js?v=mobile-reel-2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=mobile-focus-1"><link rel="stylesheet" href="/assets/real-estate-video.css?v=1"><script src="/assets/site.js?v=mobile-reel-2" defer></script>
 {''.join(ld(s) for s in schemas)}</head>'''
 
 def breadcrumbs(items):

@@ -5,3 +5,4 @@ User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://taguchi338.com/sitemap.xml
+Sitemap: https://taguchi338.com/video-sitemap.xml

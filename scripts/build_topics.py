@@ -22,7 +22,7 @@ AUTHOR = {
 def validate_content(data):
     """Catch missing records or anchors before overwriting generated files."""
     expected_services = {
-        "ai-agent", "ai-video", "video-editing", "training-video", "manual-to-video"
+        "ai-agent", "ai-video", "video-editing", "training-video", "manual-to-video", "real-estate-3d-video"
     }
     expected_guides = {"ai-agent-guide", "ai-video-guide", "manual-video-guide"}
     for kind, expected in (("services", expected_services), ("guides", expected_guides)):

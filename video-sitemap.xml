@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://taguchi338.com/works/villa-lumiere-3d-walkthrough.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://taguchi338.com/uploads/videos/villa-lumiere-3d-walkthrough-poster.jpg</video:thumbnail_loc>
+      <video:title>Blenderで制作した3D住宅・建築PRウォークスルー</video:title>
+      <video:description>Blenderで制作した架空の邸宅「VILLA LUMIÈRE」の3D建築・室内PRウォークスルー動画。実在の販売物件ではありません。</video:description>
+      <video:content_loc>https://taguchi338.com/uploads/videos/villa-lumiere-3d-walkthrough.mp4</video:content_loc>
+      <video:duration>64</video:duration>
+      <video:publication_date>2026-09-16T00:00:00+09:00</video:publication_date>
+    </video:video>
+  </url>
+</urlset>

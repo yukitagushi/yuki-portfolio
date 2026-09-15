@@ -5,12 +5,12 @@
   "outputDirectory": null,
   "redirects": [
     {
-      "source": "/works/:slug(auto-repair-shop|ai-influencer|sns-ad-video|zukin-note|auto-accounting|welfare-matching|ec-site|internal-rag|grant-recommender|video-pipeline|order-management)",
+      "source": "/works/:slug(auto-repair-shop|ai-influencer|sns-ad-video|zukin-note|auto-accounting|welfare-matching|ec-site|internal-rag|grant-recommender|video-pipeline|order-management|villa-lumiere-3d-walkthrough)",
       "destination": "/works/:slug.html",
       "permanent": true
     },
     {
-      "source": "/services/:slug(automation|app-development|ai-influencer|ai-agent|ai-video|video-editing|training-video|manual-to-video)",
+      "source": "/services/:slug(automation|app-development|ai-influencer|ai-agent|ai-video|video-editing|training-video|manual-to-video|real-estate-3d-video)",
       "destination": "/services/:slug.html",
       "permanent": true
     },
