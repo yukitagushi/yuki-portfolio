@@ -74,6 +74,35 @@
   font-size: 15px;
   line-height: 1.9;
 }
+.article-body .portfolio-video--service { margin: 24px 0 0; }
+.price-glance {
+  margin: 20px 0 0;
+  padding: 20px 22px;
+  border: 1px solid #a5cfdf;
+  background: #f5fbfd;
+}
+.price-glance__label {
+  margin: 0 0 6px !important;
+  color: var(--accent);
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.price-glance__headline {
+  margin: 0 !important;
+  color: var(--ink);
+  font-size: clamp(18px, 2.2vw, 24px) !important;
+  font-weight: 700;
+  line-height: 1.5 !important;
+}
+.price-glance__description {
+  margin: 8px 0 12px !important;
+  color: var(--ink-2);
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+.price-glance .text-link { font-size: 14px; }
 @media (max-width: 760px) {
   .real-estate-showcase { padding-block: 46px; }
   .real-estate-showcase__intro { grid-template-columns: 1fr; gap: 18px; margin-bottom: 24px; }
@@ -82,4 +111,5 @@
   .portfolio-video figcaption { padding: 13px 14px 14px; font-size: 12px; }
   .portfolio-video-links { align-items: stretch; flex-direction: column; gap: 16px; }
   .portfolio-video-links .btn { width: 100%; }
+  .price-glance { padding: 18px; }
 }

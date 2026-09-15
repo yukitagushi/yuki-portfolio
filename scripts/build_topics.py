@@ -37,6 +37,18 @@ def validate_content(data):
                 raise ValueError(f"Duplicate section ID in {record['slug']}")
             if any(not re.fullmatch(r"[a-z0-9-]+", value) or value in reserved for value in identifiers):
                 raise ValueError(f"Invalid or reserved section ID in {record['slug']}")
+            for section in record["sections"]:
+                if "video" in section:
+                    video = section["video"]
+                    required = {"src", "poster", "width", "height", "caption", "fallbackUrl", "fallbackText"}
+                    if not isinstance(video, dict) or set(video) != required:
+                        raise ValueError(f"Invalid video record in {record['slug']}:{section['id']}")
+                if "priceHighlight" in section:
+                    highlight = section["priceHighlight"]
+                    if not isinstance(highlight, dict) or set(highlight) != {"label", "headline", "description", "link"}:
+                        raise ValueError(f"Invalid price highlight in {record['slug']}:{section['id']}")
+                    if not isinstance(highlight["link"], dict) or set(highlight["link"]) != {"url", "title"}:
+                        raise ValueError(f"Invalid price highlight link in {record['slug']}:{section['id']}")
     for service in data["services"]:
         if not set(service["relatedGuides"]).issubset(expected_guides):
             raise ValueError(f"Unknown related guide in {service['slug']}")
@@ -59,11 +71,37 @@ def section_open(identifier, title, css_class=""):
     return f'<section id="{esc(identifier)}"{class_attr} aria-labelledby="heading-{esc(identifier)}"><h2 id="heading-{esc(identifier)}">{esc(title)}</h2>'
 
 
+def render_embedded_video(record_slug, section_id, video):
+    caption_id = f'{record_slug}-{section_id}-caption'
+    return (
+        '<figure class="portfolio-video portfolio-video--service">'
+        f'<video controls playsinline preload="metadata" poster="{esc(video["poster"])}" width="{int(video["width"])}" height="{int(video["height"])}" aria-describedby="{esc(caption_id)}">'
+        f'<source src="{esc(video["src"])}" type="video/mp4">'
+        f'<p>お使いのブラウザでは動画を再生できません。<a href="{esc(video["fallbackUrl"])}">{esc(video["fallbackText"])}</a></p></video>'
+        f'<figcaption id="{esc(caption_id)}"><strong>制作サンプル：</strong>{esc(video["caption"])}</figcaption></figure>'
+    )
+
+
+def render_price_highlight(highlight):
+    link = highlight["link"]
+    return (
+        '<aside class="price-glance" aria-label="料金の目安">'
+        f'<p class="price-glance__label">{esc(highlight["label"])}</p>'
+        f'<p class="price-glance__headline">{esc(highlight["headline"])}</p>'
+        f'<p class="price-glance__description">{esc(highlight["description"])}</p>'
+        f'<a class="text-link" href="{esc(link["url"])}">{esc(link["title"])} <span aria-hidden="true">→</span></a></aside>'
+    )
+
+
 def render_sections(record):
     rendered = []
     for section in record["sections"]:
         rendered.append(section_open(section["id"], section["title"]))
         rendered.extend(f'<p>{esc(paragraph)}</p>' for paragraph in section["paragraphs"])
+        if section.get("video"):
+            rendered.append(render_embedded_video(record["slug"], section["id"], section["video"]))
+        if section.get("priceHighlight"):
+            rendered.append(render_price_highlight(section["priceHighlight"]))
         if section.get("bullets"):
             rendered.append("<ul>" + "".join(f'<li>{esc(item)}</li>' for item in section["bullets"]) + "</ul>")
         if section.get("links"):
@@ -119,7 +157,9 @@ def build_service(record, services, guides):
     article = '<div class="answer-box" id="overview"><h2>サービスの概要</h2><p>' + esc(record["answer"]) + '</p></div>'
     article += render_sections(record) + render_faq(record)
     article += section_open("pricing", "料金・お見積もり")
-    article += f'<p class="price-note">{esc(record["priceNote"])}</p></section>'
+    price_headline = record.get("priceHeadline")
+    price_content = (f'<strong>{esc(price_headline)}</strong><br>{esc(record["priceNote"])}' if price_headline else esc(record["priceNote"]))
+    article += f'<p class="price-note">{price_content}</p></section>'
 
     if record["relatedWorks"]:
         entries.append(("related-works", "関連する制作実績"))
