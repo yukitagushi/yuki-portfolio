@@ -189,8 +189,13 @@ def build_service(record, services, guides):
         "provider": AUTHOR if record["slug"] == "ai-video" else {"@id": BASE + "/#person"},
         "areaServed": {"@type": "Country", "name": "Japan"},
     }
+    if record.get("audience"):
+        schema["audience"] = {"@type": "Audience", "audienceType": record["audience"]}
     body = detail_body(record, "SERVICES", crumb_markup, entries, article)
-    return path, page(record["title"], record["description"], path, body, [schema, crumb_schema])
+    return path, page(
+        record["title"], record["description"], path, body, [schema, crumb_schema],
+        og_image=record.get("ogImage"), og_image_alt=record.get("ogImageAlt"),
+    )
 
 
 def build_guide(record, services):
