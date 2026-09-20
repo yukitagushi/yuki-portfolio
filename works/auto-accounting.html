@@ -3,27 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>自動車整備業向け会計管理システム — Yuki Taguchi</title>
-<meta name="description" content="自動車整備業向け会計管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
+<title>自動車整備業向け会計ソフト・業務管理システムの開発事例 — Yuki Taguchi</title>
+<meta name="description" content="自動車整備業向け会計ソフト・業務管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
 <meta name="author" content="Yuki Taguchi" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <link rel="canonical" href="https://taguchi338.com/works/auto-accounting.html" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="自動車整備業向け会計管理システム — Yuki Taguchi" />
-<meta property="og:description" content="自動車整備業向け会計管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
+<meta property="og:title" content="自動車整備業向け会計ソフト・業務管理システムの開発事例 — Yuki Taguchi" />
+<meta property="og:description" content="自動車整備業向け会計ソフト・業務管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
 <meta property="og:url" content="https://taguchi338.com/works/auto-accounting.html" />
 <meta property="og:image" content="https://taguchi338.com/uploads/ogp_ai_portfolio.jpg" />
 <meta property="og:site_name" content="Yuki Taguchi" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="自動車整備業向け会計管理システム — Yuki Taguchi" />
-<meta name="twitter:description" content="自動車整備業向け会計管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
+<meta name="twitter:title" content="自動車整備業向け会計ソフト・業務管理システムの開発事例 — Yuki Taguchi" />
+<meta name="twitter:description" content="自動車整備業向け会計ソフト・業務管理システムの開発事例。請求・会計・勤怠・出入庫・入金確認をまとめ、レシートからの仕訳候補生成や車検・見積・請求の連携を実装した内容を紹介します。" />
 <meta name="twitter:image" content="https://taguchi338.com/uploads/ogp_ai_portfolio.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-<link rel="stylesheet" href="../assets/site.css?v=mobile-focus-1" />
+<link rel="stylesheet" href="../assets/site.css?v=accounting-pricing-1" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +44,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "自動車整備業向け会計管理システム",
+      "name": "自動車整備業向け会計ソフト・業務管理システムの開発事例",
       "item": "https://taguchi338.com/works/auto-accounting.html"
     }
   ]
@@ -66,7 +66,7 @@
 
   <section class="detail-hero">
     <div class="category-tag">System Development</div>
-    <h1 class="detail-title">自動車整備業向け会計管理システム</h1>
+    <h1 class="detail-title">自動車整備業向け会計ソフト・業務管理システムの開発事例</h1>
     <div class="detail-meta">
       <div class="meta-item">
         <div class="meta-label">Client</div>
@@ -83,23 +83,28 @@
     </div>
   </section>
 
+  <section class="content-section">
+    <h2>このページについて</h2>
+    <p>このページは、自動車整備業向けに制作した会計・業務管理システムの開発事例です。業務に合わせたシステムの開発相談を受け付けています。小規模な業務アプリの標準範囲は、<a class="text-link" href="../services/app-development.html#pricing">料金目安と進め方</a>で確認できます。</p>
+  </section>
+
   <div class="showcase">
     <div class="showcase-img"><img src="../uploads/real_works-auto-accounting.webp" alt="自動車整備業向け会計管理システムのスクリーンショット" /></div>
   </div>
 
   <section class="content-section">
-    <h2>Overview</h2>
+    <h2>事例概要</h2>
     <p>自動車整備工場の現場で発生する「請求」「会計」「勤怠」「出入庫」「入金確認」を1つのダッシュボードに集約する業務システム。現場でバラバラに使われていたExcel・紙・複数SaaSを統合し、整備士・事務・経営者が同じ画面を見て会話できる状態を作りました。レシート撮影からの仕訳自動化、車検登録・見積・請求の連動、未回収アラートなど、整備業特有のワークフローに最適化しています。</p>
   </section>
 
   <section class="content-section">
-    <h2>Challenge</h2>
+    <h2>開発前の課題</h2>
     <p>整備業は「車検・整備の現場」「請求書発行」「会計仕訳」「社員の出退勤」「部品の出入庫」「入金消込」が別々のツールで管理され、月末の経理処理に膨大な手間がかかっていました。さらに「どの請求がまだ入金されていないのか」を即座に把握できず、未回収状況の確認が課題となっていました。現場の負担を減らしつつ経営判断にも使えるダッシュボードが必要でした。</p>
   </section>
 
   <section class="content-section">
-    <h2>Solution</h2>
-    <p>整備業特化型のSaaSとして、請求・会計・勤怠・出入庫・入金消込を1つのデータ基盤に統合。レシート撮影からAIが仕訳候補を自動生成し、見積→車検登録→請求→入金の流れを連携。ダッシュボードで「今月の実売上」「未払い請求」「未回収」「振替伝票件数」がリアルタイム可視化され、入金されていない請求が一目でわかる設計に。クイックアクション（新規仕訳/レシート読取り/見積書/請求書/車検登録）を常時表示し、よく使う機能にアクセスできるようにしています。</p>
+    <h2>対応内容</h2>
+    <p>整備業向けの業務システムとして、請求・会計・勤怠・出入庫・入金消込を1つのデータ基盤に統合。レシート撮影からAIが仕訳候補を自動生成し、見積→車検登録→請求→入金の流れを連携。ダッシュボードで「今月の実売上」「未払い請求」「未回収」「振替伝票件数」がリアルタイム可視化され、入金されていない請求が一目でわかる設計に。クイックアクション（新規仕訳/レシート読取り/見積書/請求書/車検登録）を常時表示し、よく使う機能にアクセスできるようにしています。</p>
   </section>
 
   <section class="content-section">
@@ -114,7 +119,7 @@
   </section>
 
   <section class="content-section">
-    <h2>Tech Stack</h2>
+    <h2>使用技術</h2>
     <div class="tech-stack">
       <span class="tech-pill">Next.js</span>
       <span class="tech-pill">TypeScript</span>
@@ -123,6 +128,29 @@
       <span class="tech-pill">AI OCR（レシート読取り）</span>
       <span class="tech-pill">Vercel</span>
     </div>
+  </section>
+
+  <section class="content-section" id="faq">
+    <h2>費用と開発相談のよくある質問</h2>
+    <div class="faq">
+      <details>
+        <summary><span class="q-mark">Q</span>一般的な小規模業務アプリの標準価格は適用できますか？<span class="q-toggle" aria-hidden="true">＋</span></summary>
+        <p class="faq-a">1業務・主要3画面までの小規模な業務アプリでは、試作50,000円、本番化追加150,000円〜、標準範囲の初期合計200,000円が税別の目安です。月額は基本運用4,000円、AIライト8,000円、AIスタンダード12,000円で、AI機能の初期開発は別途見積もりです。詳しい標準範囲は<a class="text-link" href="../services/app-development.html#pricing">料金目安と進め方</a>をご確認ください。</p>
+      </details>
+      <details>
+        <summary><span class="q-mark">Q</span>この会計・業務管理システムと同じ機能一式も標準価格ですか？<span class="q-toggle" aria-hidden="true">＋</span></summary>
+        <p class="faq-a">いいえ。この事例は、請求・会計・勤怠・出入庫・入金確認など複数の業務を扱っており、一般的な小規模業務アプリの標準範囲とは異なります。同じ機能一式をご希望の場合は、必要な画面、データ、AI機能、外部連携などを確認して個別にお見積もりします。</p>
+      </details>
+      <details>
+        <summary><span class="q-mark">Q</span>開発相談の前に用意するものはありますか？<span class="q-toggle" aria-hidden="true">＋</span></summary>
+        <p class="faq-a">現在の業務フロー、実際に使っている帳票のサンプル、利用人数と権限、連携を検討しているシステム、優先したい業務がわかると、必要な範囲を整理しやすくなります。機密情報や個人情報は伏せたサンプルでも構いません。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>同じような業務システムの開発をご検討の方へ</h2>
+    <p>ご相談では、現在の業務、必要な画面、扱うデータ、連携先を確認します。試作・本番化の費用は対応範囲に合わせてお見積もりします。小規模な業務アプリの料金目安と進め方をご覧いただけます。掲載事例と同じ機能構成の費用は個別見積もりです。<a class="text-link" href="../services/app-development.html#pricing">料金目安と進め方を見る</a>、または<a class="text-link" href="/#contact">開発について相談する</a>。</p>
   </section>
 
   <div class="cta-card">
