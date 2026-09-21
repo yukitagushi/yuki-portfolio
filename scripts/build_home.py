@@ -35,7 +35,7 @@ hero = f'''<section class="home-hero wide">
 if has_reel:
     hero = f'''<section class="home-hero has-reel">
 {hero_media}
-<div class="hero-details wide"><p>アイデアを、ちゃんと使えるかたちに。</p><a class="hero-consult" href="#contact">相談する <span aria-hidden="true">↗</span></a></div>
+<div class="hero-details wide"><p>アイデアを、ちゃんと使えるかたちに。</p><div class="hero-detail-actions"><a class="hero-feature-link" href="/services/manufacturing-pr-video.html#sample">製造業PR動画を全編見る <span aria-hidden="true">↗</span></a><a class="hero-consult" href="#contact">相談する <span aria-hidden="true">↗</span></a></div></div>
 </section>'''
 body=f'''{hero}
 <section class="wide section-pad" id="services"><p class="section-label">01 / SERVICES</p><h2 class="headline">つくりたいものから、<span class="understroke">選ぶ。</span></h2><p class="section-intro">AIの使い方から、制作と自動化の仕組みまで。</p><div class="service-lines">{rows}</div>

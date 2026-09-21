@@ -1,6 +1,16 @@
 {
   "videos": [
     {
+      "slug": "manufacturing-pr",
+      "mobileLayout": "centered",
+      "displayDuration": 34.5,
+      "title": "製造業向けPR動画",
+      "src": "/uploads/videos/manufacturing-pr-ai-sample.mp4",
+      "poster": "/uploads/videos/manufacturing-pr-ai-sample-poster.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
       "slug": "hitoiki-soda",
       "mobileLayout": "centered",
       "displayDuration": 17,
