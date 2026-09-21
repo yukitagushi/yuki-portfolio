@@ -149,6 +149,21 @@
       "answer": "岩手県で広告動画の依頼先を探している方へ。岩手県を拠点とする田口侑生（Yuki Taguchi）が、広告の目的整理、企画・台本、AIによる画像・映像・音声の生成、人による編集まで支援します。打ち合わせから確認、納品まではオンラインで全国から相談できます。",
       "sections": [
         {
+          "id": "vlog-sample",
+          "title": "Vlog風AI動画｜自主制作サンプル",
+          "paragraphs": [
+            "スマホで撮影したような距離感と、日常の一場面を表現した縦型AI動画の自主制作サンプルです。"
+          ],
+          "vlogVideo": {
+            "src": "/uploads/videos/vlog-selfie-sample.mp4",
+            "poster": "/uploads/videos/vlog-selfie-sample-poster.webp",
+            "width": 720,
+            "height": 1280,
+            "caption": "スマホで撮影したような距離感と、日常の一場面を表現した縦型AI動画です。",
+            "note": "音声なし・約20秒"
+          }
+        },
+        {
           "id": "iwate",
           "title": "岩手県を拠点に、AI広告動画を制作",
           "paragraphs": [

@@ -43,6 +43,13 @@ def validate_content(data):
                     required = {"src", "poster", "width", "height", "caption", "fallbackUrl", "fallbackText"}
                     if not isinstance(video, dict) or set(video) != required:
                         raise ValueError(f"Invalid video record in {record['slug']}:{section['id']}")
+                if "vlogVideo" in section:
+                    video = section["vlogVideo"]
+                    required = {"src", "poster", "width", "height", "caption", "note"}
+                    if record["slug"] != "ai-video" or section["id"] != "vlog-sample":
+                        raise ValueError("The Vlog player is limited to ai-video:vlog-sample")
+                    if not isinstance(video, dict) or set(video) != required:
+                        raise ValueError(f"Invalid Vlog video record in {record['slug']}:{section['id']}")
                 if "priceHighlight" in section:
                     highlight = section["priceHighlight"]
                     if not isinstance(highlight, dict) or set(highlight) != {"label", "headline", "description", "link"}:
@@ -82,6 +89,25 @@ def render_embedded_video(record_slug, section_id, video):
     )
 
 
+def render_vlog_video(record_slug, section_id, video):
+    caption_id = f'{record_slug}-{section_id}-caption'
+    status_id = f'{record_slug}-{section_id}-status'
+    return (
+        '<figure class="vlog-sample" data-vlog-player>'
+        '<div class="vlog-sample__media">'
+        f'<video muted playsinline preload="none" poster="{esc(video["poster"])}" width="{int(video["width"])}" height="{int(video["height"])}" aria-describedby="{esc(caption_id)} {esc(status_id)}">'
+        f'<source src="{esc(video["src"])}" type="video/mp4">'
+        '<p>お使いのブラウザでは動画を再生できません。<a href="/#contact">お問い合わせください</a>。</p></video>'
+        '<button class="vlog-sample__toggle" type="button" data-vlog-toggle aria-label="動画を再生">'
+        '<span class="vlog-sample__icon" aria-hidden="true"></span><span data-vlog-label>再生する</span></button></div>'
+        f'<figcaption id="{esc(caption_id)}"><strong>自主制作サンプル：</strong>{esc(video["caption"])}'
+        f'<span class="vlog-sample__note">{esc(video["note"])}</span></figcaption>'
+        f'<p class="vlog-sample__status" id="{esc(status_id)}" data-vlog-status role="status" aria-live="polite"></p>'
+        '<p class="vlog-sample__fallback" data-vlog-fallback hidden>動画を再生できませんでした。<a href="/#contact">お問い合わせください</a>。</p>'
+        '</figure>'
+    )
+
+
 def render_price_highlight(highlight):
     link = highlight["link"]
     return (
@@ -100,6 +126,8 @@ def render_sections(record):
         rendered.extend(f'<p>{esc(paragraph)}</p>' for paragraph in section["paragraphs"])
         if section.get("video"):
             rendered.append(render_embedded_video(record["slug"], section["id"], section["video"]))
+        if section.get("vlogVideo"):
+            rendered.append(render_vlog_video(record["slug"], section["id"], section["vlogVideo"]))
         if section.get("priceHighlight"):
             rendered.append(render_price_highlight(section["priceHighlight"]))
         if section.get("bullets"):
@@ -195,6 +223,8 @@ def build_service(record, services, guides):
     return path, page(
         record["title"], record["description"], path, body, [schema, crumb_schema],
         og_image=record.get("ogImage"), og_image_alt=record.get("ogImageAlt"),
+        stylesheets=("/assets/vlog-sample.css?v=1",) if record["slug"] == "ai-video" else (),
+        scripts=("/assets/vlog-sample.js?v=1",) if record["slug"] == "ai-video" else (),
     )
 
 

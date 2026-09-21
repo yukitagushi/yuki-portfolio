@@ -33,7 +33,7 @@ def footer():
 <div class="footer-services"><a href="/services/real-estate-3d-video.html">不動産向け3D内覧動画</a><a href="/services/ai-agent.html">AIエージェント活用</a><a href="/services/ai-video.html">AI広告動画制作</a><a href="/services/video-editing.html">AI自動動画編集</a><a href="/services/training-video.html">研修動画の自動生成</a><a href="/services/manual-to-video.html">紙マニュアルの動画化</a><a href="/industries.html">ホームページ制作</a><a href="/services/app-development.html">アプリ開発</a><a href="/services/ai-influencer.html">AIインフルエンサー</a></div>
 <div class="footer-bottom"><span>© Yuki Taguchi</span><span>AI Video &amp; Automation · Iwate, Japan</span></div></div></footer>'''
 
-def head(title, description, path, schemas=(), article=False, noindex=False, og_image=None, og_image_alt=None):
+def head(title, description, path, schemas=(), article=False, noindex=False, og_image=None, og_image_alt=None, stylesheets=(), scripts=()):
     url = BASE + path
     image = og_image or BASE + '/uploads/ogp_ai_portfolio.jpg'
     if image.startswith('/'):
@@ -47,7 +47,7 @@ def head(title, description, path, schemas=(), article=False, noindex=False, og_
 <meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{esc(title)} | Yuki Taguchi"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(image_alt)}"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="Yuki Taguchi">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)} | Yuki Taguchi"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{image}">
 <meta name="theme-color" content="#203645"><link rel="icon" href="/assets/favicon.svg?v=frame-y-1" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css?v=mobile-focus-1"><link rel="stylesheet" href="/assets/real-estate-video.css?v=1"><script src="/assets/site.js?v=mobile-reel-2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=mobile-focus-1"><link rel="stylesheet" href="/assets/real-estate-video.css?v=1">{''.join(f'<link rel="stylesheet" href="{esc(href)}">' for href in stylesheets)}<script src="/assets/site.js?v=mobile-reel-2" defer></script>{''.join(f'<script src="{esc(src)}" defer></script>' for src in scripts)}
 {''.join(ld(s) for s in schemas)}</head>'''
 
 def breadcrumbs(items):
@@ -58,7 +58,7 @@ def breadcrumbs(items):
 def contact_cta():
     return '''<aside class="small-cta"><h2>あなたの仕事に合わせて、考えます。</h2><p>資料や作りたいものが決まっていなくても大丈夫です。まずは課題をお聞かせください。</p><a class="btn btn-dark" href="/#contact">無料相談する <span aria-hidden="true">→</span></a></aside>'''
 
-def page(title, description, path, body, schemas=(), article=False, noindex=False, og_image=None, og_image_alt=None):
+def page(title, description, path, body, schemas=(), article=False, noindex=False, og_image=None, og_image_alt=None, stylesheets=(), scripts=()):
     overlay = path == '/' and 'data-hero-reel' in body
     body_class = 'refresh home-page' if overlay else 'refresh'
-    return head(title, description, path, schemas, article, noindex, og_image, og_image_alt) + f'<body class="{body_class}">' + header(overlay) + '<main id="main">' + body + '</main>' + footer() + '</body></html>'
+    return head(title, description, path, schemas, article, noindex, og_image, og_image_alt, stylesheets, scripts) + f'<body class="{body_class}">' + header(overlay) + '<main id="main">' + body + '</main>' + footer() + '</body></html>'
