@@ -11,4 +11,15 @@
       <video:publication_date>2026-09-16T00:00:00+09:00</video:publication_date>
     </video:video>
   </url>
+  <url>
+    <loc>https://taguchi338.com/services/manufacturing-pr-video.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://taguchi338.com/uploads/videos/manufacturing-pr-ai-sample-poster.webp</video:thumbnail_loc>
+      <video:title>TSUGU PRECISION｜製造業向けAI PR動画 自主制作サンプル</video:title>
+      <video:description>金属部品を確かめる技術者、加工、精密部品、街や暮らし、車いすを利用する人、職人へとつなぎ、製造業の技術と暮らしの接点を描いたAI生成の自主制作サンプルです。受託案件の実績紹介ではありません。</video:description>
+      <video:content_loc>https://taguchi338.com/uploads/videos/manufacturing-pr-ai-sample.mp4</video:content_loc>
+      <video:duration>35</video:duration>
+      <video:publication_date>2026-09-21T13:41:04+00:00</video:publication_date>
+    </video:video>
+  </url>
 </urlset>

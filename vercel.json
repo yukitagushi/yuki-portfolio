@@ -10,7 +10,7 @@
       "permanent": true
     },
     {
-      "source": "/services/:slug(automation|app-development|ai-influencer|ai-agent|ai-video|video-editing|training-video|manual-to-video|real-estate-3d-video)",
+      "source": "/services/:slug(automation|app-development|ai-influencer|ai-agent|ai-video|video-editing|training-video|manual-to-video|real-estate-3d-video|manufacturing-pr-video)",
       "destination": "/services/:slug.html",
       "permanent": true
     },

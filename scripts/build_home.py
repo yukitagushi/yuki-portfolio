@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 topics = json.loads((ROOT/'content/topics.json').read_text())
 service_rows = [
     ('real-estate-3d-video','不動産・ホテル・旅館向け3D内覧・PR動画','Blenderで制作。内覧・館内紹介の依頼制作とレクチャーに対応。','3D WALKTHROUGH'),
+    ('manufacturing-pr-video','製造業向けPR動画','技術・製品・仕事の価値を、AI映像とAI BGMで伝える。','MANUFACTURING VIDEO'),
     ('ai-video','AI広告動画の制作','企画・台本・生成・編集まで。SNSに届く動画を。','AI VIDEO'),
     ('video-editing','AIによる自動動画編集','字幕・カット・整音の繰り返しを、仕組み化。','VIDEO EDITING'),
     ('training-video','社内・研修動画の自動生成','研修資料から、伝わるナレーション付き動画へ。','TRAINING'),

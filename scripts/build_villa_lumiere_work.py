@@ -2,9 +2,9 @@
 """Build the approved VILLA LUMIÈRE portfolio video page and video sitemap."""
 
 from pathlib import Path
-import xml.etree.ElementTree as ET
 
 from site_common import BASE, breadcrumbs, contact_cta, page
+from video_sitemap import write as write_video_sitemap
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,28 +64,9 @@ def build_page():
     )
 
 
-def build_video_sitemap():
-    namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
-    video_namespace = "http://www.google.com/schemas/sitemap-video/1.1"
-    ET.register_namespace("", namespace)
-    ET.register_namespace("video", video_namespace)
-    root = ET.Element(f"{{{namespace}}}urlset")
-    url = ET.SubElement(root, f"{{{namespace}}}url")
-    ET.SubElement(url, f"{{{namespace}}}loc").text = BASE + PATH
-    video = ET.SubElement(url, f"{{{video_namespace}}}video")
-    ET.SubElement(video, f"{{{video_namespace}}}thumbnail_loc").text = POSTER_URL
-    ET.SubElement(video, f"{{{video_namespace}}}title").text = TITLE
-    ET.SubElement(video, f"{{{video_namespace}}}description").text = DESCRIPTION
-    ET.SubElement(video, f"{{{video_namespace}}}content_loc").text = VIDEO_URL
-    ET.SubElement(video, f"{{{video_namespace}}}duration").text = "64"
-    ET.SubElement(video, f"{{{video_namespace}}}publication_date").text = PUBLISHED_AT
-    ET.indent(root, space="  ")
-    return ET.tostring(root, encoding="utf-8", xml_declaration=True) + b"\n"
-
-
 def main():
     (ROOT / PATH.lstrip("/")).write_text(build_page() + "\n", encoding="utf-8")
-    (ROOT / "video-sitemap.xml").write_bytes(build_video_sitemap())
+    write_video_sitemap(ROOT)
     print("Built VILLA LUMIÈRE video work page and video sitemap.")
 
 

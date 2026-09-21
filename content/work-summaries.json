@@ -16,5 +16,14 @@
     "scope": [],
     "related_url": "/#contact",
     "related_label": "漫画制作について相談する"
+  },
+  {
+    "id": "manufacturing-pr-video-sample",
+    "category": "SELF-PRODUCED SAMPLE",
+    "title": "製造業向けAI PR動画",
+    "summary": "製造業の技術と暮らしの接点を描いた、自主制作のAI PR動画サンプルです。映像からBGMまでAIで制作しました。受託案件の実績紹介ではありません。",
+    "scope": ["映像・BGMをAIで制作", "音声付き・約35秒", "会社紹介・製品PR・採用・展示会を想定した構成例"],
+    "related_url": "/services/manufacturing-pr-video.html",
+    "related_label": "自主制作サンプルと料金を見る"
   }
 ]
